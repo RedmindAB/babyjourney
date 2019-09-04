@@ -1,18 +1,17 @@
-import {StyleSheet} from 'react-native'
+import { StyleSheet } from 'react-native'
+import theme from '../../../theme'
 
-import {variables, colors} from '../../../theme'
-
-export const basePadding = variables.BASELINE * 3
+export const basePadding = theme.BASELINE * 3
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: colors.secondary,
+    backgroundColor: theme.secondary.color
   },
   contentContainer: {
     padding: basePadding,
-    flexGrow: 1,
-  },
+    flexGrow: 1
+  }
 })
 
 export default styles

@@ -1,0 +1,35 @@
+{
+  "primary": {
+    "color": "#FFFFFF",
+    "onColor": "#554a61"
+  },
+  "primary_variant": {
+    "color": "#bd0338",
+    "onColor": "#FFF"
+  },
+  "secondary": {
+    "color": "#FFFFFF",
+    "onColor": "#554a61",
+    "variantColor": "#f0eef3"
+  },
+  "secondary_variant": {
+    "color": "#000fae",
+    "onColor": "#FFF"
+  },
+  "tertiary": {
+    "color": "#ffdcdc",
+    "onColor": "#4a4152"
+  },
+  "tertiary_variant": {
+    "color": "#ffacad",
+    "onColor": "#4a4152"
+  },
+  "background": {
+    "color": "#FFFFFF",
+    "variantColor": "#86af881a",
+    "onColor": "#554a61",
+    "inactiveOnColor": "#8E8995"
+  },
+  "error": "#D12903",
+  "success": "#00C853"
+}

@@ -3,8 +3,8 @@ import { createBottomTabNavigator } from 'react-navigation'
 import Home from '../screens/Home'
 import { screens, stacks } from './navigationConstants'
 import { NavigationScreenProps } from 'react-navigation'
-import { colors } from '../theme'
 import { createStackNavigator } from 'react-navigation'
+import theme from '../theme'
 
 const defaultNavigationOptions = (
   { navigation }: NavigationScreenProps,
@@ -12,13 +12,13 @@ const defaultNavigationOptions = (
 ): NavigationScreenOptions => {
   const options: NavigationScreenOptions = {
     headerStyle: {
-      backgroundColor: colors.secondary,
+      backgroundColor: theme.secondary.color,
       borderBottomWidth: 1,
       shadowColor: 'transparent',
       elevation: 0
     },
     headerBackTitle: null,
-    headerTintColor: colors.secondaryOn
+    headerTintColor: theme.secondary.onColor
   }
 
   return { ...options, ...customOptions }

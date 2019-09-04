@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
-import { TouchableOpacity, View, Text, ViewStyle } from 'react-native'
-import styles from './styles'
-import { colors } from '../../../theme'
+import { TouchableOpacity, ViewStyle } from 'react-native'
+import { FilterButtonText, FilterButtonContainer } from './styled'
 
 type OwnProps = {
   style?: ViewStyle
@@ -16,18 +15,13 @@ class FilterButton extends Component<Props> {
   onPress = () => this.props.onPress(this.props.data)
 
   render() {
-    const { data, onPress, style, selectedValue } = this.props
-    const selectedStyles =
-      selectedValue === data.value
-        ? {}
-        : ({
-            backgroundColor: colors.secondary
-          } as ViewStyle)
+    const { data, style, selectedValue } = this.props
+    const selected = selectedValue === data.value
     return (
       <TouchableOpacity onPress={this.onPress}>
-        <View style={[styles.container, selectedStyles, style]}>
-          <Text style={styles.title}>{data.label}</Text>
-        </View>
+        <FilterButtonContainer selected={selected} style={style}>
+          <FilterButtonText>{data.label}</FilterButtonText>
+        </FilterButtonContainer>
       </TouchableOpacity>
     )
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, FlatList } from 'react-native'
 import FilterButton from '../FilterButton'
-import { variables } from '../../../theme'
+import theme from '../../../theme'
 
 type Filter = { value: any; label: string }
 
@@ -15,7 +15,7 @@ type Props = OwnProps
 
 class FilterList extends Component<Props> {
   renderItem = ({ item, index }: { item: Filter; index: number }) => {
-    const style = index === FilterList.length - 1 ? {} : { marginRight: variables.BASELINE }
+    const style = index === FilterList.length - 1 ? {} : { marginRight: theme.BASELINE }
     return (
       <FilterButton
         selectedValue={this.props.selectedValue}
@@ -34,7 +34,7 @@ class FilterList extends Component<Props> {
         <FlatList
           keyExtractor={this.keyExtractor}
           contentContainerStyle={{
-            paddingHorizontal: variables.BASELINE * 2,
+            paddingHorizontal: theme.BASELINE * 2,
             paddingTop: 0
           }}
           data={this.props.filters}

@@ -1,5 +1,5 @@
 import { StyleSheet, ViewStyle, ImageStyle, TextStyle } from 'react-native'
-import { variables, colors } from '../../../theme'
+import theme from '../../../theme'
 
 const width = 200
 
@@ -7,7 +7,7 @@ export default StyleSheet.create({
   container: {
     borderRadius: 14,
     width: 200,
-    shadowColor: colors.secondaryOn,
+    shadowColor: theme.secondary.onColor,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 4,
@@ -22,12 +22,12 @@ export default StyleSheet.create({
   bottomContainer: {
     borderBottomLeftRadius: 14,
     borderBottomRightRadius: 14,
-    padding: variables.BASELINE,
-    backgroundColor: colors.secondary
+    padding: theme.BASELINE,
+    backgroundColor: theme.secondary.color
   } as ViewStyle,
   title: {
     fontSize: 16,
-    marginBottom: variables.BASELINE
+    marginBottom: theme.BASELINE
   } as TextStyle,
   author: {
     fontSize: 12

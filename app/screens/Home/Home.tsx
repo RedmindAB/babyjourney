@@ -7,10 +7,11 @@ import FilterList from '../../components/common/FilterList'
 import styles from './styles'
 import { View } from 'react-native'
 import ArticleButton from '../../components/common/ArticleButton'
-import { variables } from '../../theme'
 import { ArticleModel } from '../../components/common/ArticleButton/ArticleButton'
 import { string } from 'prop-types'
 import { FlatList } from 'react-native-gesture-handler'
+import theme from '../../theme'
+import OfferList from '../../components/common/OfferList'
 
 type Props = NavigationScreenProps
 
@@ -62,10 +63,10 @@ class Home extends Component<Props, State> {
     this.setState({ activeFilter: filter.value })
   }
 
-  articleKeyExtractor = (item: ArticleModel) => item.title
+  articleKeyExtractor = (_: ArticleModel, index: number) => index.toString()
 
   renderArticle = ({ item, index }) => {
-    const style = index === this.articles.length - 1 ? {} : { marginRight: variables.BASELINE * 2 }
+    const style = index === this.articles.length - 1 ? {} : { marginRight: theme.BASELINE * 2 }
     return <ArticleButton article={item} style={style} />
   }
 
@@ -79,13 +80,13 @@ class Home extends Component<Props, State> {
         />
         <FlatList
           keyExtractor={this.articleKeyExtractor}
-          contentContainerStyle={{ padding: variables.BASELINE * 2 }}
+          contentContainerStyle={{ padding: theme.BASELINE * 2 }}
           data={this.articles}
           renderItem={this.renderArticle}
           showsHorizontalScrollIndicator={false}
           horizontal
         />
-        <View style={{ flex: 1, padding: variables.BASELINE * 2 }} />
+        <OfferList />
       </Container>
     )
   }

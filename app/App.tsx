@@ -1,14 +1,14 @@
-import React, {Component} from 'react'
-import {View, StatusBar, StyleSheet} from 'react-native'
+import React, { Component } from 'react'
+import { View, StatusBar, StyleSheet } from 'react-native'
 
 import AppContainer from './navigation'
-import {colors} from './theme'
+import theme from './theme'
 
 class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar barStyle="dark-content" backgroundColor={colors.secondary} />
+        <StatusBar barStyle="dark-content" backgroundColor={theme.secondary.color} />
         <AppContainer />
       </View>
     )
@@ -16,7 +16,7 @@ class App extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {backgroundColor: colors.secondary, flex: 1},
+  container: { backgroundColor: theme.secondary.color, flex: 1 }
 })
 
 export default App
