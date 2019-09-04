@@ -13,10 +13,10 @@ type Props = OwnProps
 
 class SquareButton extends Component<Props> {
   render() {
-    const { title, onPress } = this.props
+    const { title, onPress, style } = this.props
     return (
       <TouchableOpacity onPress={onPress}>
-        <SquareButtonContainer>
+        <SquareButtonContainer style={style}>
           <SquareButtonText>{title}</SquareButtonText>
         </SquareButtonContainer>
       </TouchableOpacity>

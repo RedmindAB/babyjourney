@@ -48,6 +48,15 @@ export const CenteredFill = styled.View`
 export const Header = styled(CustomText)`
   font-size: ${layout.isSmallDevice ? 18 : 24};
 `
+
+export const Headline = styled.Text`
+  text-transform: uppercase;
+  color: #ff6d6f;
+  font-size: 12;
+  margin: ${theme.BASELINE * 1.5}px;
+  ${props => props.noMargin && `margin: 0`}
+`
+
 export const SubHeader = styled(CustomText)`
   font-size: 21;
   text-align: center;

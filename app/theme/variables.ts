@@ -48,6 +48,7 @@ export const layout = {
 }
 
 export const BASELINE = 8
+export const SCREEN_PADDING = BASELINE * 1.5
 
 export const screenContainerPadding = BASELINE * 2.5
 export const getBottomScreenSpace = () => getBottomSpace() || BASELINE * 2

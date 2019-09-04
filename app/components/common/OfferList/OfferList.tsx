@@ -1,15 +1,10 @@
 import React, { Component } from 'react'
 import LinearGradient from 'react-native-linear-gradient'
 
-import {
-  OfferListContainer,
-  SpecialOffersText,
-  TopRowContainer,
-  PageDot,
-  PageDotContainer
-} from './styled'
+import { OfferListContainer, TopRowContainer, PageDot, PageDotContainer } from './styled'
 import SquareButton from '../SquareButton'
 import Offer from '../Offer'
+import { Headline } from '../styled'
 
 class OfferList extends Component {
   render() {
@@ -17,7 +12,7 @@ class OfferList extends Component {
       <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#fff4f4', '#ffbaba']}>
         <OfferListContainer>
           <TopRowContainer>
-            <SpecialOffersText>Special Offers</SpecialOffersText>
+            <Headline noMargin>Special Offers</Headline>
             <SquareButton title="VIEW ALL" onPress={() => undefined} />
           </TopRowContainer>
           <Offer />

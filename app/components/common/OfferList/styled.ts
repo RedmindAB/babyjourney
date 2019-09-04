@@ -2,27 +2,25 @@ import styled from 'styled-components/native'
 import theme from '../../../theme'
 
 export const OfferListContainer = styled.View`
-  padding: ${theme.BASELINE * 2}px;
+  padding: ${theme.SCREEN_PADDING}px;
+  padding-top: 0;
 `
 
 export const TopRowContainer = styled.View`
+  margin-top: ${theme.BASELINE}px;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  overflow: visible;
   margin-bottom: ${theme.BASELINE};
-`
-
-export const SpecialOffersText = styled.Text`
-  text-transform: uppercase;
-  color: #ff6d6f;
-  font-size: 12;
 `
 
 export const PageDotContainer = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: ${theme.BASELINE}px 0;
+  margin-top: ${theme.BASELINE}px;
 `
 
 const dotSize = 8

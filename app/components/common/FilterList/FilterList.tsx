@@ -34,7 +34,7 @@ class FilterList extends Component<Props> {
         <FlatList
           keyExtractor={this.keyExtractor}
           contentContainerStyle={{
-            paddingHorizontal: theme.BASELINE * 2,
+            paddingHorizontal: theme.SCREEN_PADDING,
             paddingTop: 0
           }}
           data={this.props.filters}
