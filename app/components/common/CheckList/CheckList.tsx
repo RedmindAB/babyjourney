@@ -26,7 +26,7 @@ class CheckList extends Component<Props> {
     return items.map((item, index) => {
       const onPress = () => this.props.onPress(index)
       return (
-        <CheckListItemContainer noBorder={index === items.length - 1}>
+        <CheckListItemContainer key={item.title} noBorder={index === items.length - 1}>
           <TouchableOpacity onPress={onPress}>
             <CheckListItemInnerContainer>
               <CheckListItemText>{item.title}</CheckListItemText>

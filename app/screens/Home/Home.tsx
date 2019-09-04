@@ -14,45 +14,17 @@ import { HomeHeadline, HomeConentWrapper } from './styled'
 import CheckList from '../../components/common/CheckList'
 import { CheckListItem } from '../../components/common/CheckList/CheckList'
 import HealthCheck from '../../components/common/HealthCheck'
+import { articles } from './mockArticlesData'
 
 type Props = NavigationScreenProps
 
 type State = {
   activeFilter: string
   checkList: CheckListItem[]
+  filteredArticles: ArticleModel[]
 }
 
 class Home extends Component<Props, State> {
-  articles: ArticleModel[] = [
-    {
-      category: 'lifestyle',
-      title: 'Expectations in the first trimester of pregnancy',
-      author: 'Jennifer Smith',
-      uri:
-        'https://keyassets-p2.timeincuk.net/wp/prod/wp-content/uploads/sites/53/2016/04/pregnancy-week-by-week-3-920x581.jpg'
-    },
-    {
-      category: 'fashion',
-      title: '12 Maternity-Fashion Tips',
-      author: 'Amanda Walker',
-      uri:
-        'https://www.usmagazine.com/wp-content/uploads/2019/03/Duchess-Meghans-First-Pregnancy-Is-Shaping-Up-to-Be-a-Stylish-One-See-Her-Best-Maternity-Fashion-Moments-International-Womens-Day.jpg'
-    },
-    {
-      category: 'cuisine',
-      title: 'Food that will stil your cravings',
-      author: 'Hannah Spring',
-      uri:
-        'https://www.momjunction.com/wp-content/uploads/2015/03/Chinese-Food-During-Pregnancy.jpg'
-    },
-    {
-      category: 'sports',
-      title: 'Exercise and pregnancy, what to expect',
-      author: 'Danielle Montana',
-      uri: 'https://assets.babycenter.com/ims/2017/10/iStock-542715094_wide.jpg?width=600'
-    }
-  ]
-
   filters = [
     { label: 'All', value: 'all' },
     { label: 'Lifestyle', value: 'lifestyle' },
@@ -63,6 +35,7 @@ class Home extends Component<Props, State> {
 
   state: State = {
     activeFilter: this.filters[0].value,
+    filteredArticles: articles,
     checkList: [
       { title: 'Attend yoga classes', done: false },
       { title: 'Visit healthy food cooking class', done: false },
@@ -71,13 +44,17 @@ class Home extends Component<Props, State> {
   }
 
   setFilter = (filter: any) => {
-    this.setState({ activeFilter: filter.value })
+    const filteredArticles =
+      filter.value === 'all'
+        ? articles
+        : articles.filter(article => article.category === filter.value)
+    this.setState({ activeFilter: filter.value, filteredArticles })
   }
 
-  articleKeyExtractor = (_: ArticleModel, index: number) => index.toString()
+  articleKeyExtractor = (article: ArticleModel) => article.title
 
   renderArticle = ({ item, index }) => {
-    const style = index === this.articles.length - 1 ? {} : { marginRight: theme.BASELINE * 2 }
+    const style = index === articles.length - 1 ? {} : { marginRight: theme.BASELINE * 2 }
     return <ArticleButton article={item} style={style} />
   }
 
@@ -105,7 +82,7 @@ class Home extends Component<Props, State> {
             paddingBottom: theme.BASELINE * 2,
             paddingTop: 0
           }}
-          data={this.articles}
+          data={this.state.filteredArticles}
           renderItem={this.renderArticle}
           showsHorizontalScrollIndicator={false}
           horizontal
