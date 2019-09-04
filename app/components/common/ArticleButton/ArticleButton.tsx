@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
-import { View, Text, Image, ViewStyle, ViewProps } from 'react-native'
+import { ViewProps } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import styles from './styles'
+import {
+  ArticleButtonContainer,
+  ArticleButtonImage,
+  ArticleButtonBottomContainer,
+  ArticleButtonTitle,
+  ArticleButtonAuthor
+} from './styled'
 
 export type ArticleModel = {
   uri: string
@@ -19,15 +25,15 @@ class ArticleButton extends Component<Props> {
   render() {
     const { article, style } = this.props
     return (
-      <View style={[ styles.container, style  ]}>
+      <ArticleButtonContainer style={style}>
         <TouchableOpacity>
-          <Image style={styles.image} source={{ uri: article.uri }} />
-          <View style={styles.bottomContainer}>
-            <Text style={styles.title}>{article.title}</Text>
-            <Text style={styles.author}>{article.author}</Text>
-          </View>
+          <ArticleButtonImage source={{ uri: article.uri }} />
+          <ArticleButtonBottomContainer>
+            <ArticleButtonTitle>{article.title}</ArticleButtonTitle>
+            <ArticleButtonAuthor>{article.author}</ArticleButtonAuthor>
+          </ArticleButtonBottomContainer>
         </TouchableOpacity>
-      </View>
+      </ArticleButtonContainer>
     )
   }
 }

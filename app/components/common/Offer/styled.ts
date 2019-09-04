@@ -9,7 +9,6 @@ export const OfferContainer = styled.View`
   border-radius: ${borderRadius}px;
   background-color: #ffffff;
   flex-direction: row;
-  /* overflow: hidden; */
   shadow-color: #ffa2a2;
   shadow-offset: 0 4px;
   shadow-opacity: 0.66;
