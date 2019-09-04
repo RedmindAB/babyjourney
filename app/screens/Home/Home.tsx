@@ -13,6 +13,7 @@ import OfferList from '../../components/common/OfferList'
 import { HomeHeadline, HomeConentWrapper } from './styled'
 import CheckList from '../../components/common/CheckList'
 import { CheckListItem } from '../../components/common/CheckList/CheckList'
+import HealthCheck from '../../components/common/HealthCheck'
 
 type Props = NavigationScreenProps
 
@@ -108,7 +109,10 @@ class Home extends Component<Props, State> {
         />
         <OfferList />
         <HomeHeadline>My health</HomeHeadline>
-        <HomeHeadline>activites to do this week</HomeHeadline>
+        <HomeConentWrapper>
+          <HealthCheck />
+        </HomeConentWrapper>
+        <HomeHeadline>activities to do this week</HomeHeadline>
         <HomeConentWrapper>
           <CheckList onPress={this.onCheckListItemPress} items={this.state.checkList} />
         </HomeConentWrapper>
