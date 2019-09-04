@@ -25,28 +25,31 @@ type State = {
 class Home extends Component<Props, State> {
   articles: ArticleModel[] = [
     {
+      category: 'lifestyle',
       title: 'Expectations in the first trimester of pregnancy',
       author: 'Jennifer Smith',
       uri:
         'https://keyassets-p2.timeincuk.net/wp/prod/wp-content/uploads/sites/53/2016/04/pregnancy-week-by-week-3-920x581.jpg'
     },
     {
-      title: 'Expectations in the first trimester of pregnancy',
-      author: 'Jennifer Smith',
+      category: 'fashion',
+      title: '12 Maternity-Fashion Tips',
+      author: 'Amanda Walker',
       uri:
-        'https://keyassets-p2.timeincuk.net/wp/prod/wp-content/uploads/sites/53/2016/04/pregnancy-week-by-week-3-920x581.jpg'
+        'https://www.usmagazine.com/wp-content/uploads/2019/03/Duchess-Meghans-First-Pregnancy-Is-Shaping-Up-to-Be-a-Stylish-One-See-Her-Best-Maternity-Fashion-Moments-International-Womens-Day.jpg'
     },
     {
-      title: 'Expectations in the first trimester of pregnancy',
-      author: 'Jennifer Smith',
+      category: 'cuisine',
+      title: 'Food that will stil your cravings',
+      author: 'Hannah Spring',
       uri:
-        'https://keyassets-p2.timeincuk.net/wp/prod/wp-content/uploads/sites/53/2016/04/pregnancy-week-by-week-3-920x581.jpg'
+        'https://www.momjunction.com/wp-content/uploads/2015/03/Chinese-Food-During-Pregnancy.jpg'
     },
     {
-      title: 'Expectations in the first trimester of pregnancy',
-      author: 'Jennifer Smith',
-      uri:
-        'https://keyassets-p2.timeincuk.net/wp/prod/wp-content/uploads/sites/53/2016/04/pregnancy-week-by-week-3-920x581.jpg'
+      category: 'sports',
+      title: 'Exercise and pregnancy, what to expect',
+      author: 'Danielle Montana',
+      uri: 'https://assets.babycenter.com/ims/2017/10/iStock-542715094_wide.jpg?width=600'
     }
   ]
 

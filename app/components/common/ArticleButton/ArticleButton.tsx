@@ -13,6 +13,7 @@ export type ArticleModel = {
   uri: string
   title: string
   author: string
+  category: string
 }
 
 type OwnProps = {
