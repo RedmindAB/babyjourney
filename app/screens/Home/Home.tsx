@@ -10,11 +10,12 @@ import { ArticleModel } from '../../components/common/ArticleButton/ArticleButto
 import { FlatList } from 'react-native-gesture-handler'
 import theme from '../../theme'
 import OfferList from '../../components/common/OfferList'
-import { HomeHeadline, HomeConentWrapper } from './styled'
+import { HomeHeadline, HomeConentWrapper, HomeTopContainer } from './styled'
 import CheckList from '../../components/common/CheckList'
 import { CheckListItem } from '../../components/common/CheckList/CheckList'
 import HealthCheck from '../../components/common/HealthCheck'
 import { articles } from './mockArticlesData'
+import { Icons } from '../../assets'
 
 type Props = NavigationScreenProps
 
@@ -67,7 +68,10 @@ class Home extends Component<Props, State> {
   render() {
     return (
       <Container style={styles.container}>
-        <HomeHeadline>week 15 in social media</HomeHeadline>
+        <HomeTopContainer>
+          <HomeHeadline noMargin>week 15 in social media</HomeHeadline>
+          <Icons.Search />
+        </HomeTopContainer>
         <FilterList
           onPress={this.setFilter}
           selectedValue={this.state.activeFilter}
