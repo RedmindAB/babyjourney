@@ -1,5 +1,6 @@
 import styled from 'styled-components/native'
 import theme from '../../../theme'
+import { CenteredView } from '../styled'
 
 export const CheckListContainer = styled.View`
   background-color: #ffffff;
@@ -35,7 +36,7 @@ export const CheckListItemText = styled.Text`
 
 const checkMarkContainerSize = theme.BASELINE * 3
 
-export const CheckListCheckMarkContainer = styled.View`
+export const CheckListCheckMarkContainer = styled(CenteredView)`
   width: ${checkMarkContainerSize}px;
   height: ${checkMarkContainerSize}px;
   border-radius: ${checkMarkContainerSize / 2}px;

@@ -11,6 +11,7 @@ import {
   HealthCheckGoToSchedule
 } from './styled'
 import LinearGradient from 'react-native-linear-gradient'
+import { Icons } from '../../../assets'
 
 class HealthCheck extends Component {
   render() {
@@ -22,13 +23,15 @@ class HealthCheck extends Component {
           end={{ x: 1, y: 1 }}
           colors={['#fff4f4', '#ffbaba']}
         >
-          <HeartIcon />
+          <HeartIcon>
+            <Icons.Health />
+          </HeartIcon>
         </LinearGradient>
         <HealthCheckRightContainer>
           <HealthCheckTime>weeks 4 to 28</HealthCheckTime>
-          <HealthCheckTitle>1 parental visit a month</HealthCheckTitle>
+          <HealthCheckTitle>1 prenatal visit a month</HealthCheckTitle>
           <HealthCheckBottomRow>
-            <HealthCheckInfo>3 visits left</HealthCheckInfo>
+            <HealthCheckInfo light>3 visits left</HealthCheckInfo>
             <HealthCheckGoToSchedule>Go to schedule</HealthCheckGoToSchedule>
           </HealthCheckBottomRow>
         </HealthCheckRightContainer>

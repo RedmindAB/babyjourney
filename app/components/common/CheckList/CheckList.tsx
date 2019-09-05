@@ -7,6 +7,7 @@ import {
   CheckListItemInnerContainer
 } from './styled'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import { Icons } from '../../../assets'
 
 export type CheckListItem = {
   title: string
@@ -30,7 +31,9 @@ class CheckList extends Component<Props> {
           <TouchableOpacity onPress={onPress}>
             <CheckListItemInnerContainer>
               <CheckListItemText>{item.title}</CheckListItemText>
-              <CheckListCheckMarkContainer checked={item.done} />
+              <CheckListCheckMarkContainer checked={item.done}>
+                {item.done && <Icons.Tick />}
+              </CheckListCheckMarkContainer>
             </CheckListItemInnerContainer>
           </TouchableOpacity>
         </CheckListItemContainer>

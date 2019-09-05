@@ -27,7 +27,7 @@ class Offer extends Component<Props> {
         />
         <OfferRightContainer>
           <OfferTitle>Get 30% off Honest cosmetics</OfferTitle>
-          <OfferText>Choose 3 items and get 30% off for the whole purchase.</OfferText>
+          <OfferText light>Choose 3 items and get 30% off for the whole purchase.</OfferText>
           <ViewMoreText>View more</ViewMoreText>
         </OfferRightContainer>
       </OfferContainer>

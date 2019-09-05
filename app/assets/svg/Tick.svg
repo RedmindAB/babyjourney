@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="8px" viewBox="0 0 10 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>icon_tick</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="bj_uc01-copy-2" transform="translate(-332.000000, -1310.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="activity" transform="translate(13.000000, 1242.000000)">
+                <g id="tick" transform="translate(313.000000, 61.000000)">
+                    <path d="M7.46225153,10.1267051 C7.15857241,9.84501047 6.68403322,9.86283242 6.40233859,10.1665115 C6.12064395,10.4701907 6.1384659,10.9447298 6.44214502,11.2264245 L9.73553966,14.2813978 C10.0394401,14.5632977 10.5143913,14.5452152 10.7959779,14.2410245 L15.5025833,9.15659977 C15.7839648,8.85263053 15.7656539,8.37810996 15.4616846,8.09672841 C15.1577154,7.81534687 14.6831948,7.83365782 14.4018133,8.13762706 L10.2052196,12.6710993 L7.46225153,10.1267051 Z" id="icon_tick"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -30,8 +30,8 @@ class ArticleButton extends Component<Props> {
         <TouchableOpacity>
           <ArticleButtonImage source={{ uri: article.uri }} />
           <ArticleButtonBottomContainer>
-            <ArticleButtonTitle>{article.title}</ArticleButtonTitle>
-            <ArticleButtonAuthor>{article.author}</ArticleButtonAuthor>
+            <ArticleButtonTitle numberOfLines={2}>{article.title}</ArticleButtonTitle>
+            <ArticleButtonAuthor light>{article.author}</ArticleButtonAuthor>
           </ArticleButtonBottomContainer>
         </TouchableOpacity>
       </ArticleButtonContainer>

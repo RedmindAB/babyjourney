@@ -1,5 +1,6 @@
 import styled from 'styled-components/native'
 import theme from '../../../theme'
+import { CenteredView, CustomText } from '../styled'
 
 export const heartIconSize = theme.BASELINE * 7
 
@@ -8,7 +9,7 @@ export const linearGradientStyles = {
   width: heartIconSize,
   height: heartIconSize
 }
-export const HeartIcon = styled.View`
+export const HeartIcon = styled(CenteredView)`
   width: ${heartIconSize}px;
   height: ${heartIconSize}px;
 `
@@ -40,7 +41,7 @@ export const HealthCheckBottomRow = styled.View`
   justify-content: space-between;
 `
 
-export const HealthCheckInfo = styled.Text`
+export const HealthCheckInfo = styled(CustomText)`
   font-family: ${theme.fonts.Avenir};
   font-weight: 100;
   font-size: 12;

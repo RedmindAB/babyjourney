@@ -2,14 +2,17 @@ import styled from 'styled-components/native'
 import { getStatusBarHeight, getBottomSpace, isIphoneX } from 'react-native-iphone-x-helper'
 import { layout } from '../../theme/variables'
 import theme from '../../theme'
+
 export const CustomText = styled.Text`
+  font-family: ${theme.fonts.Avenir};
+  font-weight: 100;
   color: ${theme.background.onColor};
   ${props => props.primary && `color: ${theme.primary.onColor}`};
   ${props => props.secondary && `color: ${theme.secondary.onColor}`};
   ${props => props.tertiary && `color: ${theme.tertiary.onColor}`};
   ${props => props.background && `color: ${theme.background.onColor}`};
   ${props => props.error && `color: ${theme.error};`}
-  ${props => props.light && `color: ${theme.background.inactiveOnColor};`}
+  ${props => props.light && `opacity: 0.95`}
   ${props => props.centered && `text-align: center;`}
   ${props => props.uppercase && `text-transform: uppercase;`}
   ${props => props.lowercase && `text-transform: lowercase;`}

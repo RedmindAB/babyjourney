@@ -1,6 +1,7 @@
 import styled from 'styled-components/native'
 import theme from '../../../theme'
 import { Dimensions } from 'react-native'
+import { CustomText } from '../styled'
 
 const containerHeight = 120
 const borderRadius = 14
@@ -40,7 +41,7 @@ export const OfferTitle = styled.Text`
   flex-shrink: 1;
 `
 
-export const OfferText = styled.Text`
+export const OfferText = styled(CustomText)`
   font-family: ${theme.fonts.Avenir};
   font-weight: 100;
   font-size: 12;

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="19px" viewBox="0 0 15 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>icon_saved</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="bj_uc01-copy-2" transform="translate(-105.000000, -1547.000000)" fill="#584F60" fill-rule="nonzero">
+            <g id="UI-Bars-/-Tab-Bars-/-Base-/-Light-/-5-Text-Icons" transform="translate(-25.000000, 1537.000000)">
+                <g id="#2">
+                    <g transform="translate(75.000000, 0.000000)">
+                        <path d="M69.3181818,10 L55.6818182,10 C55.3052604,10 55,10.2962823 55,10.6617651 L55,27.8676568 C55,28.1220864 55.1502991,28.3539825 55.3865899,28.464151 C55.6228806,28.5743194 55.903322,28.5432491 56.1079545,28.3842306 L62.5,23.4209926 L68.8920455,28.3842306 C69.096678,28.5432491 69.3771194,28.5743194 69.6134101,28.464151 C69.8497009,28.3539825 70,28.1220864 70,27.8676568 L70,10.6617651 C70,10.2962823 69.6947396,10 69.3181818,10 Z M68.7,26.5892354 L63.2972865,22.3941848 L62.5,21.775115 L56.3,26.5892354 L56.3,11.3 L68.7,11.3 L68.7,26.5892354 Z" id="icon_saved"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -3,6 +3,7 @@ import { Headline } from '../../components/common/styled'
 import theme from '../../theme'
 
 export const HomeHeadline = styled(Headline)`
+  margin-top: ${theme.BASELINE * 3};
   margin-left: ${theme.SCREEN_PADDING};
 `
 export const HomeConentWrapper = styled.View`
