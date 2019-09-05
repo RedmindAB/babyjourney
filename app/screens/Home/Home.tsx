@@ -17,6 +17,7 @@ import HealthCheck from '../../components/common/HealthCheck'
 import { articles } from './mockArticlesData'
 import SearchField from '../../components/common/SearchField'
 import SquareButton from '../../components/common/SquareButton'
+import TopSearch from './TopSearch/TopSearch'
 
 type Props = NavigationScreenProps
 
@@ -70,8 +71,7 @@ class Home extends Component<Props, State> {
     return (
       <Container style={styles.container}>
         <HomeTopContainer>
-          <HomeHeadline noMargin>week 15 in social media</HomeHeadline>
-          <SearchField />
+          <TopSearch />
         </HomeTopContainer>
         <FilterList
           onPress={this.setFilter}

@@ -1,61 +1,44 @@
 import React, { Component } from 'react'
-import { View, Text, Animated, TouchableWithoutFeedback, TextInput, Easing } from 'react-native'
+import { View, Animated, TouchableWithoutFeedback, TextInput, Dimensions } from 'react-native'
 import { Icons } from '../../../assets'
 import theme from '../../../theme'
 
 const startWidth = 32
 
-class SearchField extends Component {
-  animatedValue = new Animated.Value(0)
+type OwnProps = {
+  style?: any
+  onPress: (cb, show) => void
+  showInput: boolean
+}
+
+type Props = OwnProps
+
+class SearchField extends Component<Props> {
   textInput: TextInput
 
-  state = {
-    showInput: false
-  }
-
-  animate = (show = true) => {
-    if (!show) this.setState({ showInput: false })
-
-    Animated.timing(this.animatedValue, {
-      toValue: Number(show),
-      duration: 300
-    }).start(() => {
-      if (show) {
-        this.setState({ showInput: true }, () => this.textInput.focus())
-      }
-    })
-  }
-
-  onBlur = () => this.animate(false)
+  onBlur = () => this.props.onPress(null, false)
 
   render() {
-    const opacity = this.animatedValue.interpolate({
-      inputRange: [0, 0.5, 1],
-      outputRange: [0, 1, 1]
-    })
-
-    const width = this.animatedValue.interpolate({
-      inputRange: [0, 0.5, 1],
-      outputRange: [startWidth, startWidth, 150]
-    })
-
     return (
-      <TouchableWithoutFeedback onPress={() => this.animate(true)}>
+      <TouchableWithoutFeedback
+        onPress={() => this.props.onPress(() => this.textInput.focus(), true)}
+      >
         <View style={{ position: 'relative', justifyContent: 'center' }}>
           <Animated.View
-            style={{
-              opacity,
-              flexDirection: 'row',
-              height: startWidth,
-              width,
-              borderWidth: 1,
-              borderColor: theme.tertiary.color,
-              borderRadius: startWidth / 2,
-              alignItems: 'center',
-              justifyContent: 'space-between'
-            }}
+            style={[
+              {
+                flexDirection: 'row',
+                height: startWidth,
+                borderWidth: 1,
+                borderColor: theme.tertiary.color,
+                borderRadius: startWidth / 2,
+                alignItems: 'center',
+                justifyContent: 'space-between'
+              },
+              this.props.style
+            ]}
           >
-            {this.state.showInput && (
+            {this.props.showInput && (
               <TextInput
                 onBlur={this.onBlur}
                 ref={r => (this.textInput = r)}
