@@ -3,7 +3,7 @@ import Tick from './svg/Tick.svg'
 import Saved from './svg/Saved.svg'
 import Offers from './svg/Offers.svg'
 import Notification from './svg/Notification.svg'
-import HomeSelected from './svg/HomeSelected.svg'
+import Home from './svg/Home.svg'
 import Health from './svg/Health.svg'
 import Exit from './svg/Exit.svg'
 import Diary from './svg/Diary.svg'
@@ -17,7 +17,7 @@ export const Icons = {
   Saved,
   Offers,
   Notification,
-  HomeSelected,
+  Home,
   Health,
   Exit,
   Diary,
