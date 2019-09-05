@@ -16,6 +16,7 @@ import { CheckListItem } from '../../components/common/CheckList/CheckList'
 import HealthCheck from '../../components/common/HealthCheck'
 import { articles } from './mockArticlesData'
 import SearchField from '../../components/common/SearchField'
+import SquareButton from '../../components/common/SquareButton'
 
 type Props = NavigationScreenProps
 
@@ -77,9 +78,13 @@ class Home extends Component<Props, State> {
           selectedValue={this.state.activeFilter}
           filters={this.filters}
         />
-        <HomeHeadline>stories</HomeHeadline>
+        <HomeTopContainer>
+          <HomeHeadline noMargin>stories</HomeHeadline>
+          <SquareButton title="VIEW ALL" onPress={() => undefined} />
+        </HomeTopContainer>
+
         <FlatList
-          style={{ flexGrow: 0 }}
+          style={{ flexGrow: 0, backgroundColor: 'transparent', overflow: 'visible' }}
           keyExtractor={this.articleKeyExtractor}
           contentContainerStyle={{
             paddingHorizontal: theme.SCREEN_PADDING,

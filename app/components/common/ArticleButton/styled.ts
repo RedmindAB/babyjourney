@@ -10,9 +10,9 @@ export const ArticleButtonContainer = styled.View`
   border-radius: ${borderRadius}px;
   width: ${width}px;
   shadow-color: ${theme.secondary.onColor};
-  shadow-offset: 0 2px;
-  shadow-opacity: 0.2;
-  shadow-radius: 4px;
+  shadow-offset: 0 6px;
+  shadow-opacity: 0.1;
+  shadow-radius: 8px;
   elevation: 1;
 `
 

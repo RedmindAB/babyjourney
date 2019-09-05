@@ -15,7 +15,7 @@ export const FilterButtonContainer = styled(CenteredView)`
   border-radius: ${height / 2};
   padding: 0 ${theme.BASELINE * 2}px;
   border-width: 1;
-  border-color: ${theme.tertiary.color};
+  border-color: ${theme.tertiary_variant.color};
 
-  ${props => props.selected && `background-color: ${theme.tertiary.color}`}
+  ${props => props.selected && `background-color: ${theme.tertiary_variant.color}`}
 `
