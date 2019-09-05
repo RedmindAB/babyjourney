@@ -7,11 +7,18 @@ import {
   OfferText,
   ViewMoreText
 } from './styled'
+import { ViewStyle } from 'react-native'
 
-class Offer extends Component {
+type OwnProps = {
+  style?: ViewStyle
+}
+
+type Props = OwnProps
+
+class Offer extends Component<Props> {
   render() {
     return (
-      <OfferContainer>
+      <OfferContainer style={this.props.style}>
         <OfferImage
           source={{
             uri:

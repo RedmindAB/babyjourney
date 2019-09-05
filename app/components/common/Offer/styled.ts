@@ -1,10 +1,15 @@
 import styled from 'styled-components/native'
 import theme from '../../../theme'
+import { Dimensions } from 'react-native'
 
 const containerHeight = 120
 const borderRadius = 14
 
+const { width } = Dimensions.get('screen')
+export const offerWidth = width - theme.SCREEN_PADDING * 2
+
 export const OfferContainer = styled.View`
+  width: ${offerWidth}px;
   height: ${containerHeight}px;
   border-radius: ${borderRadius}px;
   background-color: #ffffff;

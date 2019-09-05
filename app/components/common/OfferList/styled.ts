@@ -2,11 +2,11 @@ import styled from 'styled-components/native'
 import theme from '../../../theme'
 
 export const OfferListContainer = styled.View`
-  padding: ${theme.SCREEN_PADDING}px;
   padding-top: 0;
 `
 
 export const TopRowContainer = styled.View`
+  padding: 0 ${theme.SCREEN_PADDING}px;
   margin-top: ${theme.BASELINE}px;
   flex-direction: row;
   align-items: center;
@@ -17,6 +17,8 @@ export const TopRowContainer = styled.View`
 `
 
 export const PageDotContainer = styled.View`
+  padding: 0 ${theme.SCREEN_PADDING}px;
+  padding-bottom: ${theme.SCREEN_PADDING}px;
   flex-direction: row;
   align-items: center;
   justify-content: center;

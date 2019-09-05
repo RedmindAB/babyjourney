@@ -1,13 +1,19 @@
 import React, { Component } from 'react'
 import LinearGradient from 'react-native-linear-gradient'
 
-import { OfferListContainer, TopRowContainer, PageDot, PageDotContainer } from './styled'
+import { OfferListContainer, TopRowContainer } from './styled'
 import SquareButton from '../SquareButton'
 import Offer from '../Offer'
 import { Headline } from '../styled'
+import theme from '../../../theme'
+import { Dimensions } from 'react-native'
+import PaginatedScrollView from '../PaginatedScrollView'
 
+const { width } = Dimensions.get('screen')
 class OfferList extends Component {
   render() {
+    const offerMargin = { marginHorizontal: theme.SCREEN_PADDING }
+
     return (
       <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#fff4f4', '#ffbaba']}>
         <OfferListContainer>
@@ -15,12 +21,11 @@ class OfferList extends Component {
             <Headline noMargin>Special Offers</Headline>
             <SquareButton title="VIEW ALL" onPress={() => undefined} />
           </TopRowContainer>
-          <Offer />
-          <PageDotContainer>
-            <PageDot />
-            <PageDot />
-            <PageDot active last />
-          </PageDotContainer>
+          <PaginatedScrollView>
+            <Offer style={offerMargin} />
+            <Offer style={offerMargin} />
+            <Offer style={offerMargin} />
+          </PaginatedScrollView>
         </OfferListContainer>
       </LinearGradient>
     )
