@@ -15,7 +15,7 @@ import CheckList from '../../components/common/CheckList'
 import { CheckListItem } from '../../components/common/CheckList/CheckList'
 import HealthCheck from '../../components/common/HealthCheck'
 import { articles } from './mockArticlesData'
-import { Icons } from '../../assets'
+import SearchField from '../../components/common/SearchField'
 
 type Props = NavigationScreenProps
 
@@ -70,7 +70,7 @@ class Home extends Component<Props, State> {
       <Container style={styles.container}>
         <HomeTopContainer>
           <HomeHeadline noMargin>week 15 in social media</HomeHeadline>
-          <Icons.Search />
+          <SearchField />
         </HomeTopContainer>
         <FilterList
           onPress={this.setFilter}
