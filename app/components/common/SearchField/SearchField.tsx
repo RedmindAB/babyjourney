@@ -18,7 +18,7 @@ class SearchField extends Component {
 
     Animated.timing(this.animatedValue, {
       toValue: Number(show),
-      duration: 400
+      duration: 300
     }).start(() => {
       if (show) {
         this.setState({ showInput: true }, () => this.textInput.focus())
@@ -59,7 +59,7 @@ class SearchField extends Component {
               <TextInput
                 onBlur={this.onBlur}
                 ref={r => (this.textInput = r)}
-                style={{ flex: 1, marginLeft: 32 }}
+                style={{ flex: 1, marginLeft: 32, fontFamily: theme.fonts.Avenir }}
               />
             )}
           </Animated.View>
