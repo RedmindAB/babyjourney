@@ -53,6 +53,8 @@ export const Headline = styled.Text`
   text-transform: uppercase;
   color: #ff6d6f;
   font-size: 12;
+  font-family: ${theme.fonts.Avenir};
+  font-weight: bold;
   margin: ${theme.BASELINE * 1.5}px;
   ${props => props.noMargin && `margin: 0`}
 `

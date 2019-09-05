@@ -29,6 +29,7 @@ export const CheckListItemInnerContainer = styled.View`
 `
 
 export const CheckListItemText = styled.Text`
+  font-family: ${theme.fonts.Lora};
   font-size: 13;
 `
 

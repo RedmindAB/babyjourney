@@ -11,6 +11,8 @@ export const SquareButtonContainer = styled.View`
 `
 
 export const SquareButtonText = styled.Text`
+  font-family: ${theme.fonts.Avenir};
+  font-weight: bold;
   color: #ffffff;
   text-transform: uppercase;
   font-size: 12;

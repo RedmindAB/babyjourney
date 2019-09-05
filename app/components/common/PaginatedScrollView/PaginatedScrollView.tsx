@@ -11,6 +11,8 @@ type State = {
 }
 
 class PaginatedScrollView extends Component<Props, State> {
+  timeout: any
+
   state: State = {
     page: 0
   }
@@ -19,7 +21,8 @@ class PaginatedScrollView extends Component<Props, State> {
     const contentOffset = event.nativeEvent.contentOffset
     const viewSize = event.nativeEvent.layoutMeasurement
     const page = Math.floor(contentOffset.x / viewSize.width)
-    this.setState({ page })
+    clearTimeout(this.timeout)
+    this.timeout = setTimeout(() => this.setState({ page }), 50)
   }
 
   renderDots = () => {
@@ -38,6 +41,7 @@ class PaginatedScrollView extends Component<Props, State> {
     return (
       <View>
         <ScrollView
+          style={{ backgroundColor: 'transparent', overflow: 'visible' }}
           scrollEventThrottle={2000}
           onScroll={this.setScroll}
           pagingEnabled

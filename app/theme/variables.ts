@@ -47,6 +47,11 @@ export const layout = {
   statusBarHeight
 }
 
+export const fonts = {
+  Avenir: 'Avenir',
+  Lora: 'Lora'
+}
+
 export const BASELINE = 8
 export const SCREEN_PADDING = BASELINE * 1.5
 

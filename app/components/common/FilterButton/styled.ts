@@ -6,6 +6,7 @@ import theme from '../../../theme'
 const height = theme.BASELINE * 4
 
 export const FilterButtonText = styled(Paragraph)`
+  font-family: ${theme.fonts.Avenir};
   font-size: 14;
 `
 export const FilterButtonContainer = styled(CenteredView)`

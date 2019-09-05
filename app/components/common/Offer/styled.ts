@@ -35,16 +35,21 @@ export const OfferRightContainer = styled.View`
 `
 
 export const OfferTitle = styled.Text`
+  font-family: ${theme.fonts.Lora};
   font-size: 16;
   flex-shrink: 1;
 `
 
 export const OfferText = styled.Text`
+  font-family: ${theme.fonts.Avenir};
+  font-weight: 100;
   font-size: 12;
   flex-shrink: 1;
 `
 
 export const ViewMoreText = styled.Text`
+  font-family: ${theme.fonts.Avenir};
+  font-weight: bold;
   font-size: 13px;
   color: #ff7273;
 `

@@ -30,10 +30,13 @@ export const ArticleButtonBottomContainer = styled.View`
 `
 
 export const ArticleButtonTitle = styled.Text`
+  font-family: ${theme.fonts.Lora};
   font-size: 16;
   margin-bottom: ${theme.BASELINE}px;
 `
 
 export const ArticleButtonAuthor = styled.Text`
+  font-family: ${theme.fonts.Avenir};
+  font-weight: 100;
   font-size: 12;
 `

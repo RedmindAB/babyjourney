@@ -24,11 +24,14 @@ export const HealthCheckRightContainer = styled.View`
 `
 
 export const HealthCheckTime = styled.Text`
+  font-family: ${theme.fonts.Avenir};
+  font-weight: bold;
   text-transform: uppercase;
-  font-size: 14;
+  font-size: 12;
 `
 
 export const HealthCheckTitle = styled.Text`
+  font-family: ${theme.fonts.Lora};
   font-size: 16;
 `
 
@@ -38,10 +41,14 @@ export const HealthCheckBottomRow = styled.View`
 `
 
 export const HealthCheckInfo = styled.Text`
+  font-family: ${theme.fonts.Avenir};
+  font-weight: 100;
   font-size: 12;
 `
 
 export const HealthCheckGoToSchedule = styled.Text`
+  font-family: ${theme.fonts.Avenir};
+  font-weight: bold;
   font-size: 13;
   color: #ff7272;
 `
