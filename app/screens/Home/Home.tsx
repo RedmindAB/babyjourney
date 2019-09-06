@@ -1,11 +1,10 @@
 import React, { Component, Fragment } from 'react'
 import { NavigationScreenProps } from 'react-navigation'
+import { FlatList } from 'react-native-gesture-handler'
 
 import FilterList from '../../components/common/FilterList'
-
 import ArticleButton from '../../components/common/ArticleButton'
 import { ArticleModel } from '../../components/common/ArticleButton/ArticleButton'
-import { FlatList } from 'react-native-gesture-handler'
 import theme from '../../theme'
 import OfferList from '../../components/common/OfferList'
 import { HomeHeadline, HomeConentWrapper as HomeContentWrapper, HomeTopContainer } from './styled'
@@ -19,6 +18,8 @@ import WhatHappensNow from '../../components/common/WhatHappensNow'
 import ForumResponses from '../../components/common/ForumResponses'
 import { Animated, View } from 'react-native'
 import WeekDisplay from '../../components/common/WeekDisplay'
+import ProgressDropDown from '../../components/common/ProgressDropDown'
+import { getStatusBarHeight } from 'react-native-iphone-x-helper'
 
 type Props = NavigationScreenProps
 
@@ -71,7 +72,7 @@ class Home extends Component<Props, State> {
   }
 
   render() {
-    const maxTopHeight = 200
+    const maxTopHeight = 120
     const minTopHeight = 100
 
     const translateY = this.scrollY.interpolate({
@@ -92,6 +93,9 @@ class Home extends Component<Props, State> {
             zIndex: 1
           }}
         >
+          <ProgressDropDown
+            style={{ zIndex: 1, paddingTop: getStatusBarHeight() + theme.BASELINE * 2 }}
+          />
           <WeekDisplay />
         </Animated.View>
         <Animated.ScrollView

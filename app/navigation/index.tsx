@@ -40,7 +40,8 @@ const HomeStack = createStackNavigator(
     [screens.HOME]: Home
   },
   {
-    defaultNavigationOptions
+    defaultNavigationOptions,
+    headerMode: 'none'
   }
 )
 
