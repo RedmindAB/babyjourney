@@ -37,7 +37,6 @@ class PaginatedScrollView extends Component<Props, State> {
   }
 
   render() {
-    console.log(this.state.page)
     return (
       <View>
         <ScrollView
