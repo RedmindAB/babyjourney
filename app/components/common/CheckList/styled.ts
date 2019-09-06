@@ -1,17 +1,8 @@
 import styled from 'styled-components/native'
 import theme from '../../../theme'
-import { CenteredView } from '../styled'
+import { CenteredView, Card } from '../styled'
 
-export const CheckListContainer = styled.View`
-  background-color: #ffffff;
-  border-radius: 14px;
-  shadow-color: ${theme.secondary.onColor};
-  shadow-offset: 0 2px;
-  shadow-opacity: 0.2;
-  shadow-radius: 4px;
-  elevation: 1;
-  padding: ${theme.BASELINE * 2}px;
-`
+export const CheckListContainer = styled(Card)``
 
 export const CheckListItemContainer = styled.View`
   border-bottom-width: 1px;

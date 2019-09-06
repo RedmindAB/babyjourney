@@ -10,7 +10,7 @@ import { ArticleModel } from '../../components/common/ArticleButton/ArticleButto
 import { FlatList } from 'react-native-gesture-handler'
 import theme from '../../theme'
 import OfferList from '../../components/common/OfferList'
-import { HomeHeadline, HomeConentWrapper, HomeTopContainer } from './styled'
+import { HomeHeadline, HomeConentWrapper as HomeContentWrapper, HomeTopContainer } from './styled'
 import CheckList from '../../components/common/CheckList'
 import { CheckListItem } from '../../components/common/CheckList/CheckList'
 import HealthCheck from '../../components/common/HealthCheck'
@@ -19,6 +19,7 @@ import SearchField from '../../components/common/SearchField'
 import SquareButton from '../../components/common/SquareButton'
 import TopSearch from './TopSearch/TopSearch'
 import WhatHappensNow from '../../components/common/WhatHappensNow'
+import ForumResponses from '../../components/common/ForumResponses'
 
 type Props = NavigationScreenProps
 
@@ -100,13 +101,29 @@ class Home extends Component<Props, State> {
         />
         <OfferList />
         <HomeHeadline>My health</HomeHeadline>
-        <HomeConentWrapper>
+        <HomeContentWrapper>
           <HealthCheck />
-        </HomeConentWrapper>
+        </HomeContentWrapper>
         <HomeHeadline>activities to do this week</HomeHeadline>
-        <HomeConentWrapper>
+        <HomeContentWrapper>
           <CheckList onPress={this.onCheckListItemPress} items={this.state.checkList} />
-        </HomeConentWrapper>
+        </HomeContentWrapper>
+        <HomeContentWrapper
+          style={{
+            alignItems: 'center',
+            marginTop: theme.BASELINE
+          }}
+        >
+          <SquareButton
+            style={{ alignSelf: 'baseline' }}
+            title="Go to activities"
+            onPress={() => undefined}
+          />
+        </HomeContentWrapper>
+        <HomeHeadline>forum</HomeHeadline>
+        <HomeContentWrapper>
+          <ForumResponses />
+        </HomeContentWrapper>
       </Container>
     )
   }

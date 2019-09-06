@@ -29,15 +29,14 @@ export const CustomView = styled.View`
   ${props => props.verticalMargin && `margin: ${props.verticalMargin}px 0;`}
 `
 export const Card = styled.View`
-  background-color: white;
-  border-top-left-radius: 25;
-  border-top-right-radius: 25;
-  shadow-opacity: ${theme.boxShadowMedium.shadowOpacity};
-  shadow-radius: ${theme.boxShadowMedium.shadowRadius};
-  shadow-color: ${theme.boxShadowMedium.shadowColor};
-  shadow-offset: ${theme.boxShadowMedium.shadowOffset.width}px
-    ${theme.boxShadowMedium.shadowOffset.height}px;
-  elevation: ${theme.boxShadowMedium.elevation};
+  background-color: #ffffff;
+  border-radius: 14px;
+  shadow-color: ${theme.secondary.onColor};
+  shadow-offset: 0 2px;
+  shadow-opacity: 0.2;
+  shadow-radius: 4px;
+  elevation: 1;
+  padding: ${theme.BASELINE * 2}px;
 `
 export const CenteredView = styled.View`
   justify-content: center;
@@ -179,4 +178,10 @@ export const Title = styled.Text`
   font-size: 16;
   margin-bottom: ${theme.BASELINE}px;
   color: #322b39;
+`
+export const InfoText = styled(CustomText)`
+  font-family: ${theme.fonts.Avenir};
+  font-weight: 100;
+  font-size: 12;
+  flex-shrink: 1;
 `

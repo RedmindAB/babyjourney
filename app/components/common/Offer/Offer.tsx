@@ -1,13 +1,7 @@
 import React, { Component } from 'react'
-import {
-  OfferContainer,
-  OfferImage,
-  OfferRightContainer,
-  OfferTitle,
-  OfferText,
-  ViewMoreText
-} from './styled'
+import { OfferContainer, OfferImage, OfferRightContainer, OfferTitle, ViewMoreText } from './styled'
 import { ViewStyle } from 'react-native'
+import { InfoText } from '../styled'
 
 type OwnProps = {
   style?: ViewStyle
@@ -27,7 +21,7 @@ class Offer extends Component<Props> {
         />
         <OfferRightContainer>
           <OfferTitle>Get 30% off Honest cosmetics</OfferTitle>
-          <OfferText light>Choose 3 items and get 30% off for the whole purchase.</OfferText>
+          <InfoText light>Choose 3 items and get 30% off for the whole purchase.</InfoText>
           <ViewMoreText>View more</ViewMoreText>
         </OfferRightContainer>
       </OfferContainer>

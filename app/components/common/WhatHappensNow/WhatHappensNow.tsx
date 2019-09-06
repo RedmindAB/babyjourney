@@ -6,11 +6,10 @@ import {
   WhatHappensNowContainer,
   BorderRadiusWrapper,
   CalendarIconContainer,
-  RightSideContainer,
-  WhatHappensTitle,
-  WhatHappensInfo
+  RightSideContainer
 } from './styled'
 import { Icons } from '../../../assets'
+import { Title, InfoText } from '../styled'
 
 type OwnProps = {
   style?: ViewStyle
@@ -29,8 +28,8 @@ class WhatHappensNow extends Component<Props> {
               <Icons.Calendar />
             </CalendarIconContainer>
             <RightSideContainer>
-              <WhatHappensTitle>What happens now?</WhatHappensTitle>
-              <WhatHappensInfo>Weekly review for baby, mother and partner</WhatHappensInfo>
+              <Title>What happens now?</Title>
+              <InfoText>Weekly review for baby, mother and partner</InfoText>
             </RightSideContainer>
           </WhatHappensNowContainer>
         </LinearGradient>

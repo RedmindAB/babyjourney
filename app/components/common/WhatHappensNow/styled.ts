@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 import theme from '../../../theme'
-import { CenteredView, Title, CustomText } from '../styled'
+import { CenteredView, Title, CustomText, InfoText } from '../styled'
 
 export const WhatHappensNowContainer = styled.View`
   padding: ${theme.BASELINE * 2}px;
@@ -31,12 +31,4 @@ export const RightSideContainer = styled.View`
   justify-content: center;
   padding-right: 32;
   flex: 1;
-`
-export const WhatHappensTitle = styled(Title)``
-
-export const WhatHappensInfo = styled(CustomText)`
-  font-family: ${theme.fonts.Avenir};
-  font-weight: 100;
-  font-size: 12;
-  flex-shrink: 1;
 `

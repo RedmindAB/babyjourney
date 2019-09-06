@@ -41,13 +41,6 @@ export const OfferTitle = styled.Text`
   flex-shrink: 1;
 `
 
-export const OfferText = styled(CustomText)`
-  font-family: ${theme.fonts.Avenir};
-  font-weight: 100;
-  font-size: 12;
-  flex-shrink: 1;
-`
-
 export const ViewMoreText = styled.Text`
   font-family: ${theme.fonts.Avenir};
   font-weight: bold;
