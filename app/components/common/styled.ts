@@ -174,3 +174,9 @@ export const ListItem = styled.TouchableOpacity`
   padding: ${theme.BASELINE * 2.5}px 0;
   ${props => props.disabled && 'opacity: 0.4'}
 `
+export const Title = styled.Text`
+  font-family: ${theme.fonts.Lora};
+  font-size: 16;
+  margin-bottom: ${theme.BASELINE}px;
+  color: #322b39;
+`

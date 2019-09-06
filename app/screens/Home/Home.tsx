@@ -18,6 +18,7 @@ import { articles } from './mockArticlesData'
 import SearchField from '../../components/common/SearchField'
 import SquareButton from '../../components/common/SquareButton'
 import TopSearch from './TopSearch/TopSearch'
+import WhatHappensNow from '../../components/common/WhatHappensNow'
 
 type Props = NavigationScreenProps
 
@@ -78,6 +79,7 @@ class Home extends Component<Props, State> {
           selectedValue={this.state.activeFilter}
           filters={this.filters}
         />
+        <WhatHappensNow style={{ margin: theme.SCREEN_PADDING, marginBottom: 0 }} />
         <HomeTopContainer>
           <HomeHeadline noMargin>stories</HomeHeadline>
           <SquareButton title="VIEW ALL" onPress={() => undefined} />

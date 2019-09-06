@@ -1,7 +1,7 @@
 import styled from 'styled-components/native'
 
 import theme from '../../../theme'
-import { CustomText } from '../styled'
+import { CustomText, Title } from '../styled'
 
 const width = 200
 const borderRadius = 14
@@ -30,11 +30,7 @@ export const ArticleButtonBottomContainer = styled.View`
   background-color: ${theme.secondary.color};
 `
 
-export const ArticleButtonTitle = styled.Text`
-  font-family: ${theme.fonts.Lora};
-  font-size: 16;
-  margin-bottom: ${theme.BASELINE}px;
-`
+export const ArticleButtonTitle = styled(Title)``
 
 export const ArticleButtonAuthor = styled(CustomText)`
   font-family: ${theme.fonts.Avenir};
