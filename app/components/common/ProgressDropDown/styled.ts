@@ -1,6 +1,6 @@
 import styled from 'styled-components/native'
 import theme from '../../../theme'
-import { InfoText, CenteredView } from '../styled'
+import { InfoText, CenteredView, Title } from '../styled'
 
 export const ProgressDropDownContainer = styled.View`
   background-color: #ffe9e9;
@@ -105,4 +105,40 @@ export const ExpandButtonText = styled.Text`
   font-family: ${theme.fonts.Avenir};
   font-size: 12;
   color: #322b39;
+`
+
+export const BottomContainer = styled.View`
+  margin-top: ${theme.BASELINE * 6}px;
+  align-items: center;
+`
+
+const babyCompareSize = 120
+export const BabyComparisonContainer = styled(CenteredView)`
+  width: ${babyCompareSize}px;
+  height: ${babyCompareSize}px;
+  border-radius: ${babyCompareSize / 2}px;
+  background-color: white;
+  margin: ${theme.BASELINE * 6}px 0;
+`
+
+export const BabyInfoContainer = styled.View`
+  margin-top: ${theme.BASELINE}px;
+  align-items: center;
+  width: 100%;
+  margin-bottom: ${theme.BASELINE * 8}px;
+`
+
+export const BabyInfoTitle = styled.Text`
+  color: #6e6578;
+  font-family: ${theme.fonts.Avenir};
+  text-transform: uppercase;
+  font-size: 12;
+  text-align: center;
+  margin-bottom: ${theme.BASELINE / 2}px;
+`
+
+export const BabyInfoText = styled.Text`
+  font-family: ${theme.fonts.Lora};
+  font-size: 20;
+  text-align: center;
 `
