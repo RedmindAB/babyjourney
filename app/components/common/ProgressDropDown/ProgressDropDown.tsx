@@ -140,9 +140,9 @@ class ProgressDropDown extends Component<Props, State> {
                 <Headline noMargin>Your expected day of the birth</Headline>
                 <Title style={{ color: 'black' }}>January 15, 2019</Title>
                 <InfoTextContainer>
-                  <ProgressInfoText border>You have 45 days remaining</ProgressInfoText>
+                  <ProgressInfoText border>You have 198 days remaining</ProgressInfoText>
                   <ProgressInfoText border>week 13+5</ProgressInfoText>
-                  <ProgressInfoText>Trimester 3</ProgressInfoText>
+                  <ProgressInfoText>Trimester 2</ProgressInfoText>
                 </InfoTextContainer>
                 <View style={{ position: 'relative', marginTop: 32 }}>
                   <PercentageBarContainer>
@@ -156,7 +156,7 @@ class ProgressDropDown extends Component<Props, State> {
                           } as ViewStyle
                         }
                       >
-                        <PercentageText>55%</PercentageText>
+                        <PercentageText>33%</PercentageText>
                       </PercentageBarNumberContainer>
                     </PercentageBar>
                   </PercentageBarContainer>
