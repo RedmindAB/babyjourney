@@ -21,15 +21,17 @@ type Props = NavigationScreenProps & PropsFromDispatch & PropsFromState
 const oneWeek = 6.04e8
 
 class Onboarding extends Component<Props> {
-  minDate = new Date()
-  maxDate = new Date(Date.now() + oneWeek * 42)
+  minDate = new Date(new Date().setDate(new Date().getDate() - 7 * 40))
+  maxDate = new Date()
 
   state = {
     date: new Date()
   }
 
   selectDate = () => {
-    this.props.setDueDate(this.state.date)
+    const dueDate = new Date(this.state.date)
+    dueDate.setDate(this.state.date.getDate() + 7 * 40)
+    this.props.setDueDate(dueDate)
     this.props.navigation.navigate(screens.HOME)
   }
 
@@ -38,7 +40,7 @@ class Onboarding extends Component<Props> {
       <Container style={{ backgroundColor: '#ffe9e9' }}>
         <OnboardingContainer>
           <Title style={{ fontSize: 30, marginBottom: theme.BASELINE * 4 }}>Congratulations!</Title>
-          <Title>When are you due?</Title>
+          <Title>When was the first day of your last period?</Title>
           <View
             style={{ backgroundColor: '#ffb9ba', borderRadius: 14, transform: [{ scale: 0.7 }] }}
           >
