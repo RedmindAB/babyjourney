@@ -8,15 +8,28 @@ import theme from '../../theme'
 import SquareButton from '../../components/common/SquareButton'
 import { NavigationScreenProps } from 'react-navigation'
 import { screens } from '../../navigation/navigationConstants'
+import { ApplicationState } from '../../store'
+import { connect } from 'react-redux'
+import { setDueDate } from '../../store/user/actions'
+import { Dispatch } from 'redux'
 
-type Props = NavigationScreenProps
+type PropsFromState = ReturnType<typeof mapStateToProps>
+type PropsFromDispatch = ReturnType<typeof mapDispatchToProps>
+
+type Props = NavigationScreenProps & PropsFromDispatch & PropsFromState
+
+const oneWeek = 6.04e8
 
 class Onboarding extends Component<Props> {
+  minDate = new Date()
+  maxDate = new Date(Date.now() + oneWeek * 42)
+
   state = {
     date: new Date()
   }
 
   selectDate = () => {
+    this.props.setDueDate(this.state.date)
     this.props.navigation.navigate(screens.HOME)
   }
 
@@ -30,6 +43,8 @@ class Onboarding extends Component<Props> {
             style={{ backgroundColor: '#ffb9ba', borderRadius: 14, transform: [{ scale: 0.7 }] }}
           >
             <DatePicker
+              minimumDate={this.minDate}
+              maximumDate={this.maxDate}
               mode={'date'}
               date={this.state.date}
               onDateChange={date => this.setState({ date })}
@@ -47,4 +62,12 @@ class Onboarding extends Component<Props> {
   }
 }
 
-export default Onboarding
+const mapStateToProps = ({ user }: ApplicationState) => ({ user })
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  setDueDate: (dueDate: Date) => dispatch(setDueDate(dueDate))
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Onboarding)
