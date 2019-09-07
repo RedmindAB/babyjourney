@@ -1,10 +1,16 @@
 import styled from 'styled-components/native'
 import theme from '../../../theme'
-import { InfoText, CenteredView, Title } from '../styled'
+import { InfoText, CenteredView } from '../styled'
+
+export const WhiteBackground = styled.View`
+  background-color: white;
+  z-index: 1;
+`
 
 export const ProgressDropDownContainer = styled.View`
   background-color: #ffe9e9;
   padding: ${theme.SCREEN_PADDING}px;
+  padding-bottom: 0;
   border-radius: 18px;
 `
 
@@ -96,7 +102,6 @@ export const BabyLogoWhiteBorder = styled.View`
 
 export const ExpandButton = styled(CenteredView)`
   flex-direction: row;
-  margin-top: ${theme.BASELINE * 1.5};
 `
 
 export const ExpandButtonText = styled.Text`

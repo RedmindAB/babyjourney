@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
-import { View, ViewStyle, Text, Image, Animated } from 'react-native'
+import { Dispatch } from 'redux'
+import { View, ViewStyle, Image, Dimensions, SafeAreaView, TouchableOpacity } from 'react-native'
+import { connect } from 'react-redux'
+
 import {
   ProgressDropDownContainer,
   InfoTextContainer,
@@ -19,19 +22,27 @@ import {
   BabyComparisonContainer,
   BabyInfoContainer,
   BabyInfoText,
-  BabyInfoTitle
+  BabyInfoTitle,
+  WhiteBackground
 } from './styled'
 import { Headline, Title, InfoText } from '../styled'
 import { Icons } from '../../../assets'
-import { TouchableOpacity } from 'react-native-gesture-handler'
 import SquareButton from '../SquareButton'
 import theme from '../../../theme'
+import { ApplicationState } from '../../../store'
+import { hideBottomTabBar, showBottomTabBar } from '../../../store/bottomTabBar/actions'
+import { getBottomScreenSpace } from '../../../theme/variables'
+
+const { height } = Dimensions.get('screen')
+
+type PropsFromState = ReturnType<typeof mapStateToProps>
+type PropsFromDispatch = ReturnType<typeof mapDispatchToProps>
 
 type OwnProps = {
   style?: ViewStyle
 }
 
-type Props = OwnProps
+type Props = OwnProps & PropsFromDispatch & PropsFromState
 
 type State = {
   expanded: boolean
@@ -39,7 +50,17 @@ type State = {
 
 class ProgressDropDown extends Component<Props, State> {
   state = {
-    expanded: true
+    expanded: false
+  }
+
+  toggleExpanded = () => {
+    const expanded = !this.state.expanded
+    if (expanded) {
+      this.props.hideBottomTabBar()
+    } else {
+      this.props.showBottomTabBar()
+    }
+    this.setState({ expanded })
   }
 
   renderBottomPart = () => {
@@ -86,53 +107,79 @@ class ProgressDropDown extends Component<Props, State> {
   }
 
   render() {
+    const { expanded } = this.state
+    const expandedStyle: ViewStyle = {}
+    let expandButtonMargin = expanded
+      ? getBottomScreenSpace() || theme.BASELINE * 1.5
+      : theme.BASELINE * 1.5
+
+    if (expanded) {
+      expandedStyle.height = height
+    }
+
+    const Wrapper = expanded ? SafeAreaView : View
     return (
-      <View style={{ backgroundColor: 'white', zIndex: 1 }}>
-        <ProgressDropDownContainer style={[this.props.style]}>
-          <Headline noMargin>Your expected day of the birth</Headline>
-          <Title style={{ color: 'black' }}>January 15, 2019</Title>
-          <InfoTextContainer>
-            <ProgressInfoText border>You have 45 days remaining</ProgressInfoText>
-            <ProgressInfoText border>week 13+5</ProgressInfoText>
-            <ProgressInfoText>Trimester 3</ProgressInfoText>
-          </InfoTextContainer>
-          <View style={{ position: 'relative', marginTop: 32 }}>
-            <PercentageBarContainer>
-              <PercentageBar>
-                <PercentageBarDot />
-                <PercentageBarLine />
-                <PercentageBarNumberContainer
+      <WhiteBackground>
+        <ProgressDropDownContainer style={[this.props.style, expandedStyle]}>
+          <Wrapper style={{ justifyContent: 'space-between', flex: 1 }}>
+            <View>
+              <Headline noMargin>Your expected day of the birth</Headline>
+              <Title style={{ color: 'black' }}>January 15, 2019</Title>
+              <InfoTextContainer>
+                <ProgressInfoText border>You have 45 days remaining</ProgressInfoText>
+                <ProgressInfoText border>week 13+5</ProgressInfoText>
+                <ProgressInfoText>Trimester 3</ProgressInfoText>
+              </InfoTextContainer>
+              <View style={{ position: 'relative', marginTop: 32 }}>
+                <PercentageBarContainer>
+                  <PercentageBar>
+                    <PercentageBarDot />
+                    <PercentageBarLine />
+                    <PercentageBarNumberContainer
+                      style={
+                        {
+                          transform: [{ translateX: percentageNumberContainerWidth / 2 - 4 }]
+                        } as ViewStyle
+                      }
+                    >
+                      <PercentageText>55%</PercentageText>
+                    </PercentageBarNumberContainer>
+                  </PercentageBar>
+                </PercentageBarContainer>
+                <BabyLogoWhiteBorder>
+                  <BabyLogo>
+                    <Icons.Baby />
+                  </BabyLogo>
+                </BabyLogoWhiteBorder>
+              </View>
+              {this.state.expanded && this.renderBottomPart()}
+            </View>
+            <TouchableOpacity onPress={this.toggleExpanded}>
+              <ExpandButton style={{ marginBottom: expandButtonMargin }}>
+                <ExpandButtonText>Details</ExpandButtonText>
+                <Icons.DarkArrow
                   style={
                     {
-                      transform: [{ translateX: percentageNumberContainerWidth / 2 - 4 }]
+                      transform: [{ rotate: this.state.expanded ? '180deg' : '0deg' }]
                     } as ViewStyle
                   }
-                >
-                  <PercentageText>55%</PercentageText>
-                </PercentageBarNumberContainer>
-              </PercentageBar>
-            </PercentageBarContainer>
-            <BabyLogoWhiteBorder>
-              <BabyLogo>
-                <Icons.Baby />
-              </BabyLogo>
-            </BabyLogoWhiteBorder>
-          </View>
-          {this.state.expanded && this.renderBottomPart()}
-          <TouchableOpacity>
-            <ExpandButton>
-              <ExpandButtonText>Details</ExpandButtonText>
-              <Icons.DarkArrow
-                style={
-                  { transform: [{ rotate: this.state.expanded ? '180deg' : '0deg' }] } as ViewStyle
-                }
-              />
-            </ExpandButton>
-          </TouchableOpacity>
+                />
+              </ExpandButton>
+            </TouchableOpacity>
+          </Wrapper>
         </ProgressDropDownContainer>
-      </View>
+      </WhiteBackground>
     )
   }
 }
 
-export default ProgressDropDown
+const mapStateToProps = ({ bottomTabBar }: ApplicationState) => ({ bottomTabBar })
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  hideBottomTabBar: () => dispatch(hideBottomTabBar()),
+  showBottomTabBar: () => dispatch(showBottomTabBar())
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ProgressDropDown)

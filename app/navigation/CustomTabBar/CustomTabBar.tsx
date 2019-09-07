@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Animated } from 'react-native'
+import { Animated, ViewStyle } from 'react-native'
 import { BottomTabBar, NavigationScreenConfigProps } from 'react-navigation'
 import { getBottomSpace } from 'react-native-iphone-x-helper'
 import { connect } from 'react-redux'
@@ -16,6 +16,8 @@ type State = {
 type Props = PropsFromState & NavigationScreenConfigProps
 
 class CustomBottomTabBar extends Component<Props, State> {
+  hiddenOffset = TAB_BAR_OFFSET
+  visibleOffeset = 0
   state = {
     offset: new Animated.Value(0)
   }
@@ -32,9 +34,11 @@ class CustomBottomTabBar extends Component<Props, State> {
   }
 
   render() {
+    const offset = this.props.bottomTabBar.visible ? this.visibleOffeset : this.hiddenOffset
+    const style: ViewStyle = { bottom: offset }
     return (
       // @ts-ignore
-      <BottomTabBar {...this.props} style={[styles.container, { bottom: this.state.offset }]} />
+      <BottomTabBar {...this.props} style={[styles.container, style]} />
     )
   }
 }

@@ -1,6 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import { NavigationScreenProps } from 'react-navigation'
 import { FlatList } from 'react-native-gesture-handler'
+import { connect } from 'react-redux'
+import { Dispatch } from 'redux'
 
 import FilterList from '../../components/common/FilterList'
 import ArticleButton from '../../components/common/ArticleButton'
@@ -20,8 +22,13 @@ import { Animated, View } from 'react-native'
 import WeekDisplay from '../../components/common/WeekDisplay'
 import ProgressDropDown from '../../components/common/ProgressDropDown'
 import { getStatusBarHeight } from 'react-native-iphone-x-helper'
+import { ApplicationState } from '../../store'
+import { hideBottomTabBar, showBottomTabBar } from '../../store/bottomTabBar/actions'
 
-type Props = NavigationScreenProps
+type PropsFromState = ReturnType<typeof mapStateToProps>
+type PropsFromDispatch = ReturnType<typeof mapDispatchToProps>
+
+type Props = PropsFromState & PropsFromDispatch & NavigationScreenProps
 
 type State = {
   activeFilter: string
@@ -71,9 +78,17 @@ class Home extends Component<Props, State> {
     this.setState({ checkList })
   }
 
+  hideTabBar = () => {
+    if (this.props.bottomTabBar.visible) {
+      this.props.hideBottomTabBar()
+    } else {
+      this.props.showBottomTabBar()
+    }
+  }
+
   render() {
-    const maxTopHeight = 120
-    const minTopHeight = 100
+    const maxTopHeight = 217 + 119
+    const minTopHeight = 119
 
     const translateY = this.scrollY.interpolate({
       inputRange: [0, maxTopHeight - minTopHeight],
@@ -163,4 +178,13 @@ class Home extends Component<Props, State> {
   }
 }
 
-export default Home
+const mapStateToProps = ({ bottomTabBar }: ApplicationState) => ({ bottomTabBar })
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  hideBottomTabBar: () => dispatch(hideBottomTabBar()),
+  showBottomTabBar: () => dispatch(showBottomTabBar())
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home)

@@ -1,7 +1,6 @@
 import { Dimensions, Platform } from 'react-native'
-import { getStatusBarHeight } from 'react-native-iphone-x-helper'
+import { getStatusBarHeight, getBottomSpace } from 'react-native-iphone-x-helper'
 
-import { getBottomSpace } from 'react-native-iphone-x-helper'
 export const borderRadius = 24
 
 export const lightOpacity = 0.6
