@@ -1,6 +1,14 @@
 import React, { Component } from 'react'
 import { Dispatch } from 'redux'
-import { View, ViewStyle, Image, Dimensions, SafeAreaView, TouchableOpacity } from 'react-native'
+import {
+  View,
+  ViewStyle,
+  Image,
+  Dimensions,
+  SafeAreaView,
+  TouchableOpacity,
+  Animated
+} from 'react-native'
 import { connect } from 'react-redux'
 
 import {
@@ -40,6 +48,7 @@ type PropsFromDispatch = ReturnType<typeof mapDispatchToProps>
 
 type OwnProps = {
   style?: ViewStyle
+  animatedStyle?: any
 }
 
 type Props = OwnProps & PropsFromDispatch & PropsFromState
@@ -120,54 +129,56 @@ class ProgressDropDown extends Component<Props, State> {
     const Wrapper = expanded ? SafeAreaView : View
     return (
       <WhiteBackground>
-        <ProgressDropDownContainer style={[this.props.style, expandedStyle]}>
-          <Wrapper style={{ justifyContent: 'space-between', flex: 1 }}>
-            <View>
-              <Headline noMargin>Your expected day of the birth</Headline>
-              <Title style={{ color: 'black' }}>January 15, 2019</Title>
-              <InfoTextContainer>
-                <ProgressInfoText border>You have 45 days remaining</ProgressInfoText>
-                <ProgressInfoText border>week 13+5</ProgressInfoText>
-                <ProgressInfoText>Trimester 3</ProgressInfoText>
-              </InfoTextContainer>
-              <View style={{ position: 'relative', marginTop: 32 }}>
-                <PercentageBarContainer>
-                  <PercentageBar>
-                    <PercentageBarDot />
-                    <PercentageBarLine />
-                    <PercentageBarNumberContainer
-                      style={
-                        {
-                          transform: [{ translateX: percentageNumberContainerWidth / 2 - 4 }]
-                        } as ViewStyle
-                      }
-                    >
-                      <PercentageText>55%</PercentageText>
-                    </PercentageBarNumberContainer>
-                  </PercentageBar>
-                </PercentageBarContainer>
-                <BabyLogoWhiteBorder>
-                  <BabyLogo>
-                    <Icons.Baby />
-                  </BabyLogo>
-                </BabyLogoWhiteBorder>
+        <Animated.View style={this.props.animatedStyle}>
+          <ProgressDropDownContainer style={[this.props.style, expandedStyle]}>
+            <Wrapper style={{ justifyContent: 'space-between', flex: 1 }}>
+              <View>
+                <Headline noMargin>Your expected day of the birth</Headline>
+                <Title style={{ color: 'black' }}>January 15, 2019</Title>
+                <InfoTextContainer>
+                  <ProgressInfoText border>You have 45 days remaining</ProgressInfoText>
+                  <ProgressInfoText border>week 13+5</ProgressInfoText>
+                  <ProgressInfoText>Trimester 3</ProgressInfoText>
+                </InfoTextContainer>
+                <View style={{ position: 'relative', marginTop: 32 }}>
+                  <PercentageBarContainer>
+                    <PercentageBar>
+                      <PercentageBarDot />
+                      <PercentageBarLine />
+                      <PercentageBarNumberContainer
+                        style={
+                          {
+                            transform: [{ translateX: percentageNumberContainerWidth / 2 - 4 }]
+                          } as ViewStyle
+                        }
+                      >
+                        <PercentageText>55%</PercentageText>
+                      </PercentageBarNumberContainer>
+                    </PercentageBar>
+                  </PercentageBarContainer>
+                  <BabyLogoWhiteBorder>
+                    <BabyLogo>
+                      <Icons.Baby />
+                    </BabyLogo>
+                  </BabyLogoWhiteBorder>
+                </View>
+                {this.state.expanded && this.renderBottomPart()}
               </View>
-              {this.state.expanded && this.renderBottomPart()}
-            </View>
-            <TouchableOpacity onPress={this.toggleExpanded}>
-              <ExpandButton style={{ marginBottom: expandButtonMargin }}>
-                <ExpandButtonText>Details</ExpandButtonText>
-                <Icons.DarkArrow
-                  style={
-                    {
-                      transform: [{ rotate: this.state.expanded ? '180deg' : '0deg' }]
-                    } as ViewStyle
-                  }
-                />
-              </ExpandButton>
-            </TouchableOpacity>
-          </Wrapper>
-        </ProgressDropDownContainer>
+              <TouchableOpacity onPress={this.toggleExpanded}>
+                <ExpandButton style={{ marginBottom: expandButtonMargin }}>
+                  <ExpandButtonText>Details</ExpandButtonText>
+                  <Icons.DarkArrow
+                    style={
+                      {
+                        transform: [{ rotate: this.state.expanded ? '180deg' : '0deg' }]
+                      } as ViewStyle
+                    }
+                  />
+                </ExpandButton>
+              </TouchableOpacity>
+            </Wrapper>
+          </ProgressDropDownContainer>
+        </Animated.View>
       </WhiteBackground>
     )
   }

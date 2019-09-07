@@ -88,11 +88,18 @@ class Home extends Component<Props, State> {
 
   render() {
     const maxTopHeight = 217 + 119
-    const minTopHeight = 119
+    const minTopHeight = 119 + getStatusBarHeight()
+    const maxValue = maxTopHeight - minTopHeight
 
     const translateY = this.scrollY.interpolate({
-      inputRange: [0, maxTopHeight - minTopHeight],
+      inputRange: [0, maxValue],
       outputRange: [0, minTopHeight - maxTopHeight],
+      extrapolate: 'clamp'
+    })
+
+    const progressDropdownTranslateY = this.scrollY.interpolate({
+      inputRange: [0, maxValue - 50, maxValue],
+      outputRange: [0, 0, -getStatusBarHeight()],
       extrapolate: 'clamp'
     })
 
@@ -110,6 +117,7 @@ class Home extends Component<Props, State> {
         >
           <ProgressDropDown
             style={{ zIndex: 1, paddingTop: getStatusBarHeight() + theme.BASELINE * 2 }}
+            animatedStyle={{ transform: [{ translateY: progressDropdownTranslateY }] }}
           />
           <WeekDisplay />
         </Animated.View>
