@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ScrollView, TouchableWithoutFeedback } from 'react-native'
+import { ScrollView, TouchableWithoutFeedback, Dimensions } from 'react-native'
 import {
   WeekDisplayContainer,
   WeekSelectionContainer,
@@ -7,7 +7,8 @@ import {
   WeekNumberContainer,
   WeekNumber,
   WeekDotLine,
-  LineContainer
+  LineContainer,
+  weekDotLineWidth
 } from './styled'
 import { Headline, InfoText } from '../styled'
 
@@ -19,13 +20,17 @@ type State = {
   currentDay: number
 }
 
+const { width } = Dimensions.get('screen')
+
 class WeekDisplay extends Component<{}, State> {
+  scrollView = React.createRef<ScrollView>()
+
   state: State = {
     weekAmount: 42,
     weeks: [],
-    currentWeek: 5,
-    currentDay: 3,
-    selectedWeek: 7
+    currentWeek: 13,
+    currentDay: 5,
+    selectedWeek: 13
   }
 
   componentDidMount() {
@@ -34,7 +39,17 @@ class WeekDisplay extends Component<{}, State> {
       weeks.push(i)
     }
 
-    this.setState({ weeks })
+    this.setState({ weeks }, () => {
+      setTimeout(() => {
+        this.scrollToWeek(this.state.currentWeek)
+      }, 0)
+    })
+  }
+
+  scrollToWeek = (week: number) => {
+    const scrollX = weekDotLineWidth * 2 * week - weekDotLineWidth - width / 2
+    // console.log(this.scrollView.current.scrollToEnd())
+    this.scrollView.current.scrollTo({ x: scrollX })
   }
 
   selectWeek = (index: number) => {
@@ -79,7 +94,7 @@ class WeekDisplay extends Component<{}, State> {
     return (
       <WeekDisplayContainer>
         <Headline style={{ textAlign: 'center' }}>Your Week</Headline>
-        <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+        <ScrollView ref={this.scrollView} horizontal showsHorizontalScrollIndicator={false}>
           <WeekSelectionContainer>{this.renderWeeks()}</WeekSelectionContainer>
         </ScrollView>
         <InfoText style={{ textAlign: 'center', fontSize: 14, fontWeight: 'normal' }}>

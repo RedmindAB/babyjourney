@@ -21,7 +21,7 @@ export const WeekSelectionContainer = styled.View`
 const weekLineContainerHeight = theme.BASELINE * 4
 const weekLineHeight = theme.BASELINE * 1.5
 const weekDotSize = theme.BASELINE
-const weekDotLineWidth = theme.BASELINE * 3
+export const weekDotLineWidth = theme.BASELINE * 3
 
 export const LineContainer = styled.View`
   flex: 1;
