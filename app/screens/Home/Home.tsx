@@ -120,6 +120,7 @@ class Home extends Component<Props, State> {
           <WeekDisplay />
         </Animated.View>
         <Animated.ScrollView
+          showsVerticalScrollIndicator={false}
           ref={this.scrollView}
           scrollEventThrottle={1}
           onScroll={Animated.event([{ nativeEvent: { contentOffset: { y: this.scrollY } } }], {
