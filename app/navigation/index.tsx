@@ -16,6 +16,7 @@ import Diary from '../screens/Diary'
 import Offers from '../screens/Offers'
 import Profile from '../screens/Profile'
 import { Image } from 'react-native'
+import CustomBottomTabBar from './CustomTabBar/CustomTabBar'
 
 const defaultNavigationOptions = (
   { navigation }: NavigationScreenProps,
@@ -142,7 +143,8 @@ const TabNavigator = createBottomTabNavigator(
     tabBarOptions: {
       activeTintColor: '#ff7d7e',
       inactiveTintColor: '#584f60'
-    }
+    },
+    tabBarComponent: CustomBottomTabBar
   }
 )
 
