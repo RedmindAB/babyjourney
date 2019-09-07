@@ -3,7 +3,8 @@ export const screens = {
   PROFILE: 'screen/PROFILE',
   OFFERS: 'screen/OFFER',
   DIARY: 'screen/DIARY',
-  SAVED: 'screen/Saved'
+  SAVED: 'screen/Saved',
+  WHAT_HAPPENS_NOW: 'screens/WHAT_HAPPENS_NOW'
 }
 
 export const stacks = {

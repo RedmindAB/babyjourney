@@ -17,6 +17,7 @@ import Offers from '../screens/Offers'
 import Profile from '../screens/Profile'
 import { Image } from 'react-native'
 import CustomBottomTabBar from './CustomTabBar/CustomTabBar'
+import WhatHappensNowScreen from '../screens/WhatHappensNowScreen'
 
 const defaultNavigationOptions = (
   { navigation }: NavigationScreenProps,
@@ -25,7 +26,7 @@ const defaultNavigationOptions = (
   const options: NavigationScreenOptions = {
     headerStyle: {
       backgroundColor: theme.secondary.color,
-      borderBottomWidth: 1,
+      borderBottomWidth: 0,
       shadowColor: 'transparent',
       elevation: 0
     },
@@ -38,11 +39,18 @@ const defaultNavigationOptions = (
 
 const HomeStack = createStackNavigator(
   {
-    [screens.HOME]: Home
+    [screens.HOME]: {
+      screen: Home,
+      navigationOptions: {
+        header: null
+      }
+    },
+    [screens.WHAT_HAPPENS_NOW]: {
+      screen: WhatHappensNowScreen
+    }
   },
   {
-    defaultNavigationOptions,
-    headerMode: 'none'
+    defaultNavigationOptions
   }
 )
 
@@ -142,7 +150,6 @@ const TabNavigator = createBottomTabNavigator(
     [stacks.PROFILE]: ProfileTab
   },
   {
-    initialRouteName: stacks.SAVED,
     swipeEnabled: false,
     tabBarOptions: {
       activeTintColor: '#ff7d7e',

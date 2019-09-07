@@ -185,3 +185,16 @@ export const InfoText = styled(CustomText)`
   font-size: 12;
   flex-shrink: 1;
 `
+
+const iconContainerSize = 68
+export const IconCircleContainer = styled(CenteredView)`
+  width: ${iconContainerSize}px;
+  height: ${iconContainerSize}px;
+  border-radius: ${iconContainerSize / 2}px;
+  background-color: #fff;
+  shadow-color: #f5e184;
+  shadow-offset: 0 4px;
+  shadow-opacity: 0.93;
+  shadow-radius: 17px;
+  elevation: 1;
+`

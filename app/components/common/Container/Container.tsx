@@ -11,10 +11,11 @@ type OwnProps = {
   style?: any
   children?: any
   weekHeader?: boolean
+  withHeader?: boolean
 }
 type Props = OwnProps
 
-const Container = ({ children, style, withoutMargin, unsafe, weekHeader }: Props) => {
+const Container = ({ children, style, withoutMargin, unsafe, weekHeader, withHeader }: Props) => {
   const Wrapper = unsafe ? View : SafeAreaView
   const wrapperStyles: any[] = []
   const contentContainerStyles: any[] = []
@@ -23,9 +24,11 @@ const Container = ({ children, style, withoutMargin, unsafe, weekHeader }: Props
     contentContainerStyles.push({ padding: 0, margin: 0 })
   }
 
+  const paddingTop = withHeader ? 0 : getStatusBarHeight()
+
   return (
-    <View>
-      {weekHeader && <WeekDisplay style={{ paddingTop: getStatusBarHeight() }} />}
+    <View style={{ flex: 1 }}>
+      {weekHeader && <WeekDisplay style={{ paddingTop, zIndex: 1 }} />}
       <Wrapper style={[styles.container, ...wrapperStyles, style]}>
         <ScrollView
           bounces={false}
