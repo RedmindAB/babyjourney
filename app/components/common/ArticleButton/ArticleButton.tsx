@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ViewProps } from 'react-native'
+import { ViewProps, Linking } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import {
   ArticleButtonContainer,
@@ -10,7 +10,8 @@ import {
 } from './styled'
 
 export type ArticleModel = {
-  uri: string
+  imageUri: string
+  url: string
   title: string
   author: string
   category: string
@@ -23,12 +24,19 @@ type OwnProps = {
 type Props = OwnProps & ViewProps
 
 class ArticleButton extends Component<Props> {
+  goToArticle = () => {
+    const { article } = this.props
+    if (Linking.canOpenURL(article.url)) {
+      Linking.openURL(article.url)
+    }
+  }
+
   render() {
     const { article, style } = this.props
     return (
       <ArticleButtonContainer style={style}>
-        <TouchableOpacity>
-          <ArticleButtonImage source={{ uri: article.uri }} />
+        <TouchableOpacity onPress={this.goToArticle}>
+          <ArticleButtonImage source={{ uri: article.imageUri }} />
           <ArticleButtonBottomContainer>
             <ArticleButtonTitle numberOfLines={2}>{article.title}</ArticleButtonTitle>
             <ArticleButtonAuthor light>{article.author}</ArticleButtonAuthor>
