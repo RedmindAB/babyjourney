@@ -4,7 +4,8 @@ import {
   NavigationScreenOptions,
   NavigationScreenProps,
   createStackNavigator,
-  createBottomTabNavigator
+  createBottomTabNavigator,
+  createSwitchNavigator
 } from 'react-navigation'
 
 import Home from '../screens/Home'
@@ -18,6 +19,7 @@ import Profile from '../screens/Profile'
 import { Image } from 'react-native'
 import CustomBottomTabBar from './CustomTabBar/CustomTabBar'
 import WhatHappensNowScreen from '../screens/WhatHappensNowScreen'
+import Onboarding from '../screens/Onboardin'
 
 const defaultNavigationOptions = (
   { navigation }: NavigationScreenProps,
@@ -159,4 +161,18 @@ const TabNavigator = createBottomTabNavigator(
   }
 )
 
-export default createAppContainer(TabNavigator)
+const OnBoardingStack = createStackNavigator(
+  {
+    [screens.ONBOARDING]: Onboarding
+  },
+  {
+    headerMode: 'none'
+  }
+)
+
+const StartNavigator = createSwitchNavigator({
+  [stacks.ONBOARDING]: OnBoardingStack,
+  [stacks.MAIN]: TabNavigator
+})
+
+export default createAppContainer(StartNavigator)

@@ -1,4 +1,5 @@
 export const screens = {
+  ONBOARDING: 'screen/ONBOARDING',
   HOME: 'screen/HOME',
   PROFILE: 'screen/PROFILE',
   OFFERS: 'screen/OFFER',
@@ -8,6 +9,8 @@ export const screens = {
 }
 
 export const stacks = {
+  MAIN: 'stacks/MAIN',
+  ONBOARDING: 'stacks/ONBOARDING',
   HOME: 'stacks/HOME',
   PROFILE: 'stacks/PROFILE',
   OFFERS: 'stacks/OFFERS',
