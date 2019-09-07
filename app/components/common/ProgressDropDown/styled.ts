@@ -43,7 +43,7 @@ export const PercentageBarContainer = styled.View`
 export const PercentageBar = styled.View`
   height: ${theme.BASELINE}px;
   border-radius: ${theme.BASELINE / 2};
-  width: 100px;
+  width: 33%;
   background-color: #ffb9ba;
   align-items: flex-end;
 `
