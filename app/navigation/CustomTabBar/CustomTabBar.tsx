@@ -34,8 +34,13 @@ class CustomBottomTabBar extends Component<Props, State> {
   }
 
   render() {
-    const offset = this.props.bottomTabBar.visible ? this.visibleOffeset : this.hiddenOffset
+    const { visible } = this.props.bottomTabBar
+    const offset = visible ? this.visibleOffeset : this.hiddenOffset
     const style: ViewStyle = { bottom: offset }
+    if (!visible) {
+      style.position = 'absolute'
+    }
+
     return (
       // @ts-ignore
       <BottomTabBar {...this.props} style={[styles.container, style]} />
@@ -46,7 +51,6 @@ class CustomBottomTabBar extends Component<Props, State> {
 const styles = {
   container: {
     overflow: 'hidden',
-    position: 'absolute',
     bottom: 0,
     left: 0,
     right: 0,

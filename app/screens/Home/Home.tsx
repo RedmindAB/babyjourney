@@ -120,6 +120,7 @@ class Home extends Component<Props, State> {
           <WeekDisplay />
         </Animated.View>
         <Animated.ScrollView
+          contentContainerStyle={{ paddingBottom: theme.SCREEN_PADDING }}
           showsVerticalScrollIndicator={false}
           ref={this.scrollView}
           scrollEventThrottle={1}
