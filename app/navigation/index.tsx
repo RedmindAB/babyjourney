@@ -51,7 +51,8 @@ const DiaryStack = createStackNavigator(
     [screens.DIARY]: Diary
   },
   {
-    defaultNavigationOptions
+    defaultNavigationOptions,
+    headerMode: 'none'
   }
 )
 
@@ -60,13 +61,15 @@ const SavedStack = createStackNavigator(
     [screens.SAVED]: Saved
   },
   {
-    defaultNavigationOptions
+    defaultNavigationOptions,
+    headerMode: 'none'
   }
 )
 
 const OffersStack = createStackNavigator(
   {
-    [screens.OFFERS]: Offers
+    [screens.OFFERS]: Offers,
+    headerMode: 'none'
   },
   {
     defaultNavigationOptions
@@ -139,6 +142,7 @@ const TabNavigator = createBottomTabNavigator(
     [stacks.PROFILE]: ProfileTab
   },
   {
+    initialRouteName: stacks.SAVED,
     swipeEnabled: false,
     tabBarOptions: {
       activeTintColor: '#ff7d7e',

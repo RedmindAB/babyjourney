@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ScrollView, TouchableWithoutFeedback, Dimensions } from 'react-native'
+import { ScrollView, TouchableWithoutFeedback, Dimensions, ViewStyle } from 'react-native'
 import {
   WeekDisplayContainer,
   WeekSelectionContainer,
@@ -12,6 +12,12 @@ import {
 } from './styled'
 import { Headline, InfoText } from '../styled'
 
+type OwnProps = {
+  style?: ViewStyle
+}
+
+type Props = OwnProps
+
 type State = {
   weekAmount: number
   weeks: number[]
@@ -22,7 +28,7 @@ type State = {
 
 const { width } = Dimensions.get('screen')
 
-class WeekDisplay extends Component<{}, State> {
+class WeekDisplay extends Component<Props, State> {
   scrollView = React.createRef<ScrollView>()
 
   state: State = {
@@ -48,7 +54,6 @@ class WeekDisplay extends Component<{}, State> {
 
   scrollToWeek = (week: number) => {
     const scrollX = weekDotLineWidth * 2 * week - weekDotLineWidth - width / 2
-    // console.log(this.scrollView.current.scrollToEnd())
     this.scrollView.current.scrollTo({ x: scrollX })
   }
 
@@ -92,7 +97,7 @@ class WeekDisplay extends Component<{}, State> {
 
   render() {
     return (
-      <WeekDisplayContainer>
+      <WeekDisplayContainer style={this.props.style}>
         <Headline style={{ textAlign: 'center' }}>Your Week</Headline>
         <ScrollView ref={this.scrollView} horizontal showsHorizontalScrollIndicator={false}>
           <WeekSelectionContainer>{this.renderWeeks()}</WeekSelectionContainer>

@@ -13,15 +13,16 @@ export const WeekDisplayContainer = styled.View`
   shadow-radius: 17px;
   elevation: 1;
 `
-
-export const WeekSelectionContainer = styled.View`
-  flex-direction: row;
-`
-
 const weekLineContainerHeight = theme.BASELINE * 4
 const weekLineHeight = theme.BASELINE * 1.5
 const weekDotSize = theme.BASELINE
+const weekNumberLineHeight = 20
 export const weekDotLineWidth = theme.BASELINE * 3
+
+export const WeekSelectionContainer = styled.View`
+  flex-direction: row;
+  height: ${weekLineContainerHeight + weekNumberLineHeight};
+`
 
 export const LineContainer = styled.View`
   flex: 1;
@@ -65,6 +66,7 @@ export const WeekDot = styled(CenteredView)`
 `
 
 export const WeekNumber = styled.Text`
+  line-height: ${weekNumberLineHeight}px;
   font-family: ${theme.fonts.Avenir};
   font-size: 14;
   color: #a096ab;

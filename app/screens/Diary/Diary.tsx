@@ -6,7 +6,7 @@ import { CenteredFill } from '../../components/common/styled'
 class Diary extends Component {
   render() {
     return (
-      <Container>
+      <Container weekHeader>
         <CenteredFill>
           <Text>Diary</Text>
         </CenteredFill>
