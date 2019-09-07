@@ -38,6 +38,7 @@ type State = {
 
 class Home extends Component<Props, State> {
   scrollY = new Animated.Value(0)
+  scrollView = React.createRef<any>()
 
   filters = [
     { label: 'All', value: 'all' },
@@ -78,12 +79,8 @@ class Home extends Component<Props, State> {
     this.setState({ checkList })
   }
 
-  hideTabBar = () => {
-    if (this.props.bottomTabBar.visible) {
-      this.props.hideBottomTabBar()
-    } else {
-      this.props.showBottomTabBar()
-    }
+  onExpand = () => {
+    this.scrollView.current.getNode().scrollTo({ y: 0, animated: false })
   }
 
   render() {
@@ -118,10 +115,12 @@ class Home extends Component<Props, State> {
           <ProgressDropDown
             style={{ zIndex: 1, paddingTop: getStatusBarHeight() + theme.BASELINE * 2 }}
             animatedStyle={{ transform: [{ translateY: progressDropdownTranslateY }] }}
+            onExpand={this.onExpand}
           />
           <WeekDisplay />
         </Animated.View>
         <Animated.ScrollView
+          ref={this.scrollView}
           scrollEventThrottle={1}
           onScroll={Animated.event([{ nativeEvent: { contentOffset: { y: this.scrollY } } }], {
             useNativeDriver: true

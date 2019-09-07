@@ -49,6 +49,7 @@ type PropsFromDispatch = ReturnType<typeof mapDispatchToProps>
 type OwnProps = {
   style?: ViewStyle
   animatedStyle?: any
+  onExpand?: () => void
 }
 
 type Props = OwnProps & PropsFromDispatch & PropsFromState
@@ -66,6 +67,9 @@ class ProgressDropDown extends Component<Props, State> {
     const expanded = !this.state.expanded
     if (expanded) {
       this.props.hideBottomTabBar()
+      if (this.props.onExpand) {
+        this.props.onExpand()
+      }
     } else {
       this.props.showBottomTabBar()
     }
