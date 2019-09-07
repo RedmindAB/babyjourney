@@ -11,19 +11,21 @@ import {
   weekDotLineWidth
 } from './styled'
 import { Headline, InfoText } from '../styled'
+import { ApplicationState } from '../../../store'
+import { connect } from 'react-redux'
+
+type PropsFromState = ReturnType<typeof mapStateToProps>
 
 type OwnProps = {
   style?: ViewStyle
 }
 
-type Props = OwnProps
+type Props = OwnProps & PropsFromState
 
 type State = {
   weekAmount: number
   weeks: number[]
-  currentWeek: number
   selectedWeek: number
-  currentDay: number
 }
 
 const { width } = Dimensions.get('screen')
@@ -34,9 +36,7 @@ class WeekDisplay extends Component<Props, State> {
   state: State = {
     weekAmount: 42,
     weeks: [],
-    currentWeek: 13,
-    currentDay: 5,
-    selectedWeek: 13
+    selectedWeek: this.getWeekDay().weeks
   }
 
   componentDidMount() {
@@ -47,14 +47,31 @@ class WeekDisplay extends Component<Props, State> {
 
     this.setState({ weeks }, () => {
       setTimeout(() => {
-        this.scrollToWeek(this.state.currentWeek)
+        this.scrollToWeek(this.getWeekDay().weeks)
       }, 0)
     })
   }
 
+  getWeekDay() {
+    const oneDay = 1000 * 60 * 60 * 24
+    const oneWeek = oneDay * 7
+
+    const startDate = new Date(this.props.user.dueDate)
+    startDate.setDate(startDate.getDate() - 7 * 40)
+
+    const days = Math.round(Math.abs((startDate.getTime() - new Date().getTime()) / oneDay))
+    console.log(days)
+    const weeks = Math.floor(days / 7)
+    const finalDays = days - weeks * 7
+    return {
+      weeks,
+      days: finalDays
+    }
+  }
+
   scrollToWeek = (week: number) => {
     const scrollX = weekDotLineWidth * 2 * week - weekDotLineWidth - width / 2
-    this.scrollView.current.scrollTo({ x: scrollX })
+    this.scrollView.current.scrollTo({ x: scrollX, animated: false })
   }
 
   selectWeek = (index: number) => {
@@ -62,7 +79,10 @@ class WeekDisplay extends Component<Props, State> {
   }
 
   renderWeeks = () => {
-    const { selectedWeek, currentWeek } = this.state
+    const { weeks } = this.getWeekDay()
+    const currentWeek = weeks
+
+    const { selectedWeek } = this.state
     return this.state.weeks.map((n: number, index: number) => {
       const onPress = () => this.selectWeek(index)
       const dotGray = n > currentWeek
@@ -96,18 +116,26 @@ class WeekDisplay extends Component<Props, State> {
   }
 
   render() {
+    const { days } = this.getWeekDay()
     return (
       <WeekDisplayContainer style={this.props.style}>
         <Headline style={{ textAlign: 'center' }}>Your Week</Headline>
-        <ScrollView ref={this.scrollView} horizontal showsHorizontalScrollIndicator={false}>
+        <ScrollView
+          ref={this.scrollView}
+          horizontal
+          bounces={false}
+          showsHorizontalScrollIndicator={false}
+        >
           <WeekSelectionContainer>{this.renderWeeks()}</WeekSelectionContainer>
         </ScrollView>
         <InfoText style={{ textAlign: 'center', fontSize: 14, fontWeight: 'normal' }}>
-          {this.state.currentDay} days
+          {days} days
         </InfoText>
       </WeekDisplayContainer>
     )
   }
 }
 
-export default WeekDisplay
+const mapStateToProps = ({ user }: ApplicationState) => ({ user })
+
+export default connect(mapStateToProps)(WeekDisplay)
