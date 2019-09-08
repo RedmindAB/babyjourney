@@ -34,10 +34,13 @@ class ArticleButton extends Component<Props> {
 
   render() {
     const { article, style } = this.props
+    const source = article.imageUrl
+      ? { uri: article.imageUrl }
+      : require('../../../assets/images/articlePlaceHolder.png')
     return (
       <ArticleButtonContainer style={style}>
         <TouchableOpacity onPress={this.goToArticle}>
-          <ArticleButtonImage source={{ uri: article.imageUrl }} />
+          <ArticleButtonImage source={source} />
           <ArticleButtonBottomContainer>
             <ArticleButtonTitle numberOfLines={2}>{article.title}</ArticleButtonTitle>
             <ArticleButtonAuthor light>{article.author}</ArticleButtonAuthor>
