@@ -25,12 +25,18 @@ import { getStatusBarHeight } from 'react-native-iphone-x-helper'
 import { ApplicationState } from '../../store'
 import { hideBottomTabBar, showBottomTabBar } from '../../store/bottomTabBar/actions'
 
+type Filter = {
+  label: string
+  value: string
+}
+
 type PropsFromState = ReturnType<typeof mapStateToProps>
 type PropsFromDispatch = ReturnType<typeof mapDispatchToProps>
 
 type Props = PropsFromState & PropsFromDispatch & NavigationScreenProps
 
 type State = {
+  filters: Filter[]
   activeFilter: string
   checkList: CheckListItem[]
   filteredArticles: ArticleModel[]
@@ -40,29 +46,79 @@ class Home extends Component<Props, State> {
   scrollY = new Animated.Value(0)
   scrollView = React.createRef<any>()
 
-  filters = [
-    { label: 'All', value: 'all' },
-    { label: 'Lifestyle', value: 'lifestyle' },
-    { label: 'Fashion', value: 'fashion' },
-    { label: 'Cuisine', value: 'cuisine' },
-    { label: 'Sports', value: 'sports' }
-  ]
-
-  state: State = {
-    activeFilter: this.filters[0].value,
-    filteredArticles: articles,
-    checkList: [
-      { title: 'Attend yoga classes', done: false },
-      { title: 'Visit healthy food cooking class', done: false },
-      { title: 'Talk to psychologist', done: false }
-    ]
+  constructor(props: Props) {
+    super(props)
+    const filters = this.getFilters()
+    this.state = {
+      filters,
+      activeFilter: filters[0].value,
+      filteredArticles: articles,
+      checkList: [
+        { title: 'Attend yoga classes', done: false },
+        { title: 'Visit healthy food cooking class', done: false },
+        { title: 'Talk to psychologist', done: false }
+      ]
+    }
   }
 
-  setFilter = (filter: any) => {
+  componentDidUpdate(oldProps: Props) {
+    if (oldProps.user.selectedWeek !== this.props.user.selectedWeek) {
+      this.updateFilters()
+    }
+  }
+
+  isNumber = (value: string) => {
+    return /^\d+$/.test(value)
+  }
+
+  updateFilters = () => {
+    const filters = this.getFilters()
+
+    const { activeFilter } = this.state
+
+    const isMissingOldFilter =
+      !activeFilter || filters.every(filter => filter.value !== this.state.activeFilter)
+    if (isMissingOldFilter) {
+      if (this.isNumber(activeFilter)) {
+        this.setFilter(filters[1])
+      } else {
+        this.setFilter(filters[0])
+      }
+    }
+    this.setState({ filters })
+  }
+
+  getFilters = (): Filter[] => {
+    const filters: Filter[] = articles
+      .filter(article => article.category.length > 0)
+      .map(article => ({
+        value: article.category,
+        label: article.category
+      }))
+
+    filters.unshift({
+      label: `Week ${this.props.user.selectedWeek}`,
+      value: this.props.user.selectedWeek.toString()
+    })
+
+    filters.unshift({
+      label: 'All',
+      value: 'all'
+    })
+
+    return filters
+  }
+
+  setFilter = (filter: Filter) => {
     const filteredArticles =
       filter.value === 'all'
         ? articles
-        : articles.filter(article => article.category === filter.value)
+        : articles.filter(article => {
+            if (this.isNumber(filter.value)) {
+              return article.week && article.week.toString() === filter.value.toString()
+            }
+            return article.category === filter.value
+          })
     this.setState({ activeFilter: filter.value, filteredArticles })
   }
 
@@ -135,7 +191,7 @@ class Home extends Component<Props, State> {
           <FilterList
             onPress={this.setFilter}
             selectedValue={this.state.activeFilter}
-            filters={this.filters}
+            filters={this.state.filters}
           />
           <WhatHappensNow style={{ margin: theme.SCREEN_PADDING, marginBottom: 0 }} />
           <HomeTopContainer>
@@ -187,7 +243,7 @@ class Home extends Component<Props, State> {
   }
 }
 
-const mapStateToProps = ({ bottomTabBar }: ApplicationState) => ({ bottomTabBar })
+const mapStateToProps = ({ bottomTabBar, user }: ApplicationState) => ({ bottomTabBar, user })
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   hideBottomTabBar: () => dispatch(hideBottomTabBar()),
   showBottomTabBar: () => dispatch(showBottomTabBar())

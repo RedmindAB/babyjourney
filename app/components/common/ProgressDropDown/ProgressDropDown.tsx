@@ -42,6 +42,7 @@ import { ApplicationState } from '../../../store'
 import { hideBottomTabBar, showBottomTabBar } from '../../../store/bottomTabBar/actions'
 import { getBottomScreenSpace } from '../../../theme/variables'
 import moment from 'moment'
+import { getWeekAndDay, getDaysUntilDueDate, getPercentage, getTrimester } from '../../../utils'
 
 const { height } = Dimensions.get('screen')
 
@@ -121,58 +122,13 @@ class ProgressDropDown extends Component<Props, State> {
     )
   }
 
-  getDaysUntilDueDate = () => {
-    const today = new Date()
-    const { dueDate } = this.props.user
-    if (today.getMonth() == 11 && today.getDate() > 25) {
-      dueDate.setFullYear(dueDate.getFullYear() + 1)
-    }
-    const oneDay = 1000 * 60 * 60 * 24
-    return Math.ceil((dueDate.getTime() - today.getTime()) / oneDay)
-  }
-
   getDayText() {
-    return this.getDaysUntilDueDate() > 1 ? 'days' : 'day'
-  }
-
-  getWeekDay() {
-    const oneDay = 1000 * 60 * 60 * 24
-    const oneWeek = oneDay * 7
-
-    const startDate = new Date(this.props.user.dueDate)
-    startDate.setDate(startDate.getDate() - 7 * 40)
-
-    const days = Math.round(Math.abs((startDate.getTime() - new Date().getTime()) / oneDay))
-    console.log(days)
-    const weeks = Math.floor(days / 7)
-    const finalDays = days - weeks * 7
-    return {
-      weeks,
-      days: finalDays
-    }
-  }
-
-  getTrimester() {
-    const { weeks, days } = this.getWeekDay()
-
-    if (weeks < 13 || (weeks === 13 && days <= 7)) {
-      return 1
-    } else if (weeks < 27 || (weeks === 27 && days <= 7)) {
-      return 2
-    } else {
-      return 3
-    }
-  }
-
-  getPercentage() {
-    const remainingDays = this.getDaysUntilDueDate()
-    const totalDays = 280
-    const percentage = (remainingDays * 100) / totalDays
-    return 100 - Math.floor(percentage)
+    return getDaysUntilDueDate(this.props.user.dueDate) > 1 ? 'days' : 'day'
   }
 
   render() {
     const { expanded } = this.state
+    const { dueDate } = this.props.user
     const expandedStyle: ViewStyle = {}
     let expandButtonMargin = expanded
       ? getBottomScreenSpace() || theme.BASELINE * 1.5
@@ -184,7 +140,12 @@ class ProgressDropDown extends Component<Props, State> {
 
     const Wrapper = expanded ? SafeAreaView : View
 
-    const { weeks, days } = this.getWeekDay()
+    const { weeks, days } = getWeekAndDay(dueDate)
+    const dayText = this.getDayText()
+    const daysLeft = getDaysUntilDueDate(dueDate)
+    const percentage = getPercentage(dueDate)
+    const trimester = getTrimester(dueDate)
+
     return (
       <WhiteBackground>
         <Animated.View style={this.props.animatedStyle}>
@@ -201,14 +162,14 @@ class ProgressDropDown extends Component<Props, State> {
                   </Title>
                   <InfoTextContainer>
                     <ProgressInfoText border>
-                      You have {this.getDaysUntilDueDate()} {this.getDayText()} remaining
+                      You have {daysLeft} {dayText} remaining
                     </ProgressInfoText>
                     <ProgressInfoText border>week {`${weeks}+${days}`}</ProgressInfoText>
-                    <ProgressInfoText>Trimester {this.getTrimester()}</ProgressInfoText>
+                    <ProgressInfoText>Trimester {trimester}</ProgressInfoText>
                   </InfoTextContainer>
                   <View style={{ position: 'relative', marginTop: 32 }}>
                     <PercentageBarContainer>
-                      <PercentageBar style={{ width: `${this.getPercentage()}%` }}>
+                      <PercentageBar style={{ width: `${percentage}%` }}>
                         <PercentageBarDot />
                         <PercentageBarLine />
                         <PercentageBarNumberContainer
@@ -218,7 +179,7 @@ class ProgressDropDown extends Component<Props, State> {
                             } as ViewStyle
                           }
                         >
-                          <PercentageText>{this.getPercentage()}%</PercentageText>
+                          <PercentageText>{percentage}%</PercentageText>
                         </PercentageBarNumberContainer>
                       </PercentageBar>
                     </PercentageBarContainer>

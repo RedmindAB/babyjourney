@@ -2,6 +2,7 @@ import { Action } from 'redux'
 
 export type UserState = {
   dueDate: Date
+  selectedWeek: number
 }
 
 export interface SetDueDateAction extends Action {
@@ -9,4 +10,9 @@ export interface SetDueDateAction extends Action {
   dueDate: Date
 }
 
-export type UserActions = SetDueDateAction
+export interface SelectWeekAction extends Action {
+  type: '@user/SELECT_WEEK'
+  week: number
+}
+
+export type UserActions = SetDueDateAction | SelectWeekAction

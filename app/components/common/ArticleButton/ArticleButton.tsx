@@ -10,11 +10,12 @@ import {
 } from './styled'
 
 export type ArticleModel = {
-  imageUri: string
+  imageUrl: string
   url: string
   title: string
   author: string
   category: string
+  week: number
 }
 
 type OwnProps = {
@@ -36,7 +37,7 @@ class ArticleButton extends Component<Props> {
     return (
       <ArticleButtonContainer style={style}>
         <TouchableOpacity onPress={this.goToArticle}>
-          <ArticleButtonImage source={{ uri: article.imageUri }} />
+          <ArticleButtonImage source={{ uri: article.imageUrl }} />
           <ArticleButtonBottomContainer>
             <ArticleButtonTitle numberOfLines={2}>{article.title}</ArticleButtonTitle>
             <ArticleButtonAuthor light>{article.author}</ArticleButtonAuthor>

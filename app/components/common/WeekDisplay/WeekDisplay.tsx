@@ -13,19 +13,22 @@ import {
 import { Headline, InfoText } from '../styled'
 import { ApplicationState } from '../../../store'
 import { connect } from 'react-redux'
+import { getWeekAndDay } from '../../../utils'
+import { Dispatch } from 'redux'
+import { selectWeek } from '../../../store/user/actions'
 
 type PropsFromState = ReturnType<typeof mapStateToProps>
+type PropsFromDispatch = ReturnType<typeof mapDispatchToProps>
 
 type OwnProps = {
   style?: ViewStyle
 }
 
-type Props = OwnProps & PropsFromState
+type Props = OwnProps & PropsFromState & PropsFromDispatch
 
 type State = {
   weekAmount: number
   weeks: number[]
-  selectedWeek: number
 }
 
 const { width } = Dimensions.get('screen')
@@ -35,8 +38,7 @@ class WeekDisplay extends Component<Props, State> {
 
   state: State = {
     weekAmount: 42,
-    weeks: [],
-    selectedWeek: this.getWeekDay().weeks
+    weeks: []
   }
 
   componentDidMount() {
@@ -47,26 +49,9 @@ class WeekDisplay extends Component<Props, State> {
 
     this.setState({ weeks }, () => {
       setTimeout(() => {
-        this.scrollToWeek(this.getWeekDay().weeks)
+        this.scrollToWeek(getWeekAndDay(this.props.user.dueDate).weeks)
       }, 0)
     })
-  }
-
-  getWeekDay() {
-    const oneDay = 1000 * 60 * 60 * 24
-    const oneWeek = oneDay * 7
-
-    const startDate = new Date(this.props.user.dueDate)
-    startDate.setDate(startDate.getDate() - 7 * 40)
-
-    const days = Math.round(Math.abs((startDate.getTime() - new Date().getTime()) / oneDay))
-    console.log(days)
-    const weeks = Math.floor(days / 7)
-    const finalDays = days - weeks * 7
-    return {
-      weeks,
-      days: finalDays
-    }
   }
 
   scrollToWeek = (week: number) => {
@@ -75,14 +60,14 @@ class WeekDisplay extends Component<Props, State> {
   }
 
   selectWeek = (index: number) => {
-    this.setState({ selectedWeek: this.state.weeks[index] })
+    this.props.selectWeek(this.state.weeks[index])
   }
 
   renderWeeks = () => {
-    const { weeks } = this.getWeekDay()
+    const { dueDate, selectedWeek } = this.props.user
+    const { weeks } = getWeekAndDay(dueDate)
     const currentWeek = weeks
 
-    const { selectedWeek } = this.state
     return this.state.weeks.map((n: number, index: number) => {
       const onPress = () => this.selectWeek(index)
       const dotGray = n > currentWeek
@@ -116,7 +101,8 @@ class WeekDisplay extends Component<Props, State> {
   }
 
   render() {
-    const { days } = this.getWeekDay()
+    const { dueDate } = this.props.user
+    const { days } = getWeekAndDay(dueDate)
     return (
       <WeekDisplayContainer style={this.props.style}>
         <Headline style={{ textAlign: 'center' }}>Your Week</Headline>
@@ -137,5 +123,11 @@ class WeekDisplay extends Component<Props, State> {
 }
 
 const mapStateToProps = ({ user }: ApplicationState) => ({ user })
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  selectWeek: (week: number) => dispatch(selectWeek(week))
+})
 
-export default connect(mapStateToProps)(WeekDisplay)
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(WeekDisplay)
