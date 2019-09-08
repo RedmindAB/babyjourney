@@ -11,7 +11,10 @@ export const ProgressDropDownContainer = styled.View`
   background-color: #ffe9e9;
   padding: ${theme.SCREEN_PADDING}px;
   padding-bottom: 0;
-  border-radius: 18px;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+  ${props => props.expanded && `border-bottom-left-radius: 0;`}
+  ${props => props.expanded && `border-bottom-right-radius: 0;`}
 `
 
 export const ProgressInfoText = styled(InfoText)`
