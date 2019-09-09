@@ -1,16 +1,22 @@
 import React, { Component } from 'react'
 import SearchField from '../../../components/common/SearchField'
 import { HomeHeadline } from '../styled'
-import { View, Animated, TextInput, Dimensions, ViewStyle } from 'react-native'
+import { Animated, Dimensions } from 'react-native'
 import { TopSearchContainer } from './styled'
 import theme from '../../../theme'
+import { connect } from 'react-redux'
+import { ApplicationState } from '../../../store'
 
 const { width: screenWidth } = Dimensions.get('screen')
 
 const startWidth = 32
 const endWidth = screenWidth - theme.SCREEN_PADDING * 2
 
-class TopSearch extends Component {
+type PropsFromState = ReturnType<typeof mapStateToProps>
+
+type Props = PropsFromState
+
+class TopSearch extends Component<Props> {
   animatedValue = new Animated.Value(0)
 
   state = {
@@ -52,7 +58,7 @@ class TopSearch extends Component {
         <Animated.View
           style={{ position: 'absolute', left: 0, transform: [{ translateX: headlineTranslate }] }}
         >
-          <HomeHeadline noMargin>week 15 in social media</HomeHeadline>
+          <HomeHeadline noMargin>week {this.props.user.selectedWeek} in social media</HomeHeadline>
         </Animated.View>
         <SearchField
           showInput={this.state.showInput}
@@ -64,4 +70,8 @@ class TopSearch extends Component {
   }
 }
 
-export default TopSearch
+const mapStateToProps = ({ user }: ApplicationState) => ({
+  user
+})
+
+export default connect(mapStateToProps)(TopSearch)

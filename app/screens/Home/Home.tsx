@@ -37,7 +37,7 @@ type Props = PropsFromState & PropsFromDispatch & NavigationScreenProps
 
 type State = {
   filters: Filter[]
-  activeFilter: string
+  activeFilter: Filter
   checkList: CheckListItem[]
   filteredArticles: ArticleModel[]
 }
@@ -49,10 +49,11 @@ class Home extends Component<Props, State> {
   constructor(props: Props) {
     super(props)
     const filters = this.getFilters()
+    const activeFilter = filters[0]
     this.state = {
       filters,
-      activeFilter: filters[0].value,
-      filteredArticles: articles,
+      activeFilter,
+      filteredArticles: this.getFilteredArticles(filters[0]),
       checkList: [
         { title: 'Attend yoga classes', done: false },
         { title: 'Visit healthy food cooking class', done: false },
@@ -77,15 +78,18 @@ class Home extends Component<Props, State> {
     const { activeFilter } = this.state
 
     const isMissingOldFilter =
-      !activeFilter || filters.every(filter => filter.value !== this.state.activeFilter)
+      !activeFilter || filters.every(filter => filter.value !== this.state.activeFilter.value)
+    let newActiveFilter = this.state.activeFilter
     if (isMissingOldFilter) {
-      if (this.isNumber(activeFilter)) {
-        this.setFilter(filters[1])
+      if (this.isNumber(activeFilter.value)) {
+        newActiveFilter = filters[1]
       } else {
-        this.setFilter(filters[0])
+        newActiveFilter = filters[0]
       }
+      this.setFilter(newActiveFilter)
     }
-    this.setState({ filters })
+    const filteredArticles = this.getFilteredArticles(newActiveFilter)
+    this.setState({ filters, filteredArticles })
   }
 
   getFilters = (): Filter[] => {
@@ -97,11 +101,6 @@ class Home extends Component<Props, State> {
       }))
 
     filters.unshift({
-      label: `Week ${this.props.user.selectedWeek}`,
-      value: this.props.user.selectedWeek.toString()
-    })
-
-    filters.unshift({
       label: 'All',
       value: 'all'
     })
@@ -110,16 +109,15 @@ class Home extends Component<Props, State> {
   }
 
   setFilter = (filter: Filter) => {
-    const filteredArticles =
-      filter.value === 'all'
-        ? articles
-        : articles.filter(article => {
-            if (this.isNumber(filter.value)) {
-              return article.week && article.week.toString() === filter.value.toString()
-            }
-            return article.category === filter.value
-          })
-    this.setState({ activeFilter: filter.value, filteredArticles })
+    const filteredArticles = this.getFilteredArticles(filter)
+    this.setState({ activeFilter: filter, filteredArticles })
+  }
+
+  getFilteredArticles(filter: Filter) {
+    const filteredByWeek = articles.filter(article => article.week === this.props.user.selectedWeek)
+    return filter.value === 'all'
+      ? filteredByWeek
+      : filteredByWeek.filter(article => article.category === filter.value)
   }
 
   articleKeyExtractor = (article: ArticleModel) => article.title
@@ -190,7 +188,7 @@ class Home extends Component<Props, State> {
           </HomeTopContainer>
           <FilterList
             onPress={this.setFilter}
-            selectedValue={this.state.activeFilter}
+            selectedValue={this.state.activeFilter.value}
             filters={this.state.filters}
           />
           <WhatHappensNow style={{ margin: theme.SCREEN_PADDING, marginBottom: 0 }} />

@@ -24,6 +24,8 @@ export const ArticleButtonImage = styled.Image`
 `
 
 export const ArticleButtonBottomContainer = styled.View`
+  flex: 1;
+  justify-content: space-between;
   border-bottom-left-radius: ${borderRadius}px;
   border-bottom-right-radius: ${borderRadius}px;
   padding: ${theme.BASELINE * 2}px;
