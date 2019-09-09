@@ -94,12 +94,18 @@ class Home extends Component<Props, State> {
   }
 
   getFilters = (): Filter[] => {
-    const filters: Filter[] = articles
+    const filters = articles
       .filter(article => article.category.length > 0)
-      .map(article => ({
-        value: article.category,
-        label: article.category
-      }))
+      .reduce((acc, curr) => {
+        const category = {
+          value: curr.category.toLowerCase(),
+          label: curr.category
+        }
+        if (acc.every(cat => cat.value !== category.value)) {
+          acc.push(category)
+        }
+        return acc
+      }, [])
 
     filters.unshift({
       label: 'All',
@@ -118,7 +124,7 @@ class Home extends Component<Props, State> {
     const filteredByWeek = articles.filter(article => article.week === this.props.user.selectedWeek)
     return filter.value === 'all'
       ? filteredByWeek
-      : filteredByWeek.filter(article => article.category === filter.value)
+      : filteredByWeek.filter(article => article.category.toLowerCase() === filter.value)
   }
 
   articleKeyExtractor = (article: ArticleModel) => article.title
