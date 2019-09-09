@@ -145,13 +145,13 @@ class Home extends Component<Props, State> {
   }
 
   render() {
-    const maxTopHeight = 217 + 119
+    const maxTopHeight = 217 + 130
     const minTopHeight = 119
     const maxValue = maxTopHeight - minTopHeight
 
     const translateY = this.scrollY.interpolate({
       inputRange: [0, maxValue],
-      outputRange: [0, minTopHeight - maxTopHeight],
+      outputRange: [0, minTopHeight - maxTopHeight + getStatusBarHeight()],
       extrapolate: 'clamp'
     })
 
@@ -181,10 +181,7 @@ class Home extends Component<Props, State> {
           <WeekDisplay />
         </Animated.View>
         <Animated.ScrollView
-          contentContainerStyle={{
-            paddingBottom: theme.SCREEN_PADDING,
-            paddingTop: theme.SCREEN_PADDING * 2
-          }}
+          contentContainerStyle={{ paddingBottom: theme.SCREEN_PADDING }}
           showsVerticalScrollIndicator={false}
           ref={this.scrollView}
           scrollEventThrottle={1}

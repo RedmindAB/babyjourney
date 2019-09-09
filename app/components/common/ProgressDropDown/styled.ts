@@ -18,6 +18,7 @@ export const ProgressDropDownContainer = styled.View`
 `
 
 export const ProgressInfoText = styled(InfoText)`
+font-size: 12;
   ${props => props.border && `padding-right: ${theme.BASELINE}`}
   ${props => props.border && `margin-right: ${theme.BASELINE}`}
   ${props => props.border && `border-right-width: 5px`}
