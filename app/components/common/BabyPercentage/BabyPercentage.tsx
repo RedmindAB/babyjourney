@@ -34,7 +34,6 @@ class BabyPercentage extends Component<Props, State> {
 
   onPercentageContainerLayout = event => {
     this.percentageContainerRef.current.measure((fx, fy, width, height, px, py) => {
-      console.log(px, py)
       if (px < 0) {
         this.setState({ percentageX: theme.BASELINE * 2 })
       }
