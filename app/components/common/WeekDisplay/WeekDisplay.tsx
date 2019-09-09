@@ -65,10 +65,11 @@ class WeekDisplay extends Component<Props, State> {
 
   renderWeeks = () => {
     const { dueDate, selectedWeek } = this.props.user
-    const { weeks } = getWeekAndDay(dueDate)
+    const { weeks, days } = getWeekAndDay(dueDate)
     const currentWeek = weeks
 
     return this.state.weeks.map((n: number, index: number) => {
+      const text = n === currentWeek ? `${n}+${days}` : n
       const onPress = () => this.selectWeek(index)
       const dotGray = n > currentWeek
       const leftGray = n > currentWeek
@@ -93,7 +94,7 @@ class WeekDisplay extends Component<Props, State> {
             >
               {showCenterDot && <WeekDot white={isCurrentWeek} gray={dotGray} />}
             </WeekDot>
-            <WeekNumber highLight={isSelectedWeek || isCurrentWeek}>{n}</WeekNumber>
+            <WeekNumber highLight={isSelectedWeek || isCurrentWeek}>{text}</WeekNumber>
           </WeekNumberContainer>
         </TouchableWithoutFeedback>
       )
@@ -114,9 +115,6 @@ class WeekDisplay extends Component<Props, State> {
         >
           <WeekSelectionContainer>{this.renderWeeks()}</WeekSelectionContainer>
         </ScrollView>
-        <InfoText style={{ textAlign: 'center', fontSize: 14, fontWeight: 'normal' }}>
-          {days} days
-        </InfoText>
       </WeekDisplayContainer>
     )
   }
