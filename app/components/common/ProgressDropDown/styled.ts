@@ -47,12 +47,43 @@ export const BottomContainer = styled.View`
 `
 
 const babyCompareSize = 120
+
+export const Two = styled.View`
+  background-color: rgba(255, 255, 255, 0.16);
+  margin: ${theme.BASELINE * 6}px;
+  padding: 12px;
+  border-radius: 99999;
+
+  shadow-color: #ff9d9e;
+  shadow-offset: 0 0;
+  shadow-opacity: 0.15;
+  shadow-radius: 2px;
+  elevation: 1;
+`
+
+export const One = styled.View`
+  background-color: rgba(255, 255, 255, 0.54);
+  margin: ${theme.BASELINE * 6}px;
+  padding: 12px;
+  border-radius: 99999;
+
+  shadow-color: #ff9d9e;
+  shadow-offset: 0 0;
+  shadow-opacity: 0.29;
+  shadow-radius: 8px;
+  elevation: 1;
+`
+
 export const BabyComparisonContainer = styled(CenteredView)`
   width: ${babyCompareSize}px;
   height: ${babyCompareSize}px;
   border-radius: ${babyCompareSize / 2}px;
   background-color: white;
-  margin: ${theme.BASELINE * 6}px 0;
+  shadow-color: #ff9d9e;
+  shadow-offset: 0 0;
+  shadow-opacity: 0.47;
+  shadow-radius: 8px;
+  elevation: 1;
 `
 
 export const BabyInfoContainer = styled.View`

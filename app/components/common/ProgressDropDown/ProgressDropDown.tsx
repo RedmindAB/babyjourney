@@ -23,7 +23,9 @@ import {
   BabyInfoContainer,
   BabyInfoText,
   BabyInfoTitle,
-  WhiteBackground
+  WhiteBackground,
+  One,
+  Two
 } from './styled'
 import { Headline, Title, InfoText } from '../styled'
 import { Icons } from '../../../assets'
@@ -33,7 +35,7 @@ import { ApplicationState } from '../../../store'
 import { hideBottomTabBar, showBottomTabBar } from '../../../store/bottomTabBar/actions'
 import { getBottomScreenSpace } from '../../../theme/variables'
 import moment from 'moment'
-import { getWeekAndDay, getDaysUntilDueDate, getPercentage, getTrimester } from '../../../utils'
+import { getWeekAndDay, getDaysUntilDueDate, getTrimester } from '../../../utils'
 import BabyPercentage from '../BabyPercentage'
 
 const { height } = Dimensions.get('screen')
@@ -77,12 +79,21 @@ class ProgressDropDown extends Component<Props, State> {
         <InfoText style={{ textAlign: 'center', fontSize: 14 }}>
           Your baby is as big as a lemon now
         </InfoText>
-        <BabyComparisonContainer>
-          <Image
-            style={{ width: 75, height: 75, marginLeft: 8, marginBottom: 8 }}
-            source={require('../../../assets/images/lemon.png')}
-          />
-        </BabyComparisonContainer>
+        <Two>
+          <One>
+            <BabyComparisonContainer>
+              <Image
+                style={{
+                  width: 75,
+                  height: 75,
+                  marginLeft: 8,
+                  marginBottom: 8
+                }}
+                source={require('../../../assets/images/lemon.png')}
+              />
+            </BabyComparisonContainer>
+          </One>
+        </Two>
         <Headline noMargin>weight</Headline>
         <BabyInfoContainer>
           <View style={{ flexDirection: 'row', width: '100%' }}>
