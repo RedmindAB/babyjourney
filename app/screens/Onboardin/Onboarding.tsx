@@ -42,7 +42,7 @@ class Onboarding extends Component<Props> {
           <Title style={{ fontSize: 30, marginBottom: theme.BASELINE * 4 }}>Congratulations!</Title>
           <Title>When was the first day of your last period?</Title>
           <View
-            style={{ backgroundColor: '#ffb9ba', borderRadius: 14, transform: [{ scale: 0.7 }] }}
+            style={{ backgroundColor: '#ffb9ba', borderRadius: 14, transform: [{ scale: 0.9 }] }}
           >
             <DatePicker
               minimumDate={this.minDate}
