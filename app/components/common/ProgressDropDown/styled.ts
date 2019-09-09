@@ -78,6 +78,7 @@ export const BabyComparisonContainer = styled(CenteredView)`
   width: ${babyCompareSize}px;
   height: ${babyCompareSize}px;
   border-radius: ${babyCompareSize / 2}px;
+  margin: ${theme.BASELINE * 6}px;
   background-color: white;
   shadow-color: #ff9d9e;
   shadow-offset: 0 0;

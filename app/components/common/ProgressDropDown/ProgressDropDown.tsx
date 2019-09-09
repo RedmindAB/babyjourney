@@ -79,21 +79,17 @@ class ProgressDropDown extends Component<Props, State> {
         <InfoText style={{ textAlign: 'center', fontSize: 14 }}>
           Your baby is as big as a lemon now
         </InfoText>
-        <Two>
-          <One>
-            <BabyComparisonContainer>
-              <Image
-                style={{
-                  width: 75,
-                  height: 75,
-                  marginLeft: 8,
-                  marginBottom: 8
-                }}
-                source={require('../../../assets/images/lemon.png')}
-              />
-            </BabyComparisonContainer>
-          </One>
-        </Two>
+        <BabyComparisonContainer>
+          <Image
+            style={{
+              width: 75,
+              height: 75,
+              marginLeft: 8,
+              marginBottom: 8
+            }}
+            source={require('../../../assets/images/lemon.png')}
+          />
+        </BabyComparisonContainer>
         <Headline noMargin>weight</Headline>
         <BabyInfoContainer>
           <View style={{ flexDirection: 'row', width: '100%' }}>
