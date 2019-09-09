@@ -153,6 +153,7 @@ class ProgressDropDown extends Component<Props, State> {
             <ScrollView
               bounces={false}
               style={{ backgroundColor: 'transparent', overflow: 'visible' }}
+              contentContainerStyle={{ flex: 1 }}
             >
               <Wrapper style={{ justifyContent: 'space-between', flex: 1 }}>
                 <View>
