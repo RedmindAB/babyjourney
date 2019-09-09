@@ -95,6 +95,7 @@ class Home extends Component<Props, State> {
 
   getFilters = (): Filter[] => {
     const filters = articles
+      .filter(article => article.week === this.props.user.selectedWeek)
       .filter(article => article.category.length > 0)
       .reduce((acc, curr) => {
         const category = {
