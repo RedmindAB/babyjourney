@@ -1,5 +1,10 @@
 import { ActionCreator } from 'redux'
-import { SetDueDateAction, SelectWeekAction } from './types'
+import {
+  SetDueDateAction,
+  SelectWeekAction,
+  SetHasSeenCongratsModalAction,
+  SetHasSeeOnboardingAction
+} from './types'
 
 export const setDueDate: ActionCreator<SetDueDateAction> = (dueDate: Date) => ({
   type: '@user/SET_DUE_DATE',
@@ -9,4 +14,18 @@ export const setDueDate: ActionCreator<SetDueDateAction> = (dueDate: Date) => ({
 export const selectWeek: ActionCreator<SelectWeekAction> = (week: number) => ({
   type: '@user/SELECT_WEEK',
   week
+})
+
+export const setHasSeenCongratsModal: ActionCreator<SetHasSeenCongratsModalAction> = (
+  hasSeenModal: boolean
+) => ({
+  type: '@user/SET_HAS_SEEN_CONGRATULATIONS',
+  hasSeenCongratularionsModal: hasSeenModal
+})
+
+export const setHasSeenOnboarding: ActionCreator<SetHasSeeOnboardingAction> = (
+  hasSeenOnboarding: boolean
+) => ({
+  type: '@user/HAS_SEEN_ONBOARDING',
+  hasSeenOnboarding
 })

@@ -25,7 +25,7 @@ class BabyPercentage extends Component<Props> {
     const { dueDate } = this.props.user
     const percentage = getPercentage(dueDate)
     return (
-      <View style={{ position: 'relative' }}>
+      <View style={{ position: 'relative', width: '100%' }}>
         <PercentageBarContainer>
           <PercentageBar style={{ width: `${percentage}%` }}>
             <PercentageBarDot />

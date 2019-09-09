@@ -10,15 +10,13 @@ import { NavigationScreenProps } from 'react-navigation'
 import { screens } from '../../navigation/navigationConstants'
 import { ApplicationState } from '../../store'
 import { connect } from 'react-redux'
-import { setDueDate } from '../../store/user/actions'
+import { setDueDate, setHasSeenOnboarding } from '../../store/user/actions'
 import { Dispatch } from 'redux'
 
 type PropsFromState = ReturnType<typeof mapStateToProps>
 type PropsFromDispatch = ReturnType<typeof mapDispatchToProps>
 
 type Props = NavigationScreenProps & PropsFromDispatch & PropsFromState
-
-const oneWeek = 6.04e8
 
 class Onboarding extends Component<Props> {
   minDate = new Date(new Date().setDate(new Date().getDate() - 7 * 40))
@@ -32,6 +30,7 @@ class Onboarding extends Component<Props> {
     const dueDate = new Date(this.state.date)
     dueDate.setDate(this.state.date.getDate() + 7 * 40)
     this.props.setDueDate(dueDate)
+    this.props.setHasSeenOnboarding()
     this.props.navigation.navigate(screens.HOME)
   }
 
@@ -66,7 +65,8 @@ class Onboarding extends Component<Props> {
 
 const mapStateToProps = ({ user }: ApplicationState) => ({ user })
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  setDueDate: (dueDate: Date) => dispatch(setDueDate(dueDate))
+  setDueDate: (dueDate: Date) => dispatch(setDueDate(dueDate)),
+  setHasSeenOnboarding: () => dispatch(setHasSeenOnboarding(true))
 })
 
 export default connect(
