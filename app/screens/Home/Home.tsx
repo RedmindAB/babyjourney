@@ -147,7 +147,7 @@ class Home extends Component<Props, State> {
 
   render() {
     const maxTopHeight = 217 + 130
-    const minTopHeight = 119
+    const minTopHeight = 130
     const maxValue = maxTopHeight - minTopHeight
 
     const translateY = this.scrollY.interpolate({

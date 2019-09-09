@@ -14,6 +14,7 @@ export const ArticleButtonContainer = styled.View`
   shadow-opacity: 0.1;
   shadow-radius: 8px;
   elevation: 1;
+  background-color: white;
 `
 
 export const ArticleButtonImage = styled.Image`
