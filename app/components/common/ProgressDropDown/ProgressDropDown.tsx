@@ -16,17 +16,8 @@ import {
   ProgressDropDownContainer,
   InfoTextContainer,
   ProgressInfoText,
-  PercentageBarContainer,
-  PercentageBar,
-  BabyLogo,
-  BabyLogoWhiteBorder,
   ExpandButton,
   ExpandButtonText,
-  PercentageBarDot,
-  PercentageBarLine,
-  PercentageBarNumberContainer,
-  percentageNumberContainerWidth,
-  PercentageText,
   BottomContainer,
   BabyComparisonContainer,
   BabyInfoContainer,
@@ -43,6 +34,7 @@ import { hideBottomTabBar, showBottomTabBar } from '../../../store/bottomTabBar/
 import { getBottomScreenSpace } from '../../../theme/variables'
 import moment from 'moment'
 import { getWeekAndDay, getDaysUntilDueDate, getPercentage, getTrimester } from '../../../utils'
+import BabyPercentage from '../BabyPercentage'
 
 const { height } = Dimensions.get('screen')
 
@@ -143,7 +135,6 @@ class ProgressDropDown extends Component<Props, State> {
     const { weeks, days } = getWeekAndDay(dueDate)
     const dayText = this.getDayText()
     const daysLeft = getDaysUntilDueDate(dueDate)
-    const percentage = getPercentage(dueDate)
     const trimester = getTrimester(dueDate)
 
     return (
@@ -169,26 +160,7 @@ class ProgressDropDown extends Component<Props, State> {
                     <ProgressInfoText>Trimester {trimester}</ProgressInfoText>
                   </InfoTextContainer>
                   <View style={{ position: 'relative', marginTop: 32 }}>
-                    <PercentageBarContainer>
-                      <PercentageBar style={{ width: `${percentage}%` }}>
-                        <PercentageBarDot />
-                        <PercentageBarLine />
-                        <PercentageBarNumberContainer
-                          style={
-                            {
-                              transform: [{ translateX: percentageNumberContainerWidth / 2 - 4 }]
-                            } as ViewStyle
-                          }
-                        >
-                          <PercentageText>{percentage}%</PercentageText>
-                        </PercentageBarNumberContainer>
-                      </PercentageBar>
-                    </PercentageBarContainer>
-                    <BabyLogoWhiteBorder>
-                      <BabyLogo>
-                        <Icons.Baby />
-                      </BabyLogo>
-                    </BabyLogoWhiteBorder>
+                    <BabyPercentage />
                   </View>
                   {this.state.expanded && this.renderBottomPart()}
                 </View>
