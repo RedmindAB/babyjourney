@@ -12,7 +12,7 @@ export const XbuttonContainer = styled.View`
 `
 
 export const Xbutton = styled.Text`
-  font-size: 20;
+  font-size: 28;
 `
 
 export const ModalBackground = styled(CenteredView)`
