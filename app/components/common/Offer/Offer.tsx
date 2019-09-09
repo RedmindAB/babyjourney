@@ -3,25 +3,32 @@ import { OfferContainer, OfferImage, OfferRightContainer, OfferTitle, ViewMoreTe
 import { ViewStyle } from 'react-native'
 import { InfoText } from '../styled'
 
+export type OfferModel = {
+  imageUri: string
+  title: string
+  body: string
+}
+
 type OwnProps = {
   style?: ViewStyle
+  offer: OfferModel
 }
 
 type Props = OwnProps
 
 class Offer extends Component<Props> {
   render() {
+    const { offer } = this.props
     return (
       <OfferContainer style={this.props.style}>
         <OfferImage
           source={{
-            uri:
-              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0vWz7i-_Ew_RnrZjxnM7EDxWsmEFvdCKoDYEYyNUcsMrBIQYX'
+            uri: offer.imageUri
           }}
         />
         <OfferRightContainer>
-          <OfferTitle>Get 30% off Honest cosmetics</OfferTitle>
-          <InfoText light>Choose 3 items and get 30% off for the whole purchase.</InfoText>
+          <OfferTitle>{offer.title}</OfferTitle>
+          <InfoText light>{offer.body}</InfoText>
           <ViewMoreText>View more</ViewMoreText>
         </OfferRightContainer>
       </OfferContainer>
