@@ -19,11 +19,14 @@ class WhatHappensNowScreen extends Component<Props, State> {
     selectedIndex: 0
   }
 
+  icons = [Icons.BabyNow, Icons.MotherNow, Icons.PartnerNow]
+
   selectOption = index => {
     this.setState({ selectedIndex: index })
   }
 
   render() {
+    const Icon = this.icons[this.state.selectedIndex]
     return (
       <Container weekHeader withHeader>
         <SwitchList
@@ -43,7 +46,7 @@ class WhatHappensNowScreen extends Component<Props, State> {
             borderRadius: 60
           }}
         >
-          <Icons.Baby width={56} height={56} />
+          <Icon width={56} height={56} />
         </IconCircleContainer>
 
         <InfoText>

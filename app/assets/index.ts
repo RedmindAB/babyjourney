@@ -11,6 +11,9 @@ import DarkArrow from './svg/DarkArrow.svg'
 import Calendar from './svg/Calendar.svg'
 import Baby from './svg/Baby.svg'
 import Confetti from './svg/Confetti.svg'
+import BabyNow from './svg/BabyNow.svg'
+import MotherNow from './svg/MotherNow.svg'
+import PartnerNow from './svg/PartnerNow.svg'
 
 export const Icons = {
   Search,
@@ -25,5 +28,8 @@ export const Icons = {
   DarkArrow,
   Calendar,
   Baby,
-  Confetti
+  Confetti,
+  BabyNow,
+  PartnerNow,
+  MotherNow
 }
