@@ -182,7 +182,7 @@ export const Title = styled.Text`
 export const InfoText = styled(CustomText)`
   font-family: ${theme.fonts.Avenir};
   font-weight: 100;
-  font-size: 12;
+  font-size: 14;
   flex-shrink: 1;
 `
 
