@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ViewProps, Linking } from 'react-native'
+import { ViewProps, Linking, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import {
   ArticleButtonContainer,
@@ -39,13 +39,17 @@ class ArticleButton extends Component<Props> {
       : require('../../../assets/images/articlePlaceHolder.png')
     return (
       <ArticleButtonContainer style={style}>
-        <TouchableOpacity onPress={this.goToArticle}>
-          <ArticleButtonImage source={source} />
-          <ArticleButtonBottomContainer>
-            <ArticleButtonTitle numberOfLines={2}>{article.title}</ArticleButtonTitle>
-            <ArticleButtonAuthor light>{article.author}</ArticleButtonAuthor>
-          </ArticleButtonBottomContainer>
-        </TouchableOpacity>
+        <View style={{ flex: 1, overflow: 'hidden' }}>
+          <TouchableOpacity onPress={this.goToArticle}>
+            <View style={{ height: '100%' }}>
+              <ArticleButtonImage source={source} />
+              <ArticleButtonBottomContainer>
+                <ArticleButtonTitle numberOfLines={2}>{article.title}</ArticleButtonTitle>
+                <ArticleButtonAuthor light>{article.author}</ArticleButtonAuthor>
+              </ArticleButtonBottomContainer>
+            </View>
+          </TouchableOpacity>
+        </View>
       </ArticleButtonContainer>
     )
   }
