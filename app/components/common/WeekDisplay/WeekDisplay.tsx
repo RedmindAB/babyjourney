@@ -102,8 +102,6 @@ class WeekDisplay extends Component<Props, State> {
   }
 
   render() {
-    const { dueDate } = this.props.user
-    const { days } = getWeekAndDay(dueDate)
     return (
       <WeekDisplayContainer style={this.props.style}>
         <Headline style={{ textAlign: 'center' }}>Your Week</Headline>
