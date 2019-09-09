@@ -45,7 +45,7 @@ class OfferList extends Component {
           </TopRowContainer>
           <PaginatedScrollView>
             {offers.map(offer => (
-              <Offer offer={offer} style={offerMargin} />
+              <Offer key={offer.title} offer={offer} style={offerMargin} />
             ))}
           </PaginatedScrollView>
         </OfferListContainer>
