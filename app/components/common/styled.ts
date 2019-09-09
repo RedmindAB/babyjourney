@@ -58,7 +58,7 @@ export const Headline = styled.Text`
   font-family: ${theme.fonts.Avenir};
   font-weight: bold;
   margin: ${theme.BASELINE * 1.5}px;
-  ${props => props.noMargin && `margin: 0`}
+  margin-top: ${theme.BASELINE * 3} ${props => props.noMargin && `margin: 0`};
 `
 
 export const SubHeader = styled(CustomText)`
