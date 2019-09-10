@@ -26,7 +26,11 @@ class WhatHappensNow extends Component<Props> {
   }
 
   render() {
-    return <WhatHappensNowContainer>{this.renderButtons()}</WhatHappensNowContainer>
+    return (
+      <WhatHappensNowContainer style={this.props.style}>
+        {this.renderButtons()}
+      </WhatHappensNowContainer>
+    )
   }
 }
 

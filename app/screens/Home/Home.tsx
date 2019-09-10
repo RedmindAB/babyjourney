@@ -191,8 +191,8 @@ class Home extends Component<Props, State> {
           })}
         >
           <View style={{ height: maxTopHeight }} />
+          <WhatHappensNow style={{ marginTop: theme.BASELINE * 2 }} />
           <HomeTopContainer>
-            <WhatHappensNow />
             <TopSearch />
           </HomeTopContainer>
           <FilterList

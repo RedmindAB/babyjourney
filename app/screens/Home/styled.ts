@@ -12,6 +12,9 @@ export const HomeConentWrapper = styled.View`
 `
 
 export const HomeTopContainer = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding: 0 ${theme.SCREEN_PADDING}px;
   margin: ${theme.BASELINE * 1.5}px 0;
 `
