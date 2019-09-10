@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { OfferContainer, OfferImage, OfferRightContainer, OfferTitle, ViewMoreText } from './styled'
-import { ViewStyle } from 'react-native'
+import { ViewProps } from 'react-native'
 import { InfoText } from '../styled'
 
 export type OfferModel = {
@@ -10,17 +10,17 @@ export type OfferModel = {
 }
 
 type OwnProps = {
-  style?: ViewStyle
   offer: OfferModel
 }
 
-type Props = OwnProps
+type Props = OwnProps & ViewProps
 
 class Offer extends Component<Props> {
   render() {
-    const { offer } = this.props
+    const { offer, ...viewProps } = this.props
+
     return (
-      <OfferContainer style={this.props.style}>
+      <OfferContainer {...viewProps}>
         <OfferImage
           source={{
             uri: offer.imageUri

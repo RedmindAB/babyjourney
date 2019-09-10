@@ -78,11 +78,11 @@ const SavedStack = createStackNavigator(
 
 const OffersStack = createStackNavigator(
   {
-    [screens.OFFERS]: Offers,
-    headerMode: 'none'
+    [screens.OFFERS]: Offers
   },
   {
-    defaultNavigationOptions
+    defaultNavigationOptions,
+    headerMode: 'none'
   }
 )
 

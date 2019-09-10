@@ -6,12 +6,15 @@ import SquareButton from '../SquareButton'
 import Offer from '../Offer'
 import { Headline } from '../styled'
 import theme from '../../../theme'
-import { Dimensions } from 'react-native'
 import PaginatedScrollView from '../PaginatedScrollView'
 import { OfferModel } from '../Offer/Offer'
+import { withNavigation, NavigationScreenProps } from 'react-navigation'
+import { screens } from '../../../navigation/navigationConstants'
 
-const { width } = Dimensions.get('screen')
-class OfferList extends Component {
+type Props = NavigationScreenProps
+
+class OfferList extends Component<Props> {
+  onPressViewAll = () => this.props.navigation.navigate(screens.OFFERS)
   render() {
     const offerMargin = { marginHorizontal: theme.SCREEN_PADDING }
 
@@ -41,7 +44,7 @@ class OfferList extends Component {
         <OfferListContainer>
           <TopRowContainer>
             <Headline noMargin>Special Offers</Headline>
-            <SquareButton title="VIEW ALL" onPress={() => undefined} />
+            <SquareButton title="VIEW ALL" onPress={this.onPressViewAll} />
           </TopRowContainer>
           <PaginatedScrollView>
             {offers.map(offer => (
@@ -54,4 +57,4 @@ class OfferList extends Component {
   }
 }
 
-export default OfferList
+export default withNavigation(OfferList)
