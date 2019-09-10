@@ -6,12 +6,13 @@ export default StyleSheet.create({
   container: {
     height,
     borderRadius: height / 2,
-    backgroundColor: theme.accent,
+    backgroundColor: theme.tertiary_variant.color,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    paddingHorizontal: theme.BASELINE * 2
   } as ViewStyle,
   title: {
-    color: theme.accentOn,
+    color: '#4a4152',
     fontSize: 14
   } as TextStyle
 })

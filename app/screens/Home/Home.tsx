@@ -192,6 +192,7 @@ class Home extends Component<Props, State> {
         >
           <View style={{ height: maxTopHeight }} />
           <HomeTopContainer>
+            <WhatHappensNow />
             <TopSearch />
           </HomeTopContainer>
           <FilterList
@@ -199,7 +200,6 @@ class Home extends Component<Props, State> {
             selectedValue={this.state.activeFilter.value}
             filters={this.state.filters}
           />
-          <WhatHappensNow style={{ margin: theme.SCREEN_PADDING, marginBottom: 0 }} />
           <HomeTopContainer>
             <HomeHeadline noMargin>stories</HomeHeadline>
             <SquareButton title="VIEW ALL" onPress={() => undefined} />

@@ -1,10 +1,10 @@
 import styled from 'styled-components/native'
 import theme from '../../../theme'
-import { CenteredView, Title, CustomText, InfoText } from '../styled'
+import { CenteredView } from '../styled'
 
 export const WhatHappensNowContainer = styled.View`
-  padding: ${theme.BASELINE * 2}px;
   flex-direction: row;
+  justify-content: space-around;
 `
 
 export const BorderRadiusWrapper = styled.View`

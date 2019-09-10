@@ -6,21 +6,28 @@ import { InfoText, IconCircleContainer } from '../../components/common/styled'
 import theme from '../../theme'
 import { Icons } from '../../assets'
 
-type Props = NavigationScreenProps
+type Props = NavigationScreenProps<{ startContext: string }>
 
 type State = {
-  options: string[]
+  articleContext: string[]
   selectedIndex: number
 }
 
 class WhatHappensNowScreen extends Component<Props, State> {
   state: State = {
-    options: ['Baby', 'Mother', 'Partner'],
+    articleContext: ['Baby', 'Mother', 'Partner'],
     selectedIndex: 0
   }
 
   icons = [Icons.BabyNow, Icons.MotherNow, Icons.PartnerNow]
 
+  componentDidMount() {
+    const { params } = this.props.navigation.state
+    if (params && params.startContext) {
+      const selectedIndex = this.state.articleContext.indexOf(params.startContext)
+      this.setState({ selectedIndex })
+    }
+  }
   selectOption = index => {
     this.setState({ selectedIndex: index })
   }
@@ -32,7 +39,7 @@ class WhatHappensNowScreen extends Component<Props, State> {
         <SwitchList
           onPress={this.selectOption}
           selectedIndex={this.state.selectedIndex}
-          options={this.state.options}
+          options={this.state.articleContext}
         />
 
         <IconCircleContainer
