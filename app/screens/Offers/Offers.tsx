@@ -5,11 +5,17 @@ import { CenteredFill } from '../../components/common/styled'
 import Offer from '../../components/common/Offer/Offer'
 import mockOffers from './mockOffers'
 import theme from '../../theme'
+import BigOffer from '../../components/common/BigOffer'
 
 class Offers extends Component {
   renderOffers() {
     return mockOffers.map((offer, index) => {
-      const style: ViewStyle = index > 0 ? { marginTop: theme.BASELINE * 2 } : {}
+      if (index === 0) {
+        return <BigOffer offer={offer} />
+      }
+      const style: ViewStyle = { marginTop: theme.BASELINE * 1.5 }
+      style.shadowColor = '#7e728a'
+      style.shadowOpacity = 0.2
       return <Offer style={style} offer={offer} />
     })
   }

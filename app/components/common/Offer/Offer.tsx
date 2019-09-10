@@ -7,6 +7,7 @@ export type OfferModel = {
   imageUri: string
   title: string
   body: string
+  category: string
 }
 
 type OwnProps = {
