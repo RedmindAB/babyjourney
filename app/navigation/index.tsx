@@ -47,9 +47,8 @@ const HomeStack = createStackNavigator(
         header: null
       }
     },
-    [screens.WHAT_HAPPENS_NOW]: {
-      screen: WhatHappensNowScreen
-    }
+    [screens.WHAT_HAPPENS_NOW]: WhatHappensNowScreen,
+    [screens.OFFERS]: Offers
   },
   {
     defaultNavigationOptions
