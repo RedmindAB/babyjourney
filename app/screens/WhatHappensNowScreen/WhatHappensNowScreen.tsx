@@ -5,8 +5,14 @@ import { NavigationScreenProps } from 'react-navigation'
 import { InfoText, IconCircleContainer } from '../../components/common/styled'
 import theme from '../../theme'
 import { Icons } from '../../assets'
+import weekArticles from './weekArticles'
+import { connect } from 'react-redux'
+import { ApplicationState } from '../../store'
+import { ViewStyle } from 'react-native'
 
-type Props = NavigationScreenProps<{ startContext: string }>
+type PropsFromState = ReturnType<typeof mapStateToProps>
+
+type Props = NavigationScreenProps<{ startContext: string }> & PropsFromState
 
 type State = {
   articleContext: string[]
@@ -32,6 +38,25 @@ class WhatHappensNowScreen extends Component<Props, State> {
     this.setState({ selectedIndex: index })
   }
 
+  getCurrentContext = () => this.state.articleContext[this.state.selectedIndex]
+
+  renderArticle() {
+    const weekArticle = weekArticles.find(
+      weekArticle => weekArticle.week === this.props.user.selectedWeek
+    )
+    const article = weekArticle.categories.find(
+      category => category.context.toLowerCase() === this.getCurrentContext().toLowerCase()
+    )
+    return article.sections.map((section, index) => {
+      const style = index > 0 ? ({ marginTop: theme.BASELINE * 3 } as ViewStyle) : {}
+      return (
+        <InfoText style={style} key={index}>
+          {section}
+        </InfoText>
+      )
+    })
+  }
+
   render() {
     const Icon = this.icons[this.state.selectedIndex]
     return (
@@ -55,28 +80,10 @@ class WhatHappensNowScreen extends Component<Props, State> {
         >
           <Icon width={56} height={56} />
         </IconCircleContainer>
-
-        <InfoText>
-          In week 13, your baby's skeleton is starting to develop with the clavicle (collar bone)
-          and femur (thigh bone) developing first. Along with the skeleton, their organs continue to
-          grow with their stomach and bowel taking shape as well as their vocal chords (which will
-          get a lot of use in a few months' time!) Your baby’s lungs are also developing and in week
-          13 they’ll start to take their first few ‘breaths’. They’ll be getting oxygen in their
-          blood from the umbilical cord as they’re surrounded by amniotic fluid, so instead it’ll be
-          like they’re breathing under water.
-        </InfoText>
-        <InfoText style={{ marginTop: theme.BASELINE * 3 }}>
-          In week 13, your baby's skeleton is starting to develop with the clavicle (collar bone)
-          and femur (thigh bone) developing first. Along with the skeleton, their organs continue to
-          grow with their stomach and bowel taking shape as well as their vocal chords (which will
-          get a lot of use in a few months' time!) Your baby’s lungs are also developing and in week
-          13 they’ll start to take their first few ‘breaths’. They’ll be getting oxygen in their
-          blood from the umbilical cord as they’re surrounded by amniotic fluid, so instead it’ll be
-          like they’re breathing under water.
-        </InfoText>
+        {this.renderArticle()}
       </Container>
     )
   }
 }
-
-export default WhatHappensNowScreen
+const mapStateToProps = ({ user }: ApplicationState) => ({ user })
+export default connect(mapStateToProps)(WhatHappensNowScreen)
