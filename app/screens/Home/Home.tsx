@@ -18,18 +18,13 @@ import SquareButton from '../../components/common/SquareButton'
 import TopSearch from './TopSearch/TopSearch'
 import WhatHappensNow from '../../components/common/WhatHappensNow'
 import ForumResponses from '../../components/common/ForumResponses'
-import { Animated, View, Text } from 'react-native'
+import { Animated, View } from 'react-native'
 import WeekDisplay from '../../components/common/WeekDisplay'
 import ProgressDropDown from '../../components/common/ProgressDropDown'
 import { getStatusBarHeight } from 'react-native-iphone-x-helper'
 import { ApplicationState } from '../../store'
 import { hideBottomTabBar, showBottomTabBar } from '../../store/bottomTabBar/actions'
-import Modal from '../../components/common/Modal'
-
-type Filter = {
-  label: string
-  value: string
-}
+import { Filter } from '../../types'
 
 type PropsFromState = ReturnType<typeof mapStateToProps>
 type PropsFromDispatch = ReturnType<typeof mapDispatchToProps>

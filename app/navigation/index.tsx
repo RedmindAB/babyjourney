@@ -48,7 +48,12 @@ const HomeStack = createStackNavigator(
       }
     },
     [screens.WHAT_HAPPENS_NOW]: WhatHappensNowScreen,
-    [screens.OFFERS]: Offers
+    [screens.OFFERS]: {
+      screen: Offers,
+      navigationOptions: {
+        headerTitle: 'OFFERS'
+      }
+    }
   },
   {
     defaultNavigationOptions
@@ -80,8 +85,10 @@ const OffersStack = createStackNavigator(
     [screens.OFFERS]: Offers
   },
   {
-    defaultNavigationOptions,
-    headerMode: 'none'
+    defaultNavigationOptions: ({ navigation }: NavigationScreenProps) => ({
+      ...defaultNavigationOptions({ navigation }),
+      headerTitle: 'OFFERS'
+    })
   }
 )
 
