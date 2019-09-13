@@ -20,7 +20,9 @@ class SquareButton extends Component<Props> {
     return (
       <TouchableOpacity disabled={disabled} onPress={onPress}>
         <SquareButtonContainer disabled={disabled} bigButton={bigButton} style={style}>
-          <SquareButtonText style={textStyle}>{title}</SquareButtonText>
+          <SquareButtonText bigButton={bigButton} style={textStyle}>
+            {title}
+          </SquareButtonText>
         </SquareButtonContainer>
       </TouchableOpacity>
     )

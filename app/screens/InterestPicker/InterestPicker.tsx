@@ -89,7 +89,6 @@ class InterestPicker extends Component<Props, State> {
   }
 
   render() {
-    console.log(this.isButtonDisabled())
     return (
       <LinearGradient
         style={{ flex: 1 }}

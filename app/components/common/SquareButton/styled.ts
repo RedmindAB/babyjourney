@@ -19,4 +19,5 @@ export const SquareButtonText = styled.Text`
   color: #ffffff;
   text-transform: uppercase;
   font-size: 12;
+  ${props => props.bigButton && `font-size: 14`}
 `

@@ -1,13 +1,14 @@
 import styled from 'styled-components/native'
-import { CenteredFill } from '../../components/common/styled'
 import theme from '../../theme'
 
-export const DueDatePickerContainer = styled(CenteredFill)`
+export const DueDatePickerContainer = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
   padding: ${theme.SCREEN_PADDING}px;
 `
 
 export const PickerWrapper = styled.View`
-  background-color: #ffb9ba;
+  background-color: #ffffff;
   border-radius: 14;
-  transform: scale(0.9);
 `
