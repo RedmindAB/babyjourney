@@ -24,11 +24,12 @@ class WeekCongrats extends Component<Props> {
         <ConfettiContainer>
           <Icons.Confetti />
         </ConfettiContainer>
-        <InfoText style={{ fontSize: 16, fontWeight: '400', marginBottom: theme.BASELINE * 2 }}>
-          Your progress
+        <InfoText style={{ fontSize: 16, fontWeight: '400', marginBottom: theme.BASELINE * 4 }}>
+          Congartulations! This is how far you have progressed in your pregnancy
         </InfoText>
         <BabyPercentage />
         <SquareButton
+          bigButton
           style={{ width: 160, marginTop: theme.BASELINE * 4 }}
           title="share"
           onPress={() => undefined}
