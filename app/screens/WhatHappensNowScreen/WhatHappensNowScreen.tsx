@@ -34,7 +34,7 @@ class WhatHappensNowScreen extends Component<Props, State> {
       this.setState({ selectedIndex })
     }
   }
-  selectOption = index => {
+  selectOption = (index: number) => {
     this.setState({ selectedIndex: index })
   }
 

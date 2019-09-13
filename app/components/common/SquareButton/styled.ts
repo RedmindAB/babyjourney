@@ -3,7 +3,7 @@ import theme from '../../../theme'
 
 export const SquareButtonContainer = styled.View`
   background-color: #ff8c8d;
-  padding: ${theme.BASELINE}px ${theme.BASELINE * 1.5}px;
+  padding: ${theme.BASELINE / 2}px ${theme.BASELINE * 1.5}px;
   border-radius: 6px;
   width: auto;
   justify-content: center;

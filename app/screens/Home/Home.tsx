@@ -186,7 +186,6 @@ class Home extends Component<Props, State> {
           })}
         >
           <View style={{ height: maxTopHeight }} />
-          <WhatHappensNow style={{ marginTop: theme.BASELINE * 2 }} />
           <HomeTopContainer>
             <TopSearch />
           </HomeTopContainer>
@@ -195,11 +194,7 @@ class Home extends Component<Props, State> {
             selectedValue={this.state.activeFilter.value}
             filters={this.state.filters}
           />
-          <HomeTopContainer>
-            <HomeHeadline noMargin>stories</HomeHeadline>
-            <SquareButton title="VIEW ALL" onPress={() => undefined} />
-          </HomeTopContainer>
-
+          <HomeTopContainer />
           <FlatList
             style={{ flexGrow: 0, backgroundColor: 'transparent', overflow: 'visible' }}
             keyExtractor={this.articleKeyExtractor}
@@ -213,6 +208,12 @@ class Home extends Component<Props, State> {
             showsHorizontalScrollIndicator={false}
             horizontal
           />
+          <SquareButton
+            style={{ alignSelf: 'center', marginBottom: theme.BASELINE * 2, width: 100 }}
+            title="VIEW ALL"
+            onPress={() => undefined}
+          />
+          <WhatHappensNow style={{ marginTop: theme.BASELINE * 2 }} />
           <OfferList />
           <HomeHeadline>My health</HomeHeadline>
           <HomeContentWrapper>

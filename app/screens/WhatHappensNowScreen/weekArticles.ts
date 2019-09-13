@@ -342,6 +342,533 @@ const weekArticles: WeekArticleContainer[] = [
         ]
       }
     ]
+  },
+  {
+    week: 12,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 13,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 14,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 15,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 16,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 17,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 18,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 19,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 20,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 21,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 22,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 23,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 24,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 25,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 26,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 27,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 28,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 29,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 30,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 31,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 32,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 33,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 34,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 35,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 36,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 37,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 38,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 39,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 40,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 41,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
+  },
+  {
+    week: 42,
+    categories: [
+      {
+        context: 'baby',
+        sections: ['']
+      },
+      {
+        context: 'Mother',
+        sections: ['']
+      },
+      {
+        context: 'Partner',
+        sections: ['']
+      }
+    ]
   }
 ]
 

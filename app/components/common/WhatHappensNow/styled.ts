@@ -3,26 +3,35 @@ import theme from '../../../theme'
 import { CenteredView } from '../styled'
 
 export const WhatHappensNowContainer = styled.View`
+  padding: ${theme.BASELINE * 2}px;
+`
+
+export const iconContainerSize = 68
+
+export const IconsRowContainer = styled.View`
+  margin-top: ${theme.BASELINE * 3};
+  flex: 1;
   flex-direction: row;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
 `
 
-export const BorderRadiusWrapper = styled.View`
-  border-radius: 14px;
-  overflow: hidden;
+export const IconColumn = styled.View`
+  height: 140;
+  margin-left: ${theme.BASELINE * 4};
+  ${props => props.noMargin && `margin-left: 0`};
 `
 
-const iconContainerSize = 68
-
-export const CalendarIconContainer = styled(CenteredView)`
+export const IconContainer = styled(CenteredView)`
+  position: relative;
   width: ${iconContainerSize}px;
   height: ${iconContainerSize}px;
   border-radius: ${iconContainerSize / 2}px;
   background-color: #fff;
   shadow-color: #f5e184;
-  shadow-offset: 0 4px;
+  shadow-offset: 0 0;
   shadow-opacity: 0.93;
-  shadow-radius: 17px;
+  shadow-radius: 8px;
   elevation: 1;
 `
 
