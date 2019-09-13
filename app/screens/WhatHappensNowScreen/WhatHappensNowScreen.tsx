@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Container from '../../components/common/Container'
 import SwitchList from '../../components/common/SwitchList'
 import { NavigationScreenProps } from 'react-navigation'
-import { InfoText, IconCircleContainer } from '../../components/common/styled'
+import { InfoText, IconCircleContainer, Title } from '../../components/common/styled'
 import theme from '../../theme'
 import { Icons } from '../../assets'
 import weekArticles from './weekArticles'
@@ -70,7 +70,7 @@ class WhatHappensNowScreen extends Component<Props, State> {
         <IconCircleContainer
           style={{
             alignSelf: 'center',
-            marginVertical: theme.BASELINE * 6,
+            marginVertical: theme.BASELINE * 3,
             shadowOpacity: 0.47,
             shadowColor: '#ff9d9e',
             height: 120,
@@ -80,6 +80,7 @@ class WhatHappensNowScreen extends Component<Props, State> {
         >
           <Icon width={56} height={56} />
         </IconCircleContainer>
+        <Title style={{ alignSelf: 'center' }}>Vecka {this.props.user.selectedWeek}</Title>
         {this.renderArticle()}
       </Container>
     )

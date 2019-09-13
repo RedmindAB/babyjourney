@@ -194,8 +194,8 @@ export const IconCircleContainer = styled(CenteredView)`
   border-radius: ${iconContainerSize / 2}px;
   background-color: #fff;
   shadow-color: #f5e184;
-  shadow-offset: 0 4px;
+  shadow-offset: 0 0;
   shadow-opacity: 0.93;
-  shadow-radius: 17px;
+  shadow-radius: 8;
   elevation: 1;
 `
