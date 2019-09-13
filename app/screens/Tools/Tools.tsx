@@ -2,17 +2,18 @@ import React, { Component } from 'react'
 import Container from '../../components/common/Container'
 import { Text } from 'react-native'
 import { CenteredFill } from '../../components/common/styled'
+import theme from '../../theme'
 
-class Diary extends Component {
+class Tools extends Component {
   render() {
     return (
-      <Container weekHeader>
+      <Container style={{ paddingTop: theme.BASELINE * 2 }} withoutMargin>
         <CenteredFill>
-          <Text>Diary</Text>
+          <Text>Tools</Text>
         </CenteredFill>
       </Container>
     )
   }
 }
 
-export default Diary
+export default Tools

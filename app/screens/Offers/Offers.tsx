@@ -68,7 +68,7 @@ class Offers extends Component<{}, State> {
 
   render() {
     return (
-      <Container style={{ paddingTop: 16 }} withoutMargin>
+      <Container style={{ paddingTop: theme.BASELINE * 2 }} withoutMargin>
         <FilterList
           style={{ marginBottom: theme.BASELINE * 1.5 }}
           contentContainerStyle={{ padding: theme.SCREEN_PADDING }}

@@ -13,7 +13,7 @@ import { screens, stacks } from './navigationConstants'
 import theme from '../theme'
 import { Icons } from '../assets'
 import Saved from '../screens/Saved'
-import Diary from '../screens/Diary'
+import Tools from '../screens/Tools'
 import Offers from '../screens/Offers'
 import Profile from '../screens/Profile'
 import { Image } from 'react-native'
@@ -84,13 +84,16 @@ const HomeStack = createStackNavigator(
   }
 )
 
-const DiaryStack = createStackNavigator(
+const ToolsStack = createStackNavigator(
   {
-    [screens.DIARY]: Diary
+    [screens.TOOLS]: Tools
   },
   {
-    defaultNavigationOptions,
-    headerMode: 'none'
+    defaultNavigationOptions: ({ navigation }) => ({
+      ...defaultNavigationOptions({ navigation }),
+      ...headerWithoutWeekDisplay({ navigation }),
+      headerTitle: 'TOOLS'
+    })
   }
 )
 
@@ -142,10 +145,10 @@ const SavedTab = {
   }
 }
 
-const DiaryTab = {
-  screen: DiaryStack,
+const ToolsTab = {
+  screen: ToolsStack,
   navigationOptions: {
-    tabBarLabel: 'Diary',
+    tabBarLabel: 'Tools',
     tabBarIcon: ({ tintColor }) => <Icons.Diary style={{ color: tintColor }} />
   }
 }
@@ -178,7 +181,7 @@ const TabNavigator = createBottomTabNavigator(
   {
     [stacks.HOME]: HomeTab,
     [stacks.SAVED]: SavedTab,
-    [stacks.DIARY]: DiaryTab,
+    [stacks.TOOLS]: ToolsTab,
     [stacks.OFFERS]: OffersTab,
     [stacks.PROFILE]: ProfileTab
   },
