@@ -40,6 +40,29 @@ const defaultNavigationOptions = (
   return { ...options, ...customOptions }
 }
 
+const headerWithoutWeekDisplay = (
+  { navigation }: NavigationScreenProps,
+  customOptions: NavigationScreenOptions = {}
+): NavigationScreenOptions => {
+  const options: NavigationScreenOptions = {
+    headerStyle: {
+      borderBottomRightRadius: 18,
+      borderBottomLeftRadius: 18,
+      borderBottomWidth: 0,
+      backgroundColor: '#fff',
+      shadowColor: '#7e728a',
+      shadowOffset: { width: 0, height: 0 },
+      shadowOpacity: 0.2,
+      shadowRadius: 8,
+      elevation: 1
+    },
+    headerBackTitle: null,
+    headerTintColor: theme.secondary.onColor
+  }
+
+  return { ...options, ...customOptions }
+}
+
 const HomeStack = createStackNavigator(
   {
     [screens.HOME]: {
@@ -88,6 +111,7 @@ const OffersStack = createStackNavigator(
   {
     defaultNavigationOptions: ({ navigation }: NavigationScreenProps) => ({
       ...defaultNavigationOptions({ navigation }),
+      ...headerWithoutWeekDisplay({ navigation }),
       headerTitle: 'OFFERS'
     })
   }

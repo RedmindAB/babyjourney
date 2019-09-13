@@ -68,7 +68,7 @@ class Offers extends Component<{}, State> {
 
   render() {
     return (
-      <Container withoutMargin>
+      <Container style={{ paddingTop: 16 }} withoutMargin>
         <FilterList
           style={{ marginBottom: theme.BASELINE * 1.5 }}
           contentContainerStyle={{ padding: theme.SCREEN_PADDING }}
@@ -76,7 +76,9 @@ class Offers extends Component<{}, State> {
           selectedValue={this.state.activeFilter.value}
           filters={this.state.filters}
         />
-        <View style={{ alignItems: 'center' }}>{this.renderOffers()}</View>
+        <View style={{ alignItems: 'center', paddingBottom: theme.SCREEN_PADDING }}>
+          {this.renderOffers()}
+        </View>
       </Container>
     )
   }
