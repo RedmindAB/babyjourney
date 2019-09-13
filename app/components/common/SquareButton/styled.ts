@@ -8,6 +8,9 @@ export const SquareButtonContainer = styled.View`
   width: auto;
   justify-content: center;
   align-items: center;
+  ${props => props.bigButton && `width: 210`}
+  ${props => props.bigButton && `height: 48`}
+  ${props => props.disabled && `opacity: 0.36`}
 `
 
 export const SquareButtonText = styled.Text`

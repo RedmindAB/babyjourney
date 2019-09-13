@@ -19,7 +19,8 @@ import Profile from '../screens/Profile'
 import { Image } from 'react-native'
 import CustomBottomTabBar from './CustomTabBar/CustomTabBar'
 import WhatHappensNowScreen from '../screens/WhatHappensNowScreen'
-import Onboarding from '../screens/Onboardin'
+import DueDatePicker from '../screens/DueDatePicker'
+import InterestPicker from '../screens/InterestPicker'
 
 const defaultNavigationOptions = (
   { navigation }: NavigationScreenProps,
@@ -169,7 +170,8 @@ const TabNavigator = createBottomTabNavigator(
 
 const OnBoardingStack = createStackNavigator(
   {
-    [screens.ONBOARDING]: Onboarding
+    [screens.INTEREST_PICKER]: InterestPicker,
+    [screens.DUE_DATE_PICKER]: DueDatePicker
   },
   {
     headerMode: 'none'

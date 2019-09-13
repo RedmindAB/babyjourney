@@ -1,24 +1,23 @@
 import React, { Component } from 'react'
-import Container from '../../components/common/Container'
-import { View } from 'react-native'
-import { OnboardingContainer } from './styled'
-import DatePicker from 'react-native-date-picker'
-import { Title } from '../../components/common/styled'
-import theme from '../../theme'
-import SquareButton from '../../components/common/SquareButton'
-import { NavigationScreenProps } from 'react-navigation'
-import { screens } from '../../navigation/navigationConstants'
-import { ApplicationState } from '../../store'
 import { connect } from 'react-redux'
-import { setDueDate, setHasSeenOnboarding } from '../../store/user/actions'
+import { setHasSeenOnboarding, setDueDate } from '../../store/user/actions'
 import { Dispatch } from 'redux'
+import { ApplicationState } from '../../store'
+import { Title } from '../../components/common/styled'
+import Container from '../../components/common/Container'
+import { screens } from '../../navigation/navigationConstants'
+import { NavigationScreenProps } from 'react-navigation'
+import { DueDatePickerContainer, PickerWrapper } from './styled'
+import theme from '../../theme'
+import DatePicker from 'react-native-date-picker'
+import SquareButton from '../../components/common/SquareButton'
 
 type PropsFromState = ReturnType<typeof mapStateToProps>
 type PropsFromDispatch = ReturnType<typeof mapDispatchToProps>
 
 type Props = NavigationScreenProps & PropsFromDispatch & PropsFromState
 
-class Onboarding extends Component<Props> {
+class DueDatePicker extends Component<Props> {
   minDate = new Date(new Date().setDate(new Date().getDate() - 7 * 40))
   maxDate = new Date()
 
@@ -37,12 +36,10 @@ class Onboarding extends Component<Props> {
   render() {
     return (
       <Container style={{ backgroundColor: '#ffe9e9' }}>
-        <OnboardingContainer>
+        <DueDatePickerContainer>
           <Title style={{ fontSize: 30, marginBottom: theme.BASELINE * 4 }}>Congratulations!</Title>
           <Title>When was the first day of your last period?</Title>
-          <View
-            style={{ backgroundColor: '#ffb9ba', borderRadius: 14, transform: [{ scale: 0.9 }] }}
-          >
+          <PickerWrapper>
             <DatePicker
               minimumDate={this.minDate}
               maximumDate={this.maxDate}
@@ -50,14 +47,14 @@ class Onboarding extends Component<Props> {
               date={this.state.date}
               onDateChange={date => this.setState({ date })}
             />
-          </View>
+          </PickerWrapper>
           <SquareButton
             textStyle={{ color: 'black' }}
             style={{ backgroundColor: 'white', width: 64 }}
             title="OK"
             onPress={this.selectDate}
           />
-        </OnboardingContainer>
+        </DueDatePickerContainer>
       </Container>
     )
   }
@@ -72,4 +69,4 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Onboarding)
+)(DueDatePicker)

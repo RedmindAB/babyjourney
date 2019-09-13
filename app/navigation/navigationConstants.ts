@@ -1,5 +1,6 @@
 export const screens = {
-  ONBOARDING: 'screen/ONBOARDING',
+  DUE_DATE_PICKER: 'screen/DUE_DATE_PICKER',
+  INTEREST_PICKER: 'screen/INTEREST_PICKER',
   HOME: 'screen/HOME',
   PROFILE: 'screen/PROFILE',
   OFFERS: 'screen/OFFER',

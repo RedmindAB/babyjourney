@@ -3,7 +3,9 @@ import {
   SetDueDateAction,
   SelectWeekAction,
   SetHasSeenCongratsModalAction,
-  SetHasSeeOnboardingAction
+  SetHasSeeOnboardingAction,
+  SetTopicsAtion,
+  Topic
 } from './types'
 
 export const setDueDate: ActionCreator<SetDueDateAction> = (dueDate: Date) => ({
@@ -28,4 +30,9 @@ export const setHasSeenOnboarding: ActionCreator<SetHasSeeOnboardingAction> = (
 ) => ({
   type: '@user/HAS_SEEN_ONBOARDING',
   hasSeenOnboarding
+})
+
+export const setTopics: ActionCreator<SetTopicsAtion> = (topics: Topic[]) => ({
+  type: '@user/SET_TOPICS',
+  topics
 })

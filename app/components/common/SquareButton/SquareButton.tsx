@@ -6,6 +6,8 @@ import { SquareButtonContainer, SquareButtonText } from './styled'
 type OwnProps = {
   style?: ViewStyle
   textStyle?: TextStyle
+  bigButton?: boolean
+  disabled?: boolean
   onPress: () => void
   title: string
 }
@@ -14,10 +16,10 @@ type Props = OwnProps
 
 class SquareButton extends Component<Props> {
   render() {
-    const { title, onPress, style, textStyle } = this.props
+    const { title, onPress, style, textStyle, bigButton, disabled } = this.props
     return (
-      <TouchableOpacity onPress={onPress}>
-        <SquareButtonContainer style={style}>
+      <TouchableOpacity disabled={disabled} onPress={onPress}>
+        <SquareButtonContainer disabled={disabled} bigButton={bigButton} style={style}>
           <SquareButtonText style={textStyle}>{title}</SquareButtonText>
         </SquareButtonContainer>
       </TouchableOpacity>

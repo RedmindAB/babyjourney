@@ -184,6 +184,7 @@ export const InfoText = styled(CustomText)`
   font-weight: 100;
   font-size: 14;
   flex-shrink: 1;
+  ${props => props.normal && `font-weight: 400`}
 `
 
 const iconContainerSize = 68

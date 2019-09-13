@@ -1,10 +1,17 @@
 import { Action } from 'redux'
 
+export type Topic = {
+  value: string
+  label: string
+  selected?: boolean
+}
+
 export type UserState = {
   hasSeenOnboarding: boolean
   hasSeenCongratsModal: boolean
   dueDate: Date
   selectedWeek: number
+  topics: Topic[]
 }
 
 export interface SetDueDateAction extends Action {
@@ -27,8 +34,14 @@ export interface SetHasSeeOnboardingAction extends Action {
   hasSeenOnboarding: boolean
 }
 
+export interface SetTopicsAtion extends Action {
+  type: '@user/SET_TOPICS'
+  topics: Topic[]
+}
+
 export type UserActions =
   | SetDueDateAction
   | SelectWeekAction
   | SetHasSeenCongratsModalAction
   | SetHasSeeOnboardingAction
+  | SetTopicsAtion
