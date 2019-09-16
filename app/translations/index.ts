@@ -1,7 +1,7 @@
 import i18n from 'i18n-js'
+import momentSv from 'moment/locale/sv'
 import transformKeys from 'object-key-path-transformer'
 import { NativeModules, Platform } from 'react-native'
-import momentSv from 'moment/locale/sv'
 
 import en from './locales/en.json'
 import sv from './locales/sv.json'
