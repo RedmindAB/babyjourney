@@ -40,8 +40,7 @@ class DueDatePicker extends Component<Props, State> {
     setting: 'dueDate'
   }
 
-  constructor(props: Props) {
-    super(props)
+  componentDidMount() {
     this.setMinMaxDate()
   }
 
