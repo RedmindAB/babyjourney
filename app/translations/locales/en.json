@@ -28,5 +28,11 @@
       "period": "First day of last period"
     },
     "buttonText": "Submit"
+  },
+  "weekCongratsModal": {
+    "title": "Welcome to",
+    "subTitle": "Week %{week}",
+    "congratulationsText": "Congratulations! This is how far you have progressed in you pregnancy",
+    "buttonText": "Share"
   }
 }
