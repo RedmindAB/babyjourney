@@ -3,6 +3,8 @@ import { Card, InfoText } from '../styled'
 import { ViewStyle, Dimensions, View, TextStyle, TouchableOpacity } from 'react-native'
 import theme from '../../../theme'
 import { Icons } from '../../../assets'
+import i18n, { lang } from '../../../translations'
+import Tools from '../../../screens/Tools'
 
 const { width } = Dimensions.get('screen')
 
@@ -44,7 +46,7 @@ class ToolButton extends Component<Props> {
             }}
           >
             <InfoText style={{ textAlign: 'center', flex: 0, fontSize: 12, lineHeight: 14 }}>
-              {tool.label}
+              {i18n.t(lang.tools.buttons[tool.label])}
             </InfoText>
           </View>
         </Card>

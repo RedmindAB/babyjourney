@@ -9,17 +9,17 @@ const margin = theme.BASELINE * 1.5
 
 class Tools extends Component {
   tools: Tool[] = [
-    { label: 'Forum', icon: 'Forum' },
-    { label: 'Chatt med expert', icon: 'Chat' },
-    { label: 'BloggKoppling', icon: 'Blog' },
-    { label: 'Instagram', icon: 'Instagram' },
-    { label: 'Viktkurva', icon: 'WeightCurve' },
-    { label: 'Kalender', icon: 'Calender' },
-    { label: 'Värktimer', icon: 'ContractionTimer' },
-    { label: 'Checklista', icon: 'Checklist' },
-    { label: 'Veckolista', icon: 'WeekList' },
-    { label: 'Träffa läkare', icon: 'MeetDoctor' },
-    { label: 'MVC', icon: 'MVC' }
+    { label: 'forum', icon: 'Forum' },
+    { label: 'chatWithExpert', icon: 'Chat' },
+    { label: 'blogConnection', icon: 'Blog' },
+    { label: 'instagram', icon: 'Instagram' },
+    { label: 'weightCurve', icon: 'WeightCurve' },
+    { label: 'calender', icon: 'Calender' },
+    { label: 'contractionTimer', icon: 'ContractionTimer' },
+    { label: 'checklist', icon: 'Checklist' },
+    { label: 'weekList', icon: 'WeekList' },
+    { label: 'meetDoctor', icon: 'MeetDoctor' },
+    { label: 'prenatalCare', icon: 'MVC' }
   ]
 
   renderTools() {

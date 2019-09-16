@@ -20,5 +20,21 @@
       "technology": "Teknik",
       "career": "Karriär"
     }
+  },
+  "tools": {
+    "screenTitle": "Verktyg",
+    "buttons": {
+      "forum": "Forum",
+      "chatWithExpert": "Chatt med expert",
+      "blogConnection": "Blogkoppling",
+      "instagram": "Instagram",
+      "weightCurve": "Viktkurva",
+      "calender": "Kalender",
+      "contractionTimer": "Värktimer",
+      "checklist": "Checklista",
+      "weekList": "Veckolista",
+      "meetDoctor": "Träffa läkare",
+      "prenatalCare": "MVC"
+    }
   }
 }

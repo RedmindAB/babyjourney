@@ -89,5 +89,21 @@
       "cooking": "Visit healthy food cooking class",
       "shrink": "Talk to psychologist"
     }
+  },
+  "tools": {
+    "screenTitle": "Tools",
+    "buttons": {
+      "forum": "Forum",
+      "chatWithExpert": "Chat with experts",
+      "blogConnection": "Blog connection",
+      "instagram": "Instagram",
+      "weightCurve": "Weight Curve",
+      "calender": "Calender",
+      "contractionTimer": "Contraction timer",
+      "checklist": "Checklist",
+      "weekList": "Week list",
+      "meetDoctor": "Meet a doctor",
+      "prenatalCare": "Prenatal care"
+    }
   }
 }
