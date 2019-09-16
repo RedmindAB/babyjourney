@@ -52,5 +52,8 @@
     "yourCurrentWeight": "Current",
     "babyWeight": "Baby",
     "trackButton": "Track"
+  },
+  "weekDisplay": {
+    "title": "Your week"
   }
 }

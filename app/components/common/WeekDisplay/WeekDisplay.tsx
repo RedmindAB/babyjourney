@@ -16,6 +16,7 @@ import { connect } from 'react-redux'
 import { getWeekAndDay } from '../../../utils'
 import { Dispatch } from 'redux'
 import { selectWeek } from '../../../store/user/actions'
+import i18n, { lang } from '../../../translations'
 
 type PropsFromState = ReturnType<typeof mapStateToProps>
 type PropsFromDispatch = ReturnType<typeof mapDispatchToProps>
@@ -104,7 +105,7 @@ class WeekDisplay extends Component<Props, State> {
   render() {
     return (
       <WeekDisplayContainer style={this.props.style}>
-        <Headline style={{ textAlign: 'center' }}>Your Week</Headline>
+        <Headline style={{ textAlign: 'center' }}>{i18n.t(lang.weekDisplay.title)}</Headline>
         <ScrollView
           ref={this.scrollView}
           horizontal
