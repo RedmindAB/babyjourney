@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { TouchableOpacity } from 'react-native-gesture-handler'
-import { ViewStyle, TextStyle } from 'react-native'
+import { ViewStyle, TextStyle, TouchableOpacity } from 'react-native'
 import { SquareButtonContainer, SquareButtonText } from './styled'
 
 type OwnProps = {
