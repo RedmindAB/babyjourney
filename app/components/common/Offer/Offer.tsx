@@ -30,7 +30,6 @@ class Offer extends Component<Props> {
         <OfferRightContainer>
           <OfferTitle>{offer.title}</OfferTitle>
           <InfoText light>{offer.body}</InfoText>
-          <ViewMoreText>View more</ViewMoreText>
         </OfferRightContainer>
       </OfferContainer>
     )

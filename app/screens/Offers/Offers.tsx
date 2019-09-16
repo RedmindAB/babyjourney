@@ -70,7 +70,6 @@ class Offers extends Component<{}, State> {
     return (
       <Container style={{ paddingTop: theme.BASELINE * 2 }} withoutMargin>
         <FilterList
-          style={{ marginBottom: theme.BASELINE * 1.5 }}
           contentContainerStyle={{ padding: theme.SCREEN_PADDING }}
           onPress={this.setFilter}
           selectedValue={this.state.activeFilter.value}

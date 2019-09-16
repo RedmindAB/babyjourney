@@ -32,13 +32,15 @@ export const OfferImage = styled.Image`
 export const OfferRightContainer = styled.View`
   padding: ${theme.BASELINE * 1.5}px;
   flex: 1;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: center;
 `
 
 export const OfferTitle = styled.Text`
   font-family: ${theme.fonts.Lora};
   font-size: 16;
   flex-shrink: 1;
+  margin-bottom: ${theme.BASELINE};
 `
 
 export const ViewMoreText = styled.Text`

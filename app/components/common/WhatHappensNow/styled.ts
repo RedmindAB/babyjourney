@@ -3,6 +3,7 @@ import theme from '../../../theme'
 import { CenteredView } from '../styled'
 
 export const WhatHappensNowContainer = styled.View`
+  flex: 1;
   padding: ${theme.BASELINE * 2}px;
 `
 

@@ -74,9 +74,10 @@ const HomeStack = createStackNavigator(
     [screens.WHAT_HAPPENS_NOW]: WhatHappensNowScreen,
     [screens.OFFERS]: {
       screen: Offers,
-      navigationOptions: {
+      navigationOptions: ({ navigation }) => ({
+        ...headerWithoutWeekDisplay(navigation),
         headerTitle: 'OFFERS'
-      }
+      })
     }
   },
   {
