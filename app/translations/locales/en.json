@@ -34,5 +34,23 @@
     "subTitle": "Week %{week}",
     "congratulationsText": "Congratulations! This is how far you have progressed in you pregnancy",
     "buttonText": "Share"
+  },
+  "progressDisplay": {
+    "title": "Your expected date of delivery",
+    "daysLeft": "You have %{daysLeft} %{dayText} remaining",
+    "day": "day",
+    "days": "days",
+    "weekText": "Week %{weeks}+%{days}",
+    "trimesterText": "Trimester %{trimester}",
+    "exapndButton": "Details",
+    "baySizeText": "Your baby is as big as %{babySize} now",
+    "babySizes": {
+      "lemon": "a lemon"
+    },
+    "weight": "Weight",
+    "yourStartWeight": "Start",
+    "yourCurrentWeight": "Current",
+    "babyWeight": "Baby",
+    "trackButton": "Track"
   }
 }

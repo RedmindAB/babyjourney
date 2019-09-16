@@ -1,1 +1,24 @@
-{}
+{
+  "interestPicker": {
+    "title": "Vad är du intresserad av?",
+    "subTitle": "Välj minst tre stycken",
+    "buttonText": "Nästa",
+    "topics": {
+      "fashion": "Mode",
+      "lifestyle": "Livsstil",
+      "diet-health": "Kost - hälsa",
+      "exercise": "Träning",
+      "decor": "Inredning",
+      "baby": "Baby",
+      "purchases": "Inköp",
+      "siblings": "Syskon",
+      "family": "Familj",
+      "traveling": "Resor",
+      "restaurants": "Restauranger",
+      "party": "Fest",
+      "recipes": "Recept",
+      "technology": "Teknik",
+      "career": "Karriär"
+    }
+  }
+}

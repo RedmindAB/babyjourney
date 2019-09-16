@@ -23,9 +23,7 @@ import {
   BabyInfoContainer,
   BabyInfoText,
   BabyInfoTitle,
-  WhiteBackground,
-  One,
-  Two
+  WhiteBackground
 } from './styled'
 import { Headline, Title, InfoText } from '../styled'
 import { Icons } from '../../../assets'
@@ -37,6 +35,7 @@ import { getBottomScreenSpace } from '../../../theme/variables'
 import moment from 'moment'
 import { getWeekAndDay, getDaysUntilDueDate, getTrimester } from '../../../utils'
 import BabyPercentage from '../BabyPercentage'
+import i18n, { lang } from '../../../translations'
 
 const { height } = Dimensions.get('screen')
 
@@ -77,7 +76,9 @@ class ProgressDropDown extends Component<Props, State> {
     return (
       <BottomContainer>
         <InfoText style={{ textAlign: 'center', fontSize: 14 }}>
-          Your baby is as big as a lemon now
+          {i18n.t(lang.progressDisplay.baySizeText, {
+            babySize: i18n.t(lang.progressDisplay.babySizes.lemon)
+          })}
         </InfoText>
         <BabyComparisonContainer>
           <Image
@@ -90,19 +91,19 @@ class ProgressDropDown extends Component<Props, State> {
             source={require('../../../assets/images/lemon.png')}
           />
         </BabyComparisonContainer>
-        <Headline noMargin>weight</Headline>
+        <Headline noMargin>{i18n.t(lang.progressDisplay.weight)}</Headline>
         <BabyInfoContainer>
           <View style={{ flexDirection: 'row', width: '100%' }}>
             <View style={{ flex: 1 }}>
-              <BabyInfoTitle>start</BabyInfoTitle>
+              <BabyInfoTitle>{i18n.t(lang.progressDisplay.yourStartWeight)}</BabyInfoTitle>
               <BabyInfoText>55 kg</BabyInfoText>
             </View>
             <View style={{ flex: 1 }}>
-              <BabyInfoTitle>YOUR CURRENT</BabyInfoTitle>
+              <BabyInfoTitle>{i18n.t(lang.progressDisplay.yourCurrentWeight)}</BabyInfoTitle>
               <BabyInfoText>57 kg</BabyInfoText>
             </View>
             <View style={{ flex: 1 }}>
-              <BabyInfoTitle>BABY</BabyInfoTitle>
+              <BabyInfoTitle>{i18n.t(lang.progressDisplay.babyWeight)}</BabyInfoTitle>
               <BabyInfoText>50 gms</BabyInfoText>
             </View>
           </View>
@@ -113,7 +114,7 @@ class ProgressDropDown extends Component<Props, State> {
               marginTop: theme.BASELINE * 2
             }}
             textStyle={{ color: '#584f60' }}
-            title="TRACK"
+            title={i18n.t(lang.progressDisplay.trackButton)}
             onPress={() => undefined}
           />
         </BabyInfoContainer>
@@ -122,7 +123,7 @@ class ProgressDropDown extends Component<Props, State> {
   }
 
   getDayText() {
-    return getDaysUntilDueDate(this.props.user.dueDate) > 1 ? 'days' : 'day'
+    return getDaysUntilDueDate(this.props.user.dueDate) != 1 ? 'days' : 'day'
   }
 
   render() {
@@ -155,16 +156,20 @@ class ProgressDropDown extends Component<Props, State> {
             >
               <Wrapper style={{ justifyContent: 'space-between', flex: 1 }}>
                 <View>
-                  <Headline noMargin>Your expected day of the birth</Headline>
+                  <Headline noMargin>{i18n.t(lang.progressDisplay.title)}</Headline>
                   <Title style={{ color: 'black' }}>
                     {moment(this.props.user.dueDate).format('LL')}
                   </Title>
                   <InfoTextContainer>
                     <ProgressInfoText border>
-                      You have {daysLeft} {dayText} remaining
+                      {i18n.t(lang.progressDisplay.daysLeft, { daysLeft, dayText })}
                     </ProgressInfoText>
-                    <ProgressInfoText border>week {`${weeks}+${days}`}</ProgressInfoText>
-                    <ProgressInfoText>Trimester {trimester}</ProgressInfoText>
+                    <ProgressInfoText border>
+                      {i18n.t(lang.progressDisplay.weekText, { weeks, days })}{' '}
+                    </ProgressInfoText>
+                    <ProgressInfoText>
+                      {i18n.t(lang.progressDisplay.trimesterText, { trimester })}
+                    </ProgressInfoText>
                   </InfoTextContainer>
                   <View style={{ position: 'relative', marginTop: 32 }}>
                     <BabyPercentage />
@@ -173,7 +178,7 @@ class ProgressDropDown extends Component<Props, State> {
                 </View>
                 <TouchableOpacity onPress={this.toggleExpanded}>
                   <ExpandButton style={{ marginVertical: expandButtonMargin }}>
-                    <ExpandButtonText>Details</ExpandButtonText>
+                    <ExpandButtonText>{i18n.t(lang.progressDisplay.exapndButton)}</ExpandButtonText>
                     <Icons.DarkArrow
                       style={
                         {
