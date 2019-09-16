@@ -2,7 +2,6 @@ import { Action } from 'redux'
 
 export type Topic = {
   value: string
-  label: string
   selected?: boolean
 }
 

@@ -1,0 +1,32 @@
+{
+  "interestPicker": {
+    "title": "What are your interests?",
+    "subTitle": "Choose atleast 3 topics",
+    "buttonText": "Next",
+    "topics": {
+      "fashion": "Fashion",
+      "lifestyle": "Lifestyle",
+      "diet-health": "Diet - Health",
+      "exercise": "Exercise",
+      "decor": "Decor",
+      "baby": "Baby",
+      "purchases": "Purchases",
+      "siblings": "Siblings",
+      "family": "Family",
+      "traveling": "Traveling",
+      "party": "Party",
+      "recipes": "Recipes",
+      "technology": "Technology",
+      "career": "Career",
+      "restaurants": "Restaurants"
+    }
+  },
+  "dueDatePicker": {
+    "title": "Let's figure out your due date",
+    "switchButtonLabels": {
+      "dueDate": "Due date",
+      "period": "First day of last period"
+    },
+    "buttonText": "Submit"
+  }
+}

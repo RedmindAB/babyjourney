@@ -14,6 +14,7 @@ import SquareButton from '../../components/common/SquareButton'
 import LinearGradient from 'react-native-linear-gradient'
 import { View } from 'react-native'
 import GradientSwitch from '../../components/common/GradientSwitch'
+import i18n, { lang } from '../../translations'
 
 type PropsFromState = ReturnType<typeof mapStateToProps>
 type PropsFromDispatch = ReturnType<typeof mapDispatchToProps>
@@ -29,8 +30,8 @@ type State = {
 
 class DueDatePicker extends Component<Props, State> {
   dateOptions = [
-    { value: 'dueDate', label: 'Due date' },
-    { value: 'period', label: 'First day of last period' }
+    { value: 'dueDate', label: i18n.translate(lang.dueDatePicker.switchButtonLabels.dueDate) },
+    { value: 'period', label: i18n.translate(lang.dueDatePicker.switchButtonLabels.period) }
   ]
 
   state: State = {
@@ -83,7 +84,9 @@ class DueDatePicker extends Component<Props, State> {
       >
         <Container withoutMargin style={{ backgroundColor: 'transparent' }}>
           <DueDatePickerContainer>
-            <Headline style={{ maxWidth: '70%' }}>Let's figure out your due date</Headline>
+            <Headline style={{ maxWidth: '70%' }}>
+              {i18n.translate(lang.dueDatePicker.title)}
+            </Headline>
             <View style={{ width: '100%' }}>
               <GradientSwitch
                 style={{ marginBottom: theme.BASELINE * 2 }}
@@ -101,7 +104,11 @@ class DueDatePicker extends Component<Props, State> {
                 />
               </PickerWrapper>
             </View>
-            <SquareButton bigButton title="SUBMIT" onPress={this.selectDate} />
+            <SquareButton
+              bigButton
+              title={i18n.translate(lang.dueDatePicker.buttonText)}
+              onPress={this.selectDate}
+            />
           </DueDatePickerContainer>
         </Container>
       </LinearGradient>

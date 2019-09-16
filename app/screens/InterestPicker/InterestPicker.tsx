@@ -1,10 +1,13 @@
 import React, { Component } from 'react'
-import Container from '../../components/common/Container'
-import SquareButton from '../../components/common/SquareButton'
 import { NavigationScreenProps } from 'react-navigation'
-import { screens } from '../../navigation/navigationConstants'
 import LinearGradient from 'react-native-linear-gradient'
 import { TouchableOpacity } from 'react-native'
+import { connect } from 'react-redux'
+import { Dispatch } from 'redux'
+
+import Container from '../../components/common/Container'
+import SquareButton from '../../components/common/SquareButton'
+import { screens } from '../../navigation/navigationConstants'
 import { Headline, InfoText } from '../../components/common/styled'
 import {
   InteresPickerContainer,
@@ -13,9 +16,8 @@ import {
 } from './styled'
 import theme from '../../theme'
 import { Topic } from '../../store/user/types'
-import { connect } from 'react-redux'
-import { Dispatch } from 'redux'
 import { setTopics } from '../../store/user/actions'
+import i18n, { lang } from '../../translations'
 
 type PropsFromDispatch = ReturnType<typeof mapDispatchToProps>
 
@@ -28,26 +30,26 @@ type Props = NavigationScreenProps & PropsFromDispatch
 class InterestPicker extends Component<Props, State> {
   state: State = {
     topics: [
-      { value: 'fashion', label: 'Fashion', selected: false },
-      { value: 'lifestyle', label: 'Lifestyle', selected: false },
-      { value: 'diet-health', label: 'Diet - Health', selected: false },
-      { value: 'exercise', label: 'Exercise', selected: false },
-      { value: 'decor', label: 'Decor', selected: false },
-      { value: 'baby', label: 'Baby', selected: false },
-      { value: 'purchases', label: 'Purchases', selected: false },
-      { value: 'siblings', label: 'Siblings', selected: false },
-      { value: 'family', label: 'Family', selected: false },
-      { value: 'traveling', label: 'Traveling', selected: false },
-      { value: 'party', label: 'Party', selected: false },
-      { value: 'recipes', label: 'Recipes', selected: false },
-      { value: 'technology', label: 'Technology', selected: false },
-      { value: 'career', label: 'Career', selected: false },
-      { value: 'restaurants', label: 'Restaurants', selected: false }
+      { value: 'fashion', selected: false },
+      { value: 'lifestyle', selected: false },
+      { value: 'diet-health', selected: false },
+      { value: 'exercise', selected: false },
+      { value: 'decor', selected: false },
+      { value: 'baby', selected: false },
+      { value: 'purchases', selected: false },
+      { value: 'siblings', selected: false },
+      { value: 'family', selected: false },
+      { value: 'traveling', selected: false },
+      { value: 'party', selected: false },
+      { value: 'recipes', selected: false },
+      { value: 'technology', selected: false },
+      { value: 'career', selected: false },
+      { value: 'restaurants', selected: false }
     ]
   }
 
   onNextPress = () => {
-    const prettyTopics = this.state.topics.map(({ label, value }) => ({ label, value }))
+    const prettyTopics = this.state.topics.map(({ value }) => ({ value }))
     this.props.setTopics(prettyTopics)
     this.props.navigation.navigate(screens.DUE_DATE_PICKER)
   }
@@ -81,7 +83,7 @@ class InterestPicker extends Component<Props, State> {
             end={{ x: 1, y: 1 }}
             colors={colors}
           >
-            <InfoText normal>{topic.label}</InfoText>
+            <InfoText normal>{i18n.translate(lang.interestPicker.topics[topic.value])}</InfoText>
           </LinearGradient>
         </TouchableOpacity>
       )
@@ -99,8 +101,8 @@ class InterestPicker extends Component<Props, State> {
         <Container style={{ backgroundColor: 'transparent' }}>
           <InteresPickerContainer>
             <InterestPickerTopContainer>
-              <Headline>what are your interests?</Headline>
-              <InfoText>Choose at least 3 topics</InfoText>
+              <Headline>{i18n.translate(lang.interestPicker.title)}</Headline>
+              <InfoText>{i18n.translate(lang.interestPicker.subTitle)}</InfoText>
             </InterestPickerTopContainer>
 
             <InterestPickerTopicsContainer>{this.renderTopics()}</InterestPickerTopicsContainer>
@@ -108,7 +110,7 @@ class InterestPicker extends Component<Props, State> {
             <SquareButton
               disabled={this.isButtonDisabled()}
               bigButton
-              title="NEXT"
+              title={i18n.translate(lang.interestPicker.buttonText)}
               onPress={this.onNextPress}
             />
           </InteresPickerContainer>
