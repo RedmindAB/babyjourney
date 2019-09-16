@@ -184,7 +184,7 @@ class ProgressDropDown extends Component<Props, State> {
                 </View>
                 <TouchableOpacity onPress={this.toggleExpanded}>
                   <ExpandButton style={{ marginVertical: expandButtonMargin }}>
-                    <ExpandButtonText>{i18n.t(lang.progressDisplay.exapndButton)}</ExpandButtonText>
+                    <ExpandButtonText>{i18n.t(lang.progressDisplay.expandButton)}</ExpandButtonText>
                     <Icons.DarkArrow
                       style={
                         {
