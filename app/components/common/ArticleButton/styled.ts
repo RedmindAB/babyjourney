@@ -3,12 +3,12 @@ import styled from 'styled-components/native'
 import theme from '../../../theme'
 import { CustomText, Title } from '../styled'
 
-const width = 200
+const imageSize = 200
 const borderRadius = 14
 
 export const ArticleButtonContainer = styled.View`
   border-radius: ${borderRadius}px;
-  width: ${width}px;
+  width: ${imageSize}px;
   shadow-color: ${theme.secondary.onColor};
   shadow-offset: 0 6px;
   shadow-opacity: 0.1;
@@ -20,8 +20,8 @@ export const ArticleButtonContainer = styled.View`
 export const ArticleButtonImage = styled.Image`
   border-top-left-radius: ${borderRadius}px;
   border-top-right-radius: ${borderRadius}px;
-  height: ${width}px;
-  width: ${width}px;
+  height: ${imageSize}px;
+  width: ${imageSize}px;
 `
 
 export const ArticleButtonBottomContainer = styled.View`

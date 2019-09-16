@@ -29,9 +29,9 @@ export const IconContainer = styled(CenteredView)`
   height: ${iconContainerSize}px;
   border-radius: ${iconContainerSize / 2}px;
   background-color: #fff;
-  shadow-color: #f5e184;
+  shadow-color: #ffba8e;
   shadow-offset: 0 0;
-  shadow-opacity: 0.93;
+  shadow-opacity: 0.49;
   shadow-radius: 8px;
   elevation: 1;
 `
