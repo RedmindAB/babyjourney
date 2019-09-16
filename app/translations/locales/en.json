@@ -60,6 +60,7 @@
     "all": "All"
   },
   "homeScreen": {
+    "tabBarLabel": "Home",
     "socialMediaTitle": "Week %{week} in social media",
     "healthTitle": "My health",
     "activitiesTitle": "Activities to do this week",
@@ -91,7 +92,8 @@
     }
   },
   "tools": {
-    "screenTitle": "Tools",
+    "headerTitle": "Tools",
+    "tabBarLabel": "Tools",
     "buttons": {
       "forum": "Forum",
       "chatWithExpert": "Chat with experts",
@@ -105,5 +107,17 @@
       "meetDoctor": "Meet a doctor",
       "prenatalCare": "Prenatal care"
     }
+  },
+  "offers": {
+    "tabBarLabel": "Offers",
+    "headerTitle": "Offers"
+  },
+  "articles": {
+    "tabBarLabel": "Articles",
+    "headerTitle": "Articles",
+    "placeholder": "Articles"
+  },
+  "profile": {
+    "tabBarLabel": "Profile"
   }
 }

@@ -21,6 +21,7 @@ import CustomBottomTabBar from './CustomTabBar/CustomTabBar'
 import WhatHappensNowScreen from '../screens/WhatHappensNowScreen'
 import DueDatePicker from '../screens/DueDatePicker'
 import InterestPicker from '../screens/InterestPicker'
+import i18n, { lang } from '../translations'
 
 const defaultNavigationOptions = (
   { navigation }: NavigationScreenProps,
@@ -76,7 +77,7 @@ const HomeStack = createStackNavigator(
       screen: Offers,
       navigationOptions: ({ navigation }) => ({
         ...headerWithoutWeekDisplay(navigation),
-        headerTitle: 'OFFERS'
+        headerTitle: i18n.t(lang.offers.headerTitle).toUpperCase()
       })
     }
   },
@@ -93,7 +94,7 @@ const ToolsStack = createStackNavigator(
     defaultNavigationOptions: ({ navigation }) => ({
       ...defaultNavigationOptions({ navigation }),
       ...headerWithoutWeekDisplay({ navigation }),
-      headerTitle: 'TOOLS'
+      headerTitle: i18n.t(lang.tools.headerTitle).toUpperCase()
     })
   }
 )
@@ -105,7 +106,7 @@ const ArticleStack = createStackNavigator(
   {
     defaultNavigationOptions: ({ navigation }) => ({
       ...headerWithoutWeekDisplay({ navigation }),
-      headerTitle: 'ARTICLES'
+      headerTitle: i18n.t(lang.articles.headerTitle).toUpperCase()
     })
   }
 )
@@ -118,7 +119,7 @@ const OffersStack = createStackNavigator(
     defaultNavigationOptions: ({ navigation }: NavigationScreenProps) => ({
       ...defaultNavigationOptions({ navigation }),
       ...headerWithoutWeekDisplay({ navigation }),
-      headerTitle: 'OFFERS'
+      headerTitle: i18n.t(lang.offers.headerTitle).toUpperCase()
     })
   }
 )
@@ -135,7 +136,7 @@ const ProfileStack = createStackNavigator(
 const HomeTab = {
   screen: HomeStack,
   navigationOptions: {
-    tabBarLabel: 'Home',
+    tabBarLabel: i18n.t(lang.homeScreen.tabBarLabel),
     tabBarIcon: ({ tintColor }) => <Icons.Home style={{ color: tintColor }} />
   }
 }
@@ -143,7 +144,7 @@ const HomeTab = {
 const ArticlesTab = {
   screen: ArticleStack,
   navigationOptions: {
-    tabBarLabel: 'Articles',
+    tabBarLabel: i18n.t(lang.articles.tabBarLabel),
     tabBarIcon: ({ tintColor }) => <Icons.Articles style={{ color: tintColor }} />
   }
 }
@@ -151,7 +152,7 @@ const ArticlesTab = {
 const ToolsTab = {
   screen: ToolsStack,
   navigationOptions: {
-    tabBarLabel: 'Tools',
+    tabBarLabel: i18n.t(lang.tools.tabBarLabel),
     tabBarIcon: ({ tintColor }) => <Icons.Tools style={{ color: tintColor }} />
   }
 }
@@ -159,7 +160,7 @@ const ToolsTab = {
 const OffersTab = {
   screen: OffersStack,
   navigationOptions: {
-    tabBarLabel: 'Offers',
+    tabBarLabel: i18n.t(lang.offers.tabBarLabel),
     tabBarIcon: ({ tintColor }) => <Icons.Offers style={{ color: tintColor }} />
   }
 }
@@ -167,7 +168,7 @@ const OffersTab = {
 const ProfileTab = {
   screen: ProfileStack,
   navigationOptions: {
-    tabBarLabel: 'Profile',
+    tabBarLabel: i18n.t(lang.profile.tabBarLabel),
     tabBarIcon: () => (
       <Image
         style={{ width: 24, height: 24, borderRadius: 12 }}
