@@ -8,6 +8,7 @@ import {
 } from './styled'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { Icons } from '../../../assets'
+import i18n, { lang } from '../../../translations'
 
 export type CheckListItem = {
   title: string
@@ -30,7 +31,9 @@ class CheckList extends Component<Props> {
         <CheckListItemContainer key={item.title} noBorder={index === items.length - 1}>
           <TouchableOpacity onPress={onPress}>
             <CheckListItemInnerContainer>
-              <CheckListItemText>{item.title}</CheckListItemText>
+              <CheckListItemText>
+                {i18n.t(lang.checklistWidget.mockItems[item.title])}
+              </CheckListItemText>
               <CheckListCheckMarkContainer checked={item.done}>
                 {item.done && <Icons.Tick />}
               </CheckListCheckMarkContainer>

@@ -55,5 +55,39 @@
   },
   "weekDisplay": {
     "title": "Your week"
+  },
+  "articleFilters": {
+    "all": "All"
+  },
+  "homeScreen": {
+    "socialMediaTitle": "Week %{week} in social media",
+    "healthTitle": "My health",
+    "activitiesTitle": "Activities to do this week",
+    "forumTitle": "Forum",
+    "viewAllArticles": "View all"
+  },
+  "whatHappensNowWidget": {
+    "title": "What happens this week",
+    "mother": "Mother",
+    "baby": "Baby",
+    "partner": "Partner"
+  },
+  "offerWidget": {
+    "title": "Special offers",
+    "viewAllButton": "View all"
+  },
+  "myHealthWidget": {
+    "headline": "Weeks %{startWeek} to %{endWeek}",
+    "body": "1 prenatal visit a month",
+    "visistLeft": "%{amount} visits left",
+    "goToCalender": "Go to calender"
+  },
+  "checklistWidget": {
+    "goToActivitesButton": "Go to activities",
+    "mockItems": {
+      "yoga": "Attend yoga classes",
+      "cooking": "Visit healthy food cooking class",
+      "shrink": "Talk to psychologist"
+    }
   }
 }

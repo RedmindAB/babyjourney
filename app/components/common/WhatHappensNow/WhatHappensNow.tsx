@@ -15,6 +15,7 @@ import { Headline, InfoText } from '../styled'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { Icons } from '../../../assets'
 import theme from '../../../theme'
+import i18n, { lang } from '../../../translations'
 
 type OwnProps = {
   style?: ViewStyle
@@ -65,7 +66,7 @@ class WhatHappensNow extends Component<Props> {
             </TouchableOpacity>
           </IconContainer>
           <InfoText style={{ marginTop: theme.BASELINE, fontSize: 12 }}>
-            {context.toUpperCase()}
+            {i18n.t(lang.whatHappensNowWidget[context.toLowerCase()]).toUpperCase()}
           </InfoText>
         </IconColumn>
       )
@@ -82,7 +83,7 @@ class WhatHappensNow extends Component<Props> {
       >
         <WhatHappensNowContainer>
           <Headline noMargin style={{ alignSelf: 'center' }}>
-            What happens this week?
+            {i18n.t(lang.whatHappensNowWidget.title)}
           </Headline>
           <IconsRowContainer>{this.renderButtons()}</IconsRowContainer>
         </WhatHappensNowContainer>

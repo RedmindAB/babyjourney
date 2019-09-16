@@ -10,6 +10,7 @@ import PaginatedScrollView from '../PaginatedScrollView'
 import { OfferModel } from '../Offer/Offer'
 import { withNavigation, NavigationScreenProps } from 'react-navigation'
 import { screens } from '../../../navigation/navigationConstants'
+import i18n, { lang } from '../../../translations'
 
 type Props = NavigationScreenProps
 
@@ -46,8 +47,11 @@ class OfferList extends Component<Props> {
       <LinearGradient start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }} colors={['#fff4f4', '#ffbaba']}>
         <OfferListContainer>
           <TopRowContainer>
-            <Headline noMargin>Special Offers</Headline>
-            <SquareButton title="VIEW ALL" onPress={this.onPressViewAll} />
+            <Headline noMargin>{i18n.t(lang.offerWidget.title)}</Headline>
+            <SquareButton
+              title={i18n.t(lang.offerWidget.viewAllButton)}
+              onPress={this.onPressViewAll}
+            />
           </TopRowContainer>
           <PaginatedScrollView>
             {offers.map(offer => (

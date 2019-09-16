@@ -25,6 +25,7 @@ import { getStatusBarHeight } from 'react-native-iphone-x-helper'
 import { ApplicationState } from '../../store'
 import { hideBottomTabBar, showBottomTabBar } from '../../store/bottomTabBar/actions'
 import { Filter } from '../../types'
+import i18n, { lang } from '../../translations'
 
 type PropsFromState = ReturnType<typeof mapStateToProps>
 type PropsFromDispatch = ReturnType<typeof mapDispatchToProps>
@@ -51,9 +52,9 @@ class Home extends Component<Props, State> {
       activeFilter,
       filteredArticles: this.getFilteredArticles(filters[0]),
       checkList: [
-        { title: 'Attend yoga classes', done: false },
-        { title: 'Visit healthy food cooking class', done: false },
-        { title: 'Talk to psychologist', done: false }
+        { title: 'yoga', done: false },
+        { title: 'cooking', done: false },
+        { title: 'shrink', done: false }
       ]
     }
   }
@@ -104,8 +105,8 @@ class Home extends Component<Props, State> {
       }, [])
 
     filters.unshift({
-      label: 'All',
-      value: 'all'
+      value: 'all',
+      label: i18n.t(lang.articleFilters.all)
     })
 
     return filters
@@ -210,16 +211,16 @@ class Home extends Component<Props, State> {
           />
           <SquareButton
             style={{ alignSelf: 'center', marginBottom: theme.BASELINE * 2, width: 100 }}
-            title="VIEW ALL"
+            title={i18n.t(lang.homeScreen.viewAllArticles)}
             onPress={() => undefined}
           />
           <WhatHappensNow style={{ height: 224 }} />
           <OfferList />
-          <HomeHeadline>My health</HomeHeadline>
+          <HomeHeadline>{i18n.t(lang.homeScreen.healthTitle)}</HomeHeadline>
           <HomeContentWrapper>
             <HealthCheck />
           </HomeContentWrapper>
-          <HomeHeadline>activities to do this week</HomeHeadline>
+          <HomeHeadline>{i18n.t(lang.homeScreen.activitiesTitle)}</HomeHeadline>
           <HomeContentWrapper>
             <CheckList onPress={this.onCheckListItemPress} items={this.state.checkList} />
           </HomeContentWrapper>
@@ -231,11 +232,11 @@ class Home extends Component<Props, State> {
           >
             <SquareButton
               style={{ alignSelf: 'baseline' }}
-              title="Go to activities"
+              title={i18n.t(lang.checklistWidget.goToActivitesButton)}
               onPress={() => undefined}
             />
           </HomeContentWrapper>
-          <HomeHeadline>forum</HomeHeadline>
+          <HomeHeadline>{i18n.t(lang.homeScreen.forumTitle)}</HomeHeadline>
           <HomeContentWrapper>
             <ForumResponses />
           </HomeContentWrapper>

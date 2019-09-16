@@ -12,6 +12,7 @@ import {
 } from './styled'
 import LinearGradient from 'react-native-linear-gradient'
 import { Icons } from '../../../assets'
+import i18n, { lang } from '../../../translations'
 
 class HealthCheck extends Component {
   render() {
@@ -28,11 +29,17 @@ class HealthCheck extends Component {
           </HeartIcon>
         </LinearGradient>
         <HealthCheckRightContainer>
-          <HealthCheckTime>weeks 4 to 28</HealthCheckTime>
-          <HealthCheckTitle>1 prenatal visit a month</HealthCheckTitle>
+          <HealthCheckTime>
+            {i18n.t(lang.myHealthWidget.headline, { startWeek: 4, endWeek: 28 })}
+          </HealthCheckTime>
+          <HealthCheckTitle>{i18n.t(lang.myHealthWidget.body)}</HealthCheckTitle>
           <HealthCheckBottomRow>
-            <HealthCheckInfo light>3 visits left</HealthCheckInfo>
-            <HealthCheckGoToSchedule>Go to schedule</HealthCheckGoToSchedule>
+            <HealthCheckInfo light>
+              {i18n.t(lang.myHealthWidget.visistLeft, { amount: 3 })}
+            </HealthCheckInfo>
+            <HealthCheckGoToSchedule>
+              {i18n.t(lang.myHealthWidget.goToCalender)}
+            </HealthCheckGoToSchedule>
           </HealthCheckBottomRow>
         </HealthCheckRightContainer>
       </HealthCheckContainer>

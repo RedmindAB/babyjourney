@@ -6,6 +6,7 @@ import { TopSearchContainer } from './styled'
 import theme from '../../../theme'
 import { connect } from 'react-redux'
 import { ApplicationState } from '../../../store'
+import i18n, { lang } from '../../../translations'
 
 const { width: screenWidth } = Dimensions.get('screen')
 
@@ -58,7 +59,9 @@ class TopSearch extends Component<Props> {
         <Animated.View
           style={{ position: 'absolute', left: 0, transform: [{ translateX: headlineTranslate }] }}
         >
-          <HomeHeadline noMargin>week {this.props.user.selectedWeek} in social media</HomeHeadline>
+          <HomeHeadline noMargin>
+            {i18n.t(lang.homeScreen.socialMediaTitle, { week: this.props.user.selectedWeek })}
+          </HomeHeadline>
         </Animated.View>
         <SearchField
           showInput={this.state.showInput}
