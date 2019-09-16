@@ -35,7 +35,7 @@ export const Card = styled.View`
   shadow-offset: 0 2px;
   shadow-opacity: 0.2;
   shadow-radius: 4px;
-  elevation: 1;
+  elevation: 4;
   padding: ${theme.BASELINE * 2}px;
   ${props => props.smallPadding && `padding: ${theme.BASELINE}px`}
 `
@@ -183,7 +183,8 @@ export const Title = styled.Text`
 export const InfoText = styled(CustomText)`
   font-family: ${theme.fonts.Avenir};
   font-weight: 100;
-  font-size: 14;
+  font-size: 16;
+  line-height: 24;
   flex-shrink: 1;
   ${props => props.normal && `font-weight: 400`}
 `
@@ -198,5 +199,5 @@ export const IconCircleContainer = styled(CenteredView)`
   shadow-offset: 0 0;
   shadow-opacity: 0.93;
   shadow-radius: 8;
-  elevation: 1;
+  elevation: 4;
 `

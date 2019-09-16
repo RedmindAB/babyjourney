@@ -33,7 +33,7 @@ export const IconContainer = styled(CenteredView)`
   shadow-offset: 0 0;
   shadow-opacity: 0.49;
   shadow-radius: 8px;
-  elevation: 1;
+  elevation: 4;
 `
 
 export const RightSideContainer = styled.View`

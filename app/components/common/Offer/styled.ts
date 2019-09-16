@@ -18,7 +18,7 @@ export const OfferContainer = styled.View`
   shadow-offset: 0 4px;
   shadow-opacity: 0.66;
   shadow-radius: 17px;
-  elevation: 1;
+  elevation: 4;
 `
 
 export const OfferImage = styled.Image`

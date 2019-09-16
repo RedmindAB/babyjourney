@@ -42,7 +42,7 @@
     "days": "days",
     "weekText": "Week %{weeks}+%{days}",
     "trimesterText": "Trimester %{trimester}",
-    "exapndButton": "Details",
+    "expandButton": "Details",
     "baySizeText": "Your baby is as big as %{babySize} now",
     "babySizes": {
       "lemon": "a lemon"
@@ -72,6 +72,12 @@
     "mother": "Mother",
     "baby": "Baby",
     "partner": "Partner"
+  },
+  "whatHappenaNowScreen": {
+    "mother": "Mother",
+    "baby": "Baby",
+    "partner": "Partner",
+    "week": "Week"
   },
   "offerWidget": {
     "title": "Special offers",
@@ -113,7 +119,7 @@
     "headerTitle": "Offers",
     "categories": {
       "all": "All",
-      "cosmetics": "Comsetics",
+      "cosmetics": "Cosmetics",
       "food": "Food",
       "fitness": "Fitness"
     }

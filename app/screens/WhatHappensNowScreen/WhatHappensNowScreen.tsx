@@ -9,6 +9,7 @@ import weekArticles from './weekArticles'
 import { connect } from 'react-redux'
 import { ApplicationState } from '../../store'
 import { ViewStyle } from 'react-native'
+import i18n, { lang } from '../../translations'
 
 type PropsFromState = ReturnType<typeof mapStateToProps>
 
@@ -80,7 +81,9 @@ class WhatHappensNowScreen extends Component<Props, State> {
         >
           <Icon width={56} height={56} />
         </IconCircleContainer>
-        <Title style={{ alignSelf: 'center' }}>Vecka {this.props.user.selectedWeek}</Title>
+        <Title style={{ alignSelf: 'center' }}>
+          {i18n.t(lang.whatHappenaNowScreen.week)} {this.props.user.selectedWeek}
+        </Title>
         {this.renderArticle()}
       </Container>
     )

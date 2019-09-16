@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { ModalContainer, ModalBackground, Xbutton, XbuttonContainer } from './styled'
-import { Text, TouchableOpacity } from 'react-native'
+import { TouchableOpacity } from 'react-native'
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
 import { setHasSeenCongratsModal } from '../../../store/user/actions'

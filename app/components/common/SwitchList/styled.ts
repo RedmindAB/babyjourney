@@ -18,6 +18,7 @@ export const OptionContainer = styled(CenteredView)`
   height: ${containerHeight}px;
   flex: 1;
   border-radius: ${containerHeight / 2}px;
+  background-color: transparent;
   ${props => props.selected && `background-color: #ffacad`}
 `
 

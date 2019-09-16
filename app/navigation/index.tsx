@@ -55,7 +55,7 @@ const headerWithoutWeekDisplay = (
       shadowOffset: { width: 0, height: 0 },
       shadowOpacity: 0.2,
       shadowRadius: 8,
-      elevation: 1
+      elevation: 4
     },
     headerBackTitle: null,
     headerTintColor: theme.secondary.onColor

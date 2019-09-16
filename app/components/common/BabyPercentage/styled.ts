@@ -72,5 +72,5 @@ export const BabyLogoWhiteBorder = styled.View`
   shadow-offset: 0 4px;
   shadow-opacity: 0.66;
   shadow-radius: 6px;
-  elevation: 1;
+  elevation: 4;
 `

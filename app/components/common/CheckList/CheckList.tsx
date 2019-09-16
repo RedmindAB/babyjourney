@@ -6,9 +6,9 @@ import {
   CheckListCheckMarkContainer,
   CheckListItemInnerContainer
 } from './styled'
-import { TouchableOpacity } from 'react-native-gesture-handler'
 import { Icons } from '../../../assets'
 import i18n, { lang } from '../../../translations'
+import { TouchableOpacity } from 'react-native'
 
 export type CheckListItem = {
   title: string

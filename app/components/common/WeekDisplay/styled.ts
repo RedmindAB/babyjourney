@@ -3,6 +3,7 @@ import theme from '../../../theme'
 import { CenteredView } from '../styled'
 
 export const WeekDisplayContainer = styled.View`
+  position: relative;
   border-bottom-right-radius: 18px;
   border-bottom-left-radius: 18px;
   background-color: white;
@@ -11,7 +12,7 @@ export const WeekDisplayContainer = styled.View`
   shadow-offset: 0 4px;
   shadow-opacity: 0.2;
   shadow-radius: 17px;
-  elevation: 1;
+  elevation: 4;
 `
 const weekLineContainerHeight = theme.BASELINE * 4
 const weekLineHeight = theme.BASELINE * 1.5

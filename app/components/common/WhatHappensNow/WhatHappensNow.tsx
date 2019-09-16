@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { ViewStyle, View } from 'react-native'
+import { ViewStyle, TouchableOpacity } from 'react-native'
 import {
   WhatHappensNowContainer,
   IconsRowContainer,
@@ -12,7 +12,6 @@ import { withNavigation, NavigationScreenProps } from 'react-navigation'
 import { screens } from '../../../navigation/navigationConstants'
 import LinearGradient from 'react-native-linear-gradient'
 import { Headline, InfoText } from '../styled'
-import { TouchableOpacity } from 'react-native-gesture-handler'
 import { Icons } from '../../../assets'
 import theme from '../../../theme'
 import i18n, { lang } from '../../../translations'

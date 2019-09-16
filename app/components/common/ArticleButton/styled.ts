@@ -13,7 +13,7 @@ export const ArticleButtonContainer = styled.View`
   shadow-offset: 0 6px;
   shadow-opacity: 0.1;
   shadow-radius: 8px;
-  elevation: 1;
+  elevation: 4;
   background-color: white;
 `
 

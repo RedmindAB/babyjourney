@@ -10,12 +10,13 @@ const imageHeight = imageWidth / (16 / 9)
 const borderRadius = 14
 
 export const BigOfferContainer = styled.View`
+  margin: 0 ${theme.SCREEN_PADDING}px;
   border-radius: ${borderRadius};
   shadow-color: #7e728a;
   shadow-offset: 0 4px;
   shadow-opacity: 0.2;
   shadow-radius: 17px;
-  elevation: 1;
+  elevation: 4;
   background-color: white;
 `
 export const BigOfferImage = styled.Image`

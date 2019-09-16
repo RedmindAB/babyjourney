@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { TouchableOpacity } from 'react-native'
 import { SwitchListContainer, OptionContainer, OptionText } from './styled'
+import i18n, { lang } from '../../../translations'
 
 type OwnProps = {
   options: string[]
@@ -17,7 +18,7 @@ class SwitchList extends Component<Props> {
       return (
         <TouchableOpacity style={{ flex: 1 }} key={option} onPress={onPress}>
           <OptionContainer selected={this.props.selectedIndex === index}>
-            <OptionText>{option}</OptionText>
+            <OptionText>{i18n.t(lang.whatHappenaNowScreen[option.toLowerCase()])}</OptionText>
           </OptionContainer>
         </TouchableOpacity>
       )

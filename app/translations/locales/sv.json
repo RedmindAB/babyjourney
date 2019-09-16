@@ -42,7 +42,7 @@
     "days": "dagar",
     "weekText": "Vecka %{weeks}+%{days}",
     "trimesterText": "Trimester %{trimester}",
-    "exapndButton": "Läs mer",
+    "expandButton": "Läs mer",
     "baySizeText": "Din bebis är stor som %{babySize} nu",
     "babySizes": {
       "lemon": "en citron"
@@ -72,6 +72,12 @@
     "mother": "Mamma",
     "baby": "Barnet",
     "partner": "Partner"
+  },
+  "whatHappenaNowScreen": {
+    "mother": "Mamma",
+    "baby": "Barnet",
+    "partner": "Partner",
+    "week": "Vecka"
   },
   "offerWidget": {
     "title": "Erbjudanden",

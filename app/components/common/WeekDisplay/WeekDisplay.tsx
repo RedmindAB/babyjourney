@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ScrollView, TouchableWithoutFeedback, Dimensions, ViewStyle } from 'react-native'
+import { ScrollView, TouchableWithoutFeedback, Dimensions, ViewStyle, View } from 'react-native'
 import {
   WeekDisplayContainer,
   WeekSelectionContainer,
@@ -105,6 +105,16 @@ class WeekDisplay extends Component<Props, State> {
   render() {
     return (
       <WeekDisplayContainer style={this.props.style}>
+        <View
+          style={{
+            position: 'absolute',
+            top: -10,
+            left: 0,
+            right: 0,
+            backgroundColor: 'white',
+            height: 10
+          }}
+        />
         <Headline style={{ textAlign: 'center' }}>{i18n.t(lang.weekDisplay.title)}</Headline>
         <ScrollView
           ref={this.scrollView}
