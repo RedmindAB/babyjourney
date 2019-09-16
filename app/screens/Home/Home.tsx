@@ -142,7 +142,7 @@ class Home extends Component<Props, State> {
   }
 
   render() {
-    const maxTopHeight = 217 + 130
+    const maxTopHeight = 217 + 140
     const minTopHeight = 119
     const maxValue = maxTopHeight - minTopHeight
 
