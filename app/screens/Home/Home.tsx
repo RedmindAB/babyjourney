@@ -213,7 +213,7 @@ class Home extends Component<Props, State> {
             title="VIEW ALL"
             onPress={() => undefined}
           />
-          <WhatHappensNow style={{ marginTop: theme.BASELINE * 2, height: 224 }} />
+          <WhatHappensNow style={{ height: 224 }} />
           <OfferList />
           <HomeHeadline>My health</HomeHeadline>
           <HomeContentWrapper>
