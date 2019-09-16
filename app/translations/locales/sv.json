@@ -1,0 +1,132 @@
+{
+  "interestPicker": {
+    "title": "Vad är du intresserad av?",
+    "subTitle": "Välj minst tre stycken",
+    "buttonText": "Nästa",
+    "topics": {
+      "fashion": "Mode",
+      "lifestyle": "Livsstil",
+      "diet-health": "Kost - hälsa",
+      "exercise": "Träning",
+      "decor": "Inredning",
+      "baby": "Baby",
+      "purchases": "Inköp",
+      "siblings": "Syskon",
+      "family": "Familj",
+      "traveling": "Resor",
+      "restaurants": "Restauranger",
+      "party": "Fest",
+      "recipes": "Recept",
+      "technology": "Teknik",
+      "career": "Karriär"
+    }
+  },
+  "dueDatePicker": {
+    "title": "Hjälp oss ta reda på ditt förlossningsdatum",
+    "switchButtonLabels": {
+      "dueDate": "Förlossningsdatum",
+      "period": "Första dagen på senaste mensen"
+    },
+    "buttonText": "bekräfta"
+  },
+  "weekCongratsModal": {
+    "title": "Välkommern till",
+    "subTitle": "Vecka %{week}",
+    "congratulationsText": "Grattis! Så här långt har du kommit i din graviditet",
+    "buttonText": "Dela"
+  },
+  "progressDisplay": {
+    "title": "Ditt beräknade förlossningsdatum",
+    "daysLeft": "%{daysLeft} %{dayText} kvar",
+    "day": "dag",
+    "days": "dagar",
+    "weekText": "Vecka %{weeks}+%{days}",
+    "trimesterText": "Trimester %{trimester}",
+    "exapndButton": "Läs mer",
+    "baySizeText": "Din bebis är stor som %{babySize} nu",
+    "babySizes": {
+      "lemon": "en citron"
+    },
+    "weight": "Vikt",
+    "yourStartWeight": "Start",
+    "yourCurrentWeight": "Nuvarande",
+    "babyWeight": "Bebis",
+    "trackButton": "track"
+  },
+  "weekDisplay": {
+    "title": "Gravidvecka"
+  },
+  "articleFilters": {
+    "all": "Alla"
+  },
+  "homeScreen": {
+    "tabBarLabel": "Hem",
+    "socialMediaTitle": "Vecka %{week} i sociala medier",
+    "healthTitle": "Hälsokort",
+    "activitiesTitle": "Aktiviteter",
+    "forumTitle": "Forum",
+    "viewAllArticles": "Visa alla"
+  },
+  "whatHappensNowWidget": {
+    "title": "Vad händer den här veckan",
+    "mother": "Mamma",
+    "baby": "Barnet",
+    "partner": "Partner"
+  },
+  "offerWidget": {
+    "title": "Erbjudanden",
+    "viewAllButton": "Visa alla"
+  },
+  "myHealthWidget": {
+    "headline": "Vecka %{startWeek} till %{endWeek}",
+    "body": "1 MVC i månaden",
+    "visistLeft": "%{amount} besök återstår",
+    "goToCalender": "Gå till kalender"
+  },
+  "checklistWidget": {
+    "goToActivitesButton": "Gå till aktiviteter",
+    "mockItems": {
+      "yoga": "Gå på ett yogapass",
+      "cooking": "Gå på matlagningskurs för gravida",
+      "shrink": "Prata med din psykolog"
+    }
+  },
+  "tools": {
+    "headerTitle": "Verktyg",
+    "tabBarLabel": "Verktyg",
+    "buttons": {
+      "forum": "Forum",
+      "chatWithExpert": "Chatt med expert",
+      "blogConnection": "Blogkoppling",
+      "instagram": "Instagram",
+      "weightCurve": "Viktkurva",
+      "calender": "Kalender",
+      "contractionTimer": "Värktimer",
+      "checklist": "Checklista",
+      "weekList": "Veckolista",
+      "meetDoctor": "Träffa läkare",
+      "prenatalCare": "MVC"
+    }
+  },
+  "offers": {
+    "tabBarLabel": "Erbjudanden",
+    "headerTitle": "Erbjudanden",
+    "categories": {
+      "all": "Alla",
+      "cosmetics": "Skönhet",
+      "food": "Mat",
+      "fitness": "Träning"
+    }
+  },
+  "articles": {
+    "tabBarLabel": "Artiklar",
+    "headerTitle": "Artiklar",
+    "placeholder": "Artiklar",
+    "categories": {
+      "all": "Alla"
+    }
+  },
+  "profile": {
+    "tabBarLabel": "Profil"
+  }
+}

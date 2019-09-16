@@ -191,6 +191,7 @@ class Home extends Component<Props, State> {
             <TopSearch />
           </HomeTopContainer>
           <FilterList
+            translationPath={lang.articles.categories}
             onPress={this.setFilter}
             selectedValue={this.state.activeFilter.value}
             filters={this.state.filters}

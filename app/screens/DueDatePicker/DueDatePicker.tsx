@@ -84,7 +84,7 @@ class DueDatePicker extends Component<Props, State> {
       >
         <Container withoutMargin style={{ backgroundColor: 'transparent' }}>
           <DueDatePickerContainer>
-            <Headline style={{ maxWidth: '70%' }}>
+            <Headline style={{ maxWidth: '70%', textAlign: 'center' }}>
               {i18n.translate(lang.dueDatePicker.title)}
             </Headline>
             <View style={{ width: '100%' }}>

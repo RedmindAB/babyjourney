@@ -14,11 +14,11 @@
       "siblings": "Siblings",
       "family": "Family",
       "traveling": "Traveling",
+      "restaurants": "Restaurants",
       "party": "Party",
       "recipes": "Recipes",
       "technology": "Technology",
-      "career": "Career",
-      "restaurants": "Restaurants"
+      "career": "Career"
     }
   },
   "dueDatePicker": {
@@ -37,7 +37,7 @@
   },
   "progressDisplay": {
     "title": "Your expected date of delivery",
-    "daysLeft": "You have %{daysLeft} %{dayText} remaining",
+    "daysLeft": "%{daysLeft} %{dayText} remaining",
     "day": "day",
     "days": "days",
     "weekText": "Week %{weeks}+%{days}",
@@ -110,12 +110,21 @@
   },
   "offers": {
     "tabBarLabel": "Offers",
-    "headerTitle": "Offers"
+    "headerTitle": "Offers",
+    "categories": {
+      "all": "All",
+      "cosmetics": "Comsetics",
+      "food": "Food",
+      "fitness": "Fitness"
+    }
   },
   "articles": {
     "tabBarLabel": "Articles",
     "headerTitle": "Articles",
-    "placeholder": "Articles"
+    "placeholder": "Articles",
+    "categories": {
+      "all": "All"
+    }
   },
   "profile": {
     "tabBarLabel": "Profile"

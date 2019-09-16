@@ -7,6 +7,7 @@ import theme from '../../theme'
 import BigOffer from '../../components/common/BigOffer'
 import FilterList from '../../components/common/FilterList'
 import { Filter } from '../../types'
+import { lang } from '../../translations'
 
 type State = {
   filters: Filter[]
@@ -70,6 +71,7 @@ class Offers extends Component<{}, State> {
     return (
       <Container style={{ paddingTop: theme.BASELINE * 2 }} withoutMargin>
         <FilterList
+          translationPath={lang.offers.categories}
           contentContainerStyle={{ padding: theme.SCREEN_PADDING }}
           onPress={this.setFilter}
           selectedValue={this.state.activeFilter.value}

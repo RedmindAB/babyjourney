@@ -2,11 +2,13 @@ import React, { Component } from 'react'
 import { View, FlatList, ViewStyle } from 'react-native'
 import FilterButton from '../FilterButton'
 import theme from '../../../theme'
+import i18n from '../../../translations'
 
 type Filter = { value: any; label: string }
 
 type OwnProps = {
   style?: ViewStyle
+  translationPath: any
   contentContainerStyle?: ViewStyle
   onPress: (filter: Filter) => void
   filters: Filter[]
@@ -17,13 +19,15 @@ type Props = OwnProps
 
 class FilterList extends Component<Props> {
   renderItem = ({ item, index }: { item: Filter; index: number }) => {
+    const { translationPath, selectedValue, onPress } = this.props
     const style = index === FilterList.length - 1 ? {} : { marginRight: theme.BASELINE }
     return (
       <FilterButton
-        selectedValue={this.props.selectedValue}
+        label={i18n.t(translationPath[item.value])}
+        selectedValue={selectedValue}
         style={style}
         data={item}
-        onPress={this.props.onPress}
+        onPress={onPress}
       />
     )
   }
