@@ -34,7 +34,9 @@ class ArticleButton extends Component<Props> {
 
   render() {
     const { article, style } = this.props
-    const source = article.imageUrl
+    const hasImage =
+      article.imageUrl && article.imageUrl.length > 0 && article.imageUrl !== article.url
+    const source = hasImage
       ? { uri: article.imageUrl }
       : require('../../../assets/images/articlePlaceHolder.png')
     return (
