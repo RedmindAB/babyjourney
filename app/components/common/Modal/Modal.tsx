@@ -18,12 +18,12 @@ class Modal extends Component<Props> {
     return (
       <ModalBackground>
         <ModalContainer>
+          {this.props.children}
           <XbuttonContainer>
             <TouchableOpacity onPress={this.closeModal}>
               <Xbutton style={{ transform: [{ rotate: '45deg' }] }}>+</Xbutton>
             </TouchableOpacity>
           </XbuttonContainer>
-          {this.props.children}
         </ModalContainer>
       </ModalBackground>
     )
