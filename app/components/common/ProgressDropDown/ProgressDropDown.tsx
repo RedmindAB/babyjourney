@@ -123,7 +123,9 @@ class ProgressDropDown extends Component<Props, State> {
   }
 
   getDayText() {
-    return getDaysUntilDueDate(this.props.user.dueDate) != 1 ? 'days' : 'day'
+    return getDaysUntilDueDate(this.props.user.dueDate) != 1
+      ? i18n.t(lang.progressDisplay.days)
+      : i18n.t(lang.progressDisplay.day)
   }
 
   render() {
@@ -145,6 +147,8 @@ class ProgressDropDown extends Component<Props, State> {
     const daysLeft = getDaysUntilDueDate(dueDate)
     const trimester = getTrimester(dueDate)
 
+    console.log(i18n.currentLocale())
+
     return (
       <WhiteBackground>
         <Animated.View style={this.props.animatedStyle}>
@@ -158,7 +162,9 @@ class ProgressDropDown extends Component<Props, State> {
                 <View>
                   <Headline noMargin>{i18n.t(lang.progressDisplay.title)}</Headline>
                   <Title style={{ color: 'black' }}>
-                    {moment(this.props.user.dueDate).format('LL')}
+                    {moment(this.props.user.dueDate)
+                      .locale(i18n.currentLocale())
+                      .format('LL')}
                   </Title>
                   <InfoTextContainer>
                     <ProgressInfoText border>

@@ -96,6 +96,7 @@ class DueDatePicker extends Component<Props, State> {
               />
               <PickerWrapper>
                 <DatePicker
+                  locale={i18n.currentLocale()}
                   minimumDate={this.state.minDate}
                   maximumDate={this.state.maxDate}
                   mode={'date'}

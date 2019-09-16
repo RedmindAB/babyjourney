@@ -47,7 +47,9 @@ class GradientSwitch extends Component<Props> {
             end={{ x: 1, y: 0 }}
             colors={colors}
           >
-            <InfoText normal>{option.label}</InfoText>
+            <InfoText style={{ fontSize: 12 }} numberOfLines={1} normal>
+              {option.label}
+            </InfoText>
           </LinearGradient>
         </TouchableOpacity>
       )

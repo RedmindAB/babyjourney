@@ -237,10 +237,10 @@ class Home extends Component<Props, State> {
               onPress={() => undefined}
             />
           </HomeContentWrapper>
-          <HomeHeadline>{i18n.t(lang.homeScreen.forumTitle)}</HomeHeadline>
+          {/* <HomeHeadline>{i18n.t(lang.homeScreen.forumTitle)}</HomeHeadline>
           <HomeContentWrapper>
             <ForumResponses />
-          </HomeContentWrapper>
+          </HomeContentWrapper> */}
         </Animated.ScrollView>
       </Fragment>
     )

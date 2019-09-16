@@ -6,4 +6,5 @@ export const GradientSwitchContainer = styled.View`
   border-radius: 9999;
   background-color: #ffdacb;
   flex-direction: row;
+  flex-wrap: wrap;
 `

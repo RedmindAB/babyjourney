@@ -25,7 +25,7 @@
     "title": "Hjälp oss ta reda på ditt förlossningsdatum",
     "switchButtonLabels": {
       "dueDate": "Förlossningsdatum",
-      "period": "Första dagen på senaste mensen"
+      "period": "Sista mensens första dag"
     },
     "buttonText": "bekräfta"
   },
