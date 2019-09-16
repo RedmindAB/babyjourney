@@ -12,7 +12,7 @@ import Home from '../screens/Home'
 import { screens, stacks } from './navigationConstants'
 import theme from '../theme'
 import { Icons } from '../assets'
-import Saved from '../screens/Saved'
+import Articles from '../screens/Articles'
 import Tools from '../screens/Tools'
 import Offers from '../screens/Offers'
 import Profile from '../screens/Profile'
@@ -98,13 +98,15 @@ const ToolsStack = createStackNavigator(
   }
 )
 
-const SavedStack = createStackNavigator(
+const ArticleStack = createStackNavigator(
   {
-    [screens.SAVED]: Saved
+    [screens.ARTICLES]: Articles
   },
   {
-    defaultNavigationOptions,
-    headerMode: 'none'
+    defaultNavigationOptions: ({ navigation }) => ({
+      ...headerWithoutWeekDisplay({ navigation }),
+      headerTitle: 'ARTICLES'
+    })
   }
 )
 
@@ -138,11 +140,11 @@ const HomeTab = {
   }
 }
 
-const SavedTab = {
-  screen: SavedStack,
+const ArticlesTab = {
+  screen: ArticleStack,
   navigationOptions: {
-    tabBarLabel: 'Saved',
-    tabBarIcon: ({ tintColor }) => <Icons.Saved style={{ color: tintColor }} />
+    tabBarLabel: 'Articles',
+    tabBarIcon: ({ tintColor }) => <Icons.Articles style={{ color: tintColor }} />
   }
 }
 
@@ -150,7 +152,7 @@ const ToolsTab = {
   screen: ToolsStack,
   navigationOptions: {
     tabBarLabel: 'Tools',
-    tabBarIcon: ({ tintColor }) => <Icons.Diary style={{ color: tintColor }} />
+    tabBarIcon: ({ tintColor }) => <Icons.Tools style={{ color: tintColor }} />
   }
 }
 
@@ -181,7 +183,7 @@ const ProfileTab = {
 const TabNavigator = createBottomTabNavigator(
   {
     [stacks.HOME]: HomeTab,
-    [stacks.SAVED]: SavedTab,
+    [stacks.ARTICLES]: ArticlesTab,
     [stacks.TOOLS]: ToolsTab,
     [stacks.OFFERS]: OffersTab,
     [stacks.PROFILE]: ProfileTab

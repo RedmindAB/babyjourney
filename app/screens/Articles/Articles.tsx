@@ -3,16 +3,16 @@ import Container from '../../components/common/Container'
 import { Text } from 'react-native'
 import { CenteredFill } from '../../components/common/styled'
 
-class Saved extends Component {
+class Articles extends Component {
   render() {
     return (
-      <Container weekHeader>
+      <Container withoutMargin>
         <CenteredFill>
-          <Text>Saved</Text>
+          <Text>Articles</Text>
         </CenteredFill>
       </Container>
     )
   }
 }
 
-export default Saved
+export default Articles

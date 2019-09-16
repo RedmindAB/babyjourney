@@ -1,7 +1,6 @@
 import styled from 'styled-components/native'
 import theme from '../../../theme'
 import { Dimensions } from 'react-native'
-import { CustomText } from '../styled'
 
 const containerHeight = 120
 const borderRadius = 14

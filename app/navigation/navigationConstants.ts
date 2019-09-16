@@ -5,7 +5,7 @@ export const screens = {
   PROFILE: 'screen/PROFILE',
   OFFERS: 'screen/OFFER',
   TOOLS: 'screen/TOOLS',
-  SAVED: 'screen/Saved',
+  ARTICLES: 'screen/ARTICLES',
   WHAT_HAPPENS_NOW: 'screens/WHAT_HAPPENS_NOW'
 }
 
@@ -16,5 +16,5 @@ export const stacks = {
   PROFILE: 'stacks/PROFILE',
   OFFERS: 'stacks/OFFERS',
   TOOLS: 'stacks/TOOLS',
-  SAVED: 'stacks/SAVED'
+  ARTICLES: 'stacks/ARTICLES'
 }

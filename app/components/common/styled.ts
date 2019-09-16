@@ -37,6 +37,7 @@ export const Card = styled.View`
   shadow-radius: 4px;
   elevation: 1;
   padding: ${theme.BASELINE * 2}px;
+  ${props => props.smallPadding && `padding: ${theme.BASELINE}px`}
 `
 export const CenteredView = styled.View`
   justify-content: center;
