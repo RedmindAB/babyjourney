@@ -35,7 +35,7 @@ class Tools extends Component {
 
   render() {
     return (
-      <Container style={{ padding: margin / 2 }} withoutMargin>
+      <Container withoutMargin>
         <ToolsContainer>{this.renderTools()}</ToolsContainer>
       </Container>
     )
