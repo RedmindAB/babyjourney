@@ -46,7 +46,11 @@ class WhatHappensNow extends Component<Props> {
       const onPress = () => this.goToWhatHappensNow(context)
       const Icon = this.getIcon(context)
       return (
-        <IconColumn noMargin={index === 0} style={{ justifyContent, alignItems: 'center' }}>
+        <IconColumn
+          key={context}
+          noMargin={index === 0}
+          style={{ justifyContent, alignItems: 'center' }}
+        >
           <IconContainer>
             <TouchableOpacity
               onPress={onPress}
