@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { ViewProps, Linking, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+
+import * as placeHolders from '../../../assets/images'
 import {
   ArticleButtonContainer,
   ArticleButtonImage,
@@ -32,13 +34,16 @@ class ArticleButton extends Component<Props> {
     }
   }
 
+  getRandomPlaceHolder() {
+    const nmbr = Math.floor(Math.random() * 3 + 1)
+    return placeHolders[`placeHolder${nmbr}`]
+  }
+
   render() {
     const { article, style } = this.props
     const hasImage =
       article.imageUrl && article.imageUrl.length > 0 && article.imageUrl !== article.url
-    const source = hasImage
-      ? { uri: article.imageUrl }
-      : require('../../../assets/images/articlePlaceHolder.png')
+    const source = hasImage ? { uri: article.imageUrl } : this.getRandomPlaceHolder()
     return (
       <ArticleButtonContainer style={style}>
         <View style={{ flex: 1, overflow: 'hidden' }}>
