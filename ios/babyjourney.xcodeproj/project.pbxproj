@@ -22,6 +22,9 @@
 		A122AD19DD4A406290B47A9D /* Lora-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D8DB8017D2D14A20BBB364CC /* Lora-Bold.ttf */; };
 		B5E42BCFD7A6A9727F821A61 /* libPods-babyjourney-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 30DAF102E1553FA031CD8552 /* libPods-babyjourney-tvOSTests.a */; };
 		B5EB1E206659133E0D756EA6 /* libPods-babyjourney.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D77B7B458B7143D0E09E9D66 /* libPods-babyjourney.a */; };
+		C020192F2330E24900603763 /* babyjourney.png in Resources */ = {isa = PBXBuildFile; fileRef = C020192E2330E24900603763 /* babyjourney.png */; };
+		C02019322330E25600603763 /* element.png in Resources */ = {isa = PBXBuildFile; fileRef = C02019302330E25600603763 /* element.png */; };
+		C02019332330E25600603763 /* angryimg.png in Resources */ = {isa = PBXBuildFile; fileRef = C02019312330E25600603763 /* angryimg.png */; };
 		DF7C6E4958916630B652D17B /* libPods-babyjourneyTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88C9CD015B549ECA93FC00D3 /* libPods-babyjourneyTests.a */; };
 		E776948CFE374271BECBBB6F /* Avenir.ttc in Resources */ = {isa = PBXBuildFile; fileRef = A16955A5C55443A49365C78B /* Avenir.ttc */; };
 		EA27B843E4834FC09C29DC9F /* Lora-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6757AB8E2DA945CEBBB64D19 /* Lora-Italic.ttf */; };
@@ -72,6 +75,9 @@
 		A00093C7A9555641D130F472 /* Pods-babyjourney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-babyjourney.release.xcconfig"; path = "Target Support Files/Pods-babyjourney/Pods-babyjourney.release.xcconfig"; sourceTree = "<group>"; };
 		A16955A5C55443A49365C78B /* Avenir.ttc */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Avenir.ttc; path = ../assets/fonts/Avenir.ttc; sourceTree = "<group>"; };
 		B9ABCC2D4C3EE64BCFB94B67 /* Pods-babyjourney-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-babyjourney-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-babyjourney-tvOS/Pods-babyjourney-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		C020192E2330E24900603763 /* babyjourney.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = babyjourney.png; path = babyjourney/babyjourney.png; sourceTree = "<group>"; };
+		C02019302330E25600603763 /* element.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = element.png; path = babyjourney/element.png; sourceTree = "<group>"; };
+		C02019312330E25600603763 /* angryimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = angryimg.png; path = babyjourney/angryimg.png; sourceTree = "<group>"; };
 		D77B7B458B7143D0E09E9D66 /* libPods-babyjourney.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-babyjourney.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8DB8017D2D14A20BBB364CC /* Lora-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lora-Bold.ttf"; path = "../assets/fonts/Lora/Lora-Bold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -135,6 +141,9 @@
 		13B07FAE1A68108700A75B9A /* babyjourney */ = {
 			isa = PBXGroup;
 			children = (
+				C02019312330E25600603763 /* angryimg.png */,
+				C02019302330E25600603763 /* element.png */,
+				C020192E2330E24900603763 /* babyjourney.png */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -364,10 +373,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				C02019322330E25600603763 /* element.png in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				E776948CFE374271BECBBB6F /* Avenir.ttc in Resources */,
 				A122AD19DD4A406290B47A9D /* Lora-Bold.ttf in Resources */,
+				C020192F2330E24900603763 /* babyjourney.png in Resources */,
 				90B4A885849245289A455448 /* Lora-BoldItalic.ttf in Resources */,
+				C02019332330E25600603763 /* angryimg.png in Resources */,
 				EA27B843E4834FC09C29DC9F /* Lora-Italic.ttf in Resources */,
 				0EAD7535013B48F7B9AB3A38 /* Lora-Regular.ttf in Resources */,
 			);
