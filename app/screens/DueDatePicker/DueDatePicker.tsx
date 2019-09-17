@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { setHasSeenOnboarding, setDueDate } from '../../store/user/actions'
+import { setDueDate } from '../../store/user/actions'
 import { Dispatch } from 'redux'
 import { ApplicationState } from '../../store'
 import { Headline } from '../../components/common/styled'
@@ -66,8 +66,7 @@ class DueDatePicker extends Component<Props, State> {
     } else {
       this.props.setDueDate(this.state.date)
     }
-    this.props.setHasSeenOnboarding()
-    this.props.navigation.navigate(screens.HOME)
+    this.props.navigation.navigate(screens.INTEREST_PICKER)
   }
 
   setDateSetting = (setting: string) => {
@@ -119,8 +118,7 @@ class DueDatePicker extends Component<Props, State> {
 
 const mapStateToProps = ({ user }: ApplicationState) => ({ user })
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  setDueDate: (dueDate: Date) => dispatch(setDueDate(dueDate)),
-  setHasSeenOnboarding: () => dispatch(setHasSeenOnboarding(true))
+  setDueDate: (dueDate: Date) => dispatch(setDueDate(dueDate))
 })
 
 export default connect(

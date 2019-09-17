@@ -7,7 +7,7 @@ import { Dispatch } from 'redux'
 
 import Container from '../../components/common/Container'
 import SquareButton from '../../components/common/SquareButton'
-import { screens } from '../../navigation/navigationConstants'
+import { screens, stacks } from '../../navigation/navigationConstants'
 import { Headline, InfoText } from '../../components/common/styled'
 import {
   InteresPickerContainer,
@@ -16,7 +16,7 @@ import {
 } from './styled'
 import theme from '../../theme'
 import { Topic } from '../../store/user/types'
-import { setTopics } from '../../store/user/actions'
+import { setTopics, setHasSeenOnboarding } from '../../store/user/actions'
 import i18n, { lang } from '../../translations'
 
 type PropsFromDispatch = ReturnType<typeof mapDispatchToProps>
@@ -51,7 +51,8 @@ class InterestPicker extends Component<Props, State> {
   onNextPress = () => {
     const prettyTopics = this.state.topics.map(({ value }) => ({ value }))
     this.props.setTopics(prettyTopics)
-    this.props.navigation.navigate(screens.DUE_DATE_PICKER)
+    this.props.setHasSeenOnboarding()
+    this.props.navigation.navigate(stacks.HOME)
   }
 
   onTopicPress = (index: number) => {
@@ -60,8 +61,6 @@ class InterestPicker extends Component<Props, State> {
     topic.selected = !topic.selected
     this.setState({ topics })
   }
-
-  isButtonDisabled = () => this.state.topics.filter(topic => topic.selected).length < 3
 
   renderTopics() {
     return this.state.topics.map((topic, index) => {
@@ -108,7 +107,6 @@ class InterestPicker extends Component<Props, State> {
             <InterestPickerTopicsContainer>{this.renderTopics()}</InterestPickerTopicsContainer>
 
             <SquareButton
-              disabled={this.isButtonDisabled()}
               bigButton
               title={i18n.translate(lang.interestPicker.buttonText)}
               onPress={this.onNextPress}
@@ -121,7 +119,8 @@ class InterestPicker extends Component<Props, State> {
 }
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  setTopics: (topics: Topic[]) => dispatch(setTopics(topics))
+  setTopics: (topics: Topic[]) => dispatch(setTopics(topics)),
+  setHasSeenOnboarding: () => dispatch(setHasSeenOnboarding(true))
 })
 
 export default connect(

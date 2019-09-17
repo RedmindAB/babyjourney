@@ -2,7 +2,7 @@
   "interestPicker": {
     "title": "Vad är du intresserad av?",
     "subTitle": "Välj minst tre stycken",
-    "buttonText": "Nästa",
+    "buttonText": "Klar",
     "topics": {
       "fashion": "Mode",
       "lifestyle": "Livsstil",
@@ -27,7 +27,7 @@
       "dueDate": "Förlossningsdatum",
       "period": "Sista mensens första dag"
     },
-    "buttonText": "bekräfta"
+    "buttonText": "Nästa"
   },
   "weekCongratsModal": {
     "title": "Välkommern till",

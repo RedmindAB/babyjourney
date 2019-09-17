@@ -224,8 +224,8 @@ const TabNavigator = createBottomTabNavigator(
 
 const OnBoardingStack = createStackNavigator(
   {
-    [screens.INTEREST_PICKER]: InterestPicker,
-    [screens.DUE_DATE_PICKER]: DueDatePicker
+    [screens.DUE_DATE_PICKER]: DueDatePicker,
+    [screens.INTEREST_PICKER]: InterestPicker
   },
   {
     headerMode: 'none'

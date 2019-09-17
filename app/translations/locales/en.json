@@ -2,7 +2,7 @@
   "interestPicker": {
     "title": "What are your interests?",
     "subTitle": "Choose atleast 3 topics",
-    "buttonText": "Next",
+    "buttonText": "Done",
     "topics": {
       "fashion": "Fashion",
       "lifestyle": "Lifestyle",
@@ -27,7 +27,7 @@
       "dueDate": "Due date",
       "period": "First day of last period"
     },
-    "buttonText": "Submit"
+    "buttonText": "Next"
   },
   "weekCongratsModal": {
     "title": "Welcome to",
