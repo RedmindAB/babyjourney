@@ -26,6 +26,7 @@ import { ApplicationState } from '../../store'
 import { hideBottomTabBar, showBottomTabBar } from '../../store/bottomTabBar/actions'
 import { Filter } from '../../types'
 import i18n, { lang } from '../../translations'
+import { screens } from '../../navigation/navigationConstants'
 
 type PropsFromState = ReturnType<typeof mapStateToProps>
 type PropsFromDispatch = ReturnType<typeof mapDispatchToProps>
@@ -141,6 +142,8 @@ class Home extends Component<Props, State> {
     this.scrollView.current.getNode().scrollTo({ y: 0, animated: false })
   }
 
+  onViewAllArticlesPress = () => this.props.navigation.navigate(screens.ARTICLES)
+
   render() {
     const maxTopHeight = 217 + 140
     const minTopHeight = 119
@@ -213,7 +216,7 @@ class Home extends Component<Props, State> {
           <SquareButton
             style={{ alignSelf: 'center', marginBottom: theme.BASELINE * 2, width: 100 }}
             title={i18n.t(lang.homeScreen.viewAllArticles)}
-            onPress={() => undefined}
+            onPress={this.onViewAllArticlesPress}
           />
           <WhatHappensNow style={{ height: 224 }} />
           <OfferList />
