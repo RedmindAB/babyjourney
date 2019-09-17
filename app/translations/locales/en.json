@@ -129,7 +129,15 @@
     "headerTitle": "Articles",
     "placeholder": "Articles",
     "categories": {
-      "all": "All"
+      "all": "All",
+      "travelling": "Travelling",
+      "exercise": "Exercise",
+      "fashion": "Fashion",
+      "pregnancy": "Pregnancy",
+      "lifestyle": "Lifestyle",
+      "health": "Health",
+      "food": "Food",
+      "cosmetics": "Cosmetics"
     }
   },
   "profile": {

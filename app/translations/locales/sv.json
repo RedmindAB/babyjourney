@@ -129,7 +129,15 @@
     "headerTitle": "Artiklar",
     "placeholder": "Artiklar",
     "categories": {
-      "all": "Alla"
+      "all": "Alla",
+      "travelling": "Resor",
+      "exercise": "Träning",
+      "fashion": "Mode",
+      "pregnancy": "Graviditet",
+      "lifestyle": "Livsstil",
+      "health": "Hälsa",
+      "food": "Mat",
+      "cosmetics": "Kosmetika"
     }
   },
   "profile": {
