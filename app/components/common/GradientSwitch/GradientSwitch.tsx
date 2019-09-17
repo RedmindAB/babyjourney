@@ -47,7 +47,7 @@ class GradientSwitch extends Component<Props> {
             end={{ x: 1, y: 0 }}
             colors={colors}
           >
-            <InfoText style={{ fontSize: 12 }} numberOfLines={1} normal>
+            <InfoText style={{ fontSize: 13 }} numberOfLines={1} normal>
               {option.label}
             </InfoText>
           </LinearGradient>
