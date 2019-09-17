@@ -22,6 +22,7 @@ import WhatHappensNowScreen from '../screens/WhatHappensNowScreen'
 import DueDatePicker from '../screens/DueDatePicker'
 import InterestPicker from '../screens/InterestPicker'
 import i18n, { lang } from '../translations'
+import WebView from '../screens/WebView'
 
 const defaultNavigationOptions = (
   { navigation }: NavigationScreenProps,
@@ -64,6 +65,20 @@ const headerWithoutWeekDisplay = (
   return { ...options, ...customOptions }
 }
 
+const WebViewStack = createStackNavigator(
+  {
+    [screens.WEB_VIEW]: WebView
+  },
+  {
+    // defaultNavigationOptions: ({ navigation }) => ({
+    //   // ...defaultNavigationOptions({ navigation }),
+    //   ...headerWithoutWeekDisplay({ navigation }),
+    //   headerTitle: i18n.t(lang.tools.headerTitle).toUpperCase()
+    // })
+    headerMode: 'none'
+  }
+)
+
 const HomeStack = createStackNavigator(
   {
     [screens.HOME]: {
@@ -71,6 +86,13 @@ const HomeStack = createStackNavigator(
       navigationOptions: {
         header: null
       }
+    },
+    [stacks.WEB_VIEW]: {
+      screen: WebViewStack,
+      navigationOptions: ({ navigation }) => ({
+        ...headerWithoutWeekDisplay(navigation),
+        headerTitle: i18n.t(lang.offers.headerTitle).toUpperCase()
+      })
     },
     [screens.WHAT_HAPPENS_NOW]: WhatHappensNowScreen,
     [screens.OFFERS]: {

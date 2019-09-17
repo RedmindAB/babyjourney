@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ViewProps, Linking, View } from 'react-native'
+import { ViewProps, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 
 import * as placeHolders from '../../../assets/images'
@@ -10,6 +10,8 @@ import {
   ArticleButtonTitle,
   ArticleButtonAuthor
 } from './styled'
+import { withNavigation, NavigationScreenProps } from 'react-navigation'
+import { stacks } from '../../../navigation/navigationConstants'
 
 export type ArticleModel = {
   imageUrl: string
@@ -24,14 +26,12 @@ type OwnProps = {
   article: ArticleModel
 }
 
-type Props = OwnProps & ViewProps
+type Props = OwnProps & ViewProps & NavigationScreenProps
 
 class ArticleButton extends Component<Props> {
   goToArticle = () => {
     const { article } = this.props
-    if (Linking.canOpenURL(article.url)) {
-      Linking.openURL(article.url)
-    }
+    this.props.navigation.navigate(stacks.WEB_VIEW, { uri: article.url })
   }
 
   getRandomPlaceHolder() {
@@ -62,4 +62,4 @@ class ArticleButton extends Component<Props> {
   }
 }
 
-export default ArticleButton
+export default withNavigation(ArticleButton)

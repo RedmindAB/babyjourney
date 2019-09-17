@@ -1,4 +1,5 @@
 export const screens = {
+  WEB_VIEW: 'screen/WEB_VIEW',
   DUE_DATE_PICKER: 'screen/DUE_DATE_PICKER',
   INTEREST_PICKER: 'screen/INTEREST_PICKER',
   HOME: 'screen/HOME',
@@ -10,11 +11,12 @@ export const screens = {
 }
 
 export const stacks = {
-  MAIN: 'stacks/MAIN',
-  ONBOARDING: 'stacks/ONBOARDING',
-  HOME: 'stacks/HOME',
-  PROFILE: 'stacks/PROFILE',
-  OFFERS: 'stacks/OFFERS',
-  TOOLS: 'stacks/TOOLS',
-  ARTICLES: 'stacks/ARTICLES'
+  WEB_VIEW: 'stack/WEB_VIEW',
+  MAIN: 'stack/MAIN',
+  ONBOARDING: 'stack/ONBOARDING',
+  HOME: 'stack/HOME',
+  PROFILE: 'stack/PROFILE',
+  OFFERS: 'stack/OFFERS',
+  TOOLS: 'stack/TOOLS',
+  ARTICLES: 'stack/ARTICLES'
 }
