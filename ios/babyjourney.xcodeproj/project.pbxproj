@@ -682,7 +682,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.babyjourney.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.babyjourney.ios.app;
 				PRODUCT_NAME = babyjourney;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -705,7 +705,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.babyjourney.app;
+				PRODUCT_BUNDLE_IDENTIFIER = com.babyjourney.ios.app;
 				PRODUCT_NAME = babyjourney;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				VERSIONING_SYSTEM = "apple-generic";
