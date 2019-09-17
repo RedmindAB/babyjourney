@@ -75,7 +75,7 @@ class InterestPicker extends Component<Props, State> {
               paddingVertical: theme.BASELINE,
               paddingHorizontal: theme.BASELINE * 2,
               alignItems: 'center',
-              minWidth: 88,
+              width: 140,
               borderRadius: 9999
             }}
             start={{ x: 0, y: 1 }}
