@@ -23,6 +23,7 @@ import DueDatePicker from '../screens/DueDatePicker'
 import InterestPicker from '../screens/InterestPicker'
 import i18n, { lang } from '../translations'
 import WebView from '../screens/WebView'
+import { babyJourneyText } from '../assets/images'
 
 const defaultNavigationOptions = (
   { navigation }: NavigationScreenProps,
@@ -91,7 +92,7 @@ const HomeStack = createStackNavigator(
       screen: WebViewStack,
       navigationOptions: ({ navigation }) => ({
         ...headerWithoutWeekDisplay(navigation),
-        headerTitle: i18n.t(lang.offers.headerTitle).toUpperCase()
+        headerTitle: <Image source={babyJourneyText} style={{ height: 30 }} resizeMode="contain" />
       })
     },
     [screens.WHAT_HAPPENS_NOW]: WhatHappensNowScreen,
