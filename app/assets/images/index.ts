@@ -3,3 +3,4 @@ export const placeHolder2 = require('./articlePlaceHolder2.png')
 export const placeHolder3 = require('./articlePlaceHolder3.png')
 
 export const babyJourneyText = require('./babyjourney.png')
+export const logo = require('./logo.png')

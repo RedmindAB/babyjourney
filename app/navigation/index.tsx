@@ -16,14 +16,14 @@ import Articles from '../screens/Articles'
 import Tools from '../screens/Tools'
 import Offers from '../screens/Offers'
 import Profile from '../screens/Profile'
-import { Image } from 'react-native'
+import { Image, View } from 'react-native'
 import CustomBottomTabBar from './CustomTabBar/CustomTabBar'
 import WhatHappensNowScreen from '../screens/WhatHappensNowScreen'
 import DueDatePicker from '../screens/DueDatePicker'
 import InterestPicker from '../screens/InterestPicker'
 import i18n, { lang } from '../translations'
 import WebView from '../screens/WebView'
-import { babyJourneyText } from '../assets/images'
+import { babyJourneyText, logo } from '../assets/images'
 
 const defaultNavigationOptions = (
   { navigation }: NavigationScreenProps,
@@ -92,7 +92,20 @@ const HomeStack = createStackNavigator(
       screen: WebViewStack,
       navigationOptions: ({ navigation }) => ({
         ...headerWithoutWeekDisplay(navigation),
-        headerTitle: <Image source={babyJourneyText} style={{ height: 30 }} resizeMode="contain" />
+        headerTitle: (
+          <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+            <Image
+              source={logo}
+              style={{ height: 20, width: 20, tintColor: '#ff6b6d', marginBottom: 4 }}
+              resizeMode="contain"
+            />
+            <Image
+              source={babyJourneyText}
+              style={{ height: 30, width: 150 }}
+              resizeMode="contain"
+            />
+          </View>
+        )
       })
     },
     [screens.WHAT_HAPPENS_NOW]: WhatHappensNowScreen,
