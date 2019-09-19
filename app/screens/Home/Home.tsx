@@ -188,7 +188,7 @@ class Home extends Component<Props, State> {
             useNativeDriver: true
           })}
         >
-          <View style={{ height: maxTopHeight }} />
+          <WhatHappensNow style={{ height: 570, paddingTop: 360 }} />
           <HomeTopContainer>
             <TopSearch />
           </HomeTopContainer>
@@ -217,7 +217,6 @@ class Home extends Component<Props, State> {
             title={i18n.t(lang.homeScreen.viewAllArticles)}
             onPress={this.onViewAllArticlesPress}
           />
-          <WhatHappensNow style={{ height: 224 }} />
           <OfferList />
           <HomeHeadline>{i18n.t(lang.homeScreen.healthTitle)}</HomeHeadline>
           <HomeContentWrapper>
