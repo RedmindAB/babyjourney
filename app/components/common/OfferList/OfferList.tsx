@@ -11,6 +11,7 @@ import { OfferModel } from '../Offer/Offer'
 import { withNavigation, NavigationScreenProps } from 'react-navigation'
 import { screens } from '../../../navigation/navigationConstants'
 import i18n, { lang } from '../../../translations'
+import { babyBjorn, tableChair, babyCarChair } from '../../../assets/images'
 
 type Props = NavigationScreenProps
 
@@ -21,25 +22,22 @@ class OfferList extends Component<Props> {
 
     const offers: OfferModel[] = [
       {
-        imageUri:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0vWz7i-_Ew_RnrZjxnM7EDxWsmEFvdCKoDYEYyNUcsMrBIQYX',
-        title: 'Get 30% off Honest cosmetics',
-        category: 'Food',
-        body: 'Choose three items and get 30% off for the whole purchase.'
+        image: babyBjorn,
+        title: i18n.t(lang.offers.offerList.babyBjorn.title),
+        body: i18n.t(lang.offers.offerList.babyBjorn.body),
+        category: i18n.t(lang.offers.offerList.babyBjorn.category)
       },
       {
-        imageUri:
-          'https://images.pexels.com/photos/1556706/pexels-photo-1556706.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
-        title: 'Get 15% off diapers from BabySafe',
-        category: 'Food',
-        body: 'Set up a monthly subscripton to get a discount.'
+        image: tableChair,
+        title: i18n.t(lang.offers.offerList.tableChair.title),
+        body: i18n.t(lang.offers.offerList.tableChair.body),
+        category: i18n.t(lang.offers.offerList.tableChair.category)
       },
       {
-        imageUri:
-          'https://img.ppwebstatic.com/origin/product/000101000002/5baded60eb1e2.jpg/950x950',
-        title: 'Buy three and get one for free',
-        category: 'Food',
-        body: 'Buy three baby pyjamas and get one free.'
+        image: babyCarChair,
+        title: i18n.t(lang.offers.offerList.carChair.title),
+        body: i18n.t(lang.offers.offerList.carChair.body),
+        category: i18n.t(lang.offers.offerList.carChair.category)
       }
     ]
 

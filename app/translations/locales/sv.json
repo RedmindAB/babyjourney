@@ -118,10 +118,33 @@
     "tabBarLabel": "Erbjudanden",
     "headerTitle": "Erbjudanden",
     "categories": {
-      "all": "Alla",
-      "cosmetics": "Skönhet",
-      "food": "Mat",
-      "fitness": "Träning"
+      "all": "All",
+      "fashion": "Mode",
+      "safety": "Säkerhet",
+      "lifestyle": "Livsstil",
+      "food": "Mat"
+    },
+    "offerList": {
+      "babyWagon": {
+        "title": "Få 25 % rabatt hos Bugaboo",
+        "body": "Bli medlem hos Bugaboo och få 25 % rabatt på Bugaboo Fox",
+        "category": "lifestyle"
+      },
+      "carChair": {
+        "title": "20 % rabatt på bilbarnstolar hos Bigbaby.se",
+        "body": "Köp valfri bilbarnstol från Bigbaby.se och få 20 % rabatt",
+        "category": "safety"
+      },
+      "tableChair": {
+        "title": "250 kr i presentkort hos Stokke",
+        "body": "Köp Stokke Tripp Trapp och få 250 kr i presentkort",
+        "category": "food"
+      },
+      "babyBjorn": {
+        "title": "399 kr rabatt hos Bigbaby.se",
+        "body": "Köp valfri BabyBjörn bärsele hos Bigbaby.se och få 399 kr i rabatt",
+        "category": "fashion"
+      }
     }
   },
   "articles": {

@@ -11,10 +11,10 @@ type Props = OwnProps
 
 class BigOffer extends Component<Props> {
   render() {
-    const { body, imageUri, title } = this.props.offer
+    const { body, image, title } = this.props.offer
     return (
       <BigOfferContainer>
-        <BigOfferImage source={{ uri: imageUri }} />
+        <BigOfferImage source={image} />
         <BigOfferBottomContainer>
           <BigOfferTitle>{title}</BigOfferTitle>
           <InfoText>{body}</InfoText>

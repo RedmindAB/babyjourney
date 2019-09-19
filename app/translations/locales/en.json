@@ -119,9 +119,32 @@
     "headerTitle": "Offers",
     "categories": {
       "all": "All",
-      "cosmetics": "Cosmetics",
-      "food": "Food",
-      "fitness": "Fitness"
+      "fashion": "Fashion",
+      "safety": "Safety",
+      "lifestyle": "Lifestyle",
+      "food": "Food"
+    },
+    "offerList": {
+      "babyWagon": {
+        "title": "Get 25% discount at Bugaboo",
+        "body": "Become a member at Bugaboo  and get 25% discount",
+        "category": "lifestyle"
+      },
+      "carChair": {
+        "title": "20% discount on car safety seats at Bigbaby.se",
+        "body": "Buy any car safety chair at Bigbaby.se and get 20% discount",
+        "category": "safety"
+      },
+      "tableChair": {
+        "title": "250 kr voucher at Stokke",
+        "body": "Buy Stokke Tripp Trapp and get a 250 kr gift card",
+        "category": "food"
+      },
+      "babyBjorn": {
+        "title": "399 kr discount at Bigbaby.se",
+        "body": "Buy any babo bjorn at Bigbaby.se and get a 399 kr discount",
+        "category": "fashion"
+      }
     }
   },
   "articles": {

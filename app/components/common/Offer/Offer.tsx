@@ -4,7 +4,7 @@ import { ViewProps } from 'react-native'
 import { InfoText } from '../styled'
 
 export type OfferModel = {
-  imageUri: string
+  image: any
   title: string
   body: string
   category: string
@@ -22,14 +22,12 @@ class Offer extends Component<Props> {
 
     return (
       <OfferContainer {...viewProps}>
-        <OfferImage
-          source={{
-            uri: offer.imageUri
-          }}
-        />
+        <OfferImage resizeMode="contain" source={offer.image} />
         <OfferRightContainer>
           <OfferTitle>{offer.title}</OfferTitle>
-          <InfoText light>{offer.body}</InfoText>
+          <InfoText style={{ fontSize: 13 }} light>
+            {offer.body}
+          </InfoText>
         </OfferRightContainer>
       </OfferContainer>
     )

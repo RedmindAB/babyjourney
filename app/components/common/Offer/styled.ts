@@ -37,8 +37,8 @@ export const OfferRightContainer = styled.View`
 
 export const OfferTitle = styled.Text`
   font-family: ${theme.fonts.Lora};
-  font-size: 16;
-  flex-shrink: 1;
+  font-size: 14;
+  /* flex-shrink: 1; */
   margin-bottom: ${theme.BASELINE};
 `
 
