@@ -51,7 +51,7 @@
     "totalDays": "%{daysPassed} av 280",
     "calenderMonth": "Kalendermånad",
     "pregnancyMonth": "Graviditetsmånad",
-    "infoText": "Skillnaden på Kalendermånad och Graviditetsmånad är att en kalendermånad består av 30 dagar. Den första kalendermånaden påbörjas när du blir gravid, alltså i vecka 2+0. En graviditet består ungefär av 9 kalendermånader. En graviditetsmånad är det uttrycket som används inom vården och en graviditetsmånad består alltid av 28 dagar och påbörjas i vecka 0+0 och består alltid av 10 kalendermånader."
+    "infoText": "Skillnaden på Kalendermånad och Graviditetsmånad är att en kalendermånad består av 30 dagar. Den första kalendermånaden påbörjas när du blir gravid, alltså i vecka 2+0. En graviditet består ungefär av 9 kalendermånader. En graviditetsmånad är det uttrycket som används inom vården och en graviditetsmånad består alltid av 28 dagar och påbörjas i vecka 0+0 och består alltid av 10 kalendermånader."
   },
   "weekDisplay": {
     "title": "Gravidvecka"
