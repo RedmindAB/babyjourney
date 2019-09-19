@@ -47,11 +47,11 @@
     "babySizes": {
       "lemon": "a lemon"
     },
-    "weight": "Weight",
-    "yourStartWeight": "Start",
-    "yourCurrentWeight": "Current",
-    "babyWeight": "Baby",
-    "trackButton": "Track"
+    "daysPassed": "Days passed",
+    "totalDays": "%{daysPassed} of 280",
+    "calenderMonth": "Calender month",
+    "pregnancyMonth": "Pregnancy month",
+    "infoText": "The difference between a calender month and a pregnancy month is that a calender month consists of 30 days. The first calender month start when you become pregnant, in other words week 2+0. A pregnancy consists of approximetly 9 calender months. A pregnancy month is the term used by specialists and always consists of 28 days and stat in week 0+0, a pregnancy always consists of 10 calender months."
   },
   "weekDisplay": {
     "title": "Your week"

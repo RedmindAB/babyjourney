@@ -1,6 +1,6 @@
-export function getWeekAndDay(dueDate: Date) {
-  const oneDay = 1000 * 60 * 60 * 24
+const oneDay = 1000 * 60 * 60 * 24
 
+export function getWeekAndDay(dueDate: Date) {
   const startDate = new Date(dueDate)
   startDate.setDate(startDate.getDate() - 7 * 40)
 
@@ -18,8 +18,32 @@ export function getDaysUntilDueDate(dueDate: Date) {
   if (today.getMonth() == 11 && today.getDate() > 25) {
     dueDate.setFullYear(dueDate.getFullYear() + 1)
   }
-  const oneDay = 1000 * 60 * 60 * 24
   return Math.ceil((dueDate.getTime() - today.getTime()) / oneDay)
+}
+
+export function getDaysPassed(dueDate: Date) {
+  const daysLeft = getDaysUntilDueDate(dueDate)
+  return 280 - daysLeft
+}
+
+export function getCalenderMonth(dueDate: Date) {
+  const today = new Date()
+
+  const twoWeeksIn = new Date(dueDate)
+  twoWeeksIn.setDate(twoWeeksIn.getDate() - 7 * 38)
+  var timeDiff = Math.abs(today.getTime() - twoWeeksIn.getTime())
+  const calenderMonths = Math.round(timeDiff / (2e3 * 3600 * 365.25))
+  console.log(calenderMonths)
+  return calenderMonths
+}
+
+export function getPregnancyMonths(dueDate: Date) {
+  const today = new Date()
+  const startDate = new Date(dueDate)
+  startDate.setDate(startDate.getDate() - 7 * 42)
+
+  const diffDays = Math.round(Math.abs((startDate.getTime() - today.getTime()) / oneDay))
+  return Math.floor(diffDays / 28)
 }
 
 export function getPercentage(dueDate: Date) {

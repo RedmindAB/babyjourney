@@ -91,7 +91,13 @@ export const BabyInfoContainer = styled.View`
   margin-top: ${theme.BASELINE}px;
   align-items: center;
   width: 100%;
-  margin-bottom: ${theme.BASELINE * 8}px;
+  /* margin-bottom: ${theme.BASELINE * 8}px; */
+`
+
+export const InfoRow = styled.View`
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
 `
 
 export const BabyInfoTitle = styled.Text`

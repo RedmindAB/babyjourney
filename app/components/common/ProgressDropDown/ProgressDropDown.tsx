@@ -23,17 +23,24 @@ import {
   BabyInfoContainer,
   BabyInfoText,
   BabyInfoTitle,
-  WhiteBackground
+  WhiteBackground,
+  InfoRow
 } from './styled'
 import { Headline, Title, InfoText } from '../styled'
 import { Icons } from '../../../assets'
-import SquareButton from '../SquareButton'
 import theme from '../../../theme'
 import { ApplicationState } from '../../../store'
 import { hideBottomTabBar, showBottomTabBar } from '../../../store/bottomTabBar/actions'
 import { getBottomScreenSpace } from '../../../theme/variables'
 import moment from 'moment'
-import { getWeekAndDay, getDaysUntilDueDate, getTrimester } from '../../../utils'
+import {
+  getWeekAndDay,
+  getDaysUntilDueDate,
+  getTrimester,
+  getDaysPassed,
+  getCalenderMonth,
+  getPregnancyMonths
+} from '../../../utils'
 import BabyPercentage from '../BabyPercentage'
 import i18n, { lang } from '../../../translations'
 
@@ -73,6 +80,7 @@ class ProgressDropDown extends Component<Props, State> {
   }
 
   renderBottomPart = () => {
+    const daysPassed = getDaysPassed(this.props.user.dueDate)
     return (
       <BottomContainer>
         <InfoText style={{ textAlign: 'center', fontSize: 14 }}>
@@ -91,32 +99,29 @@ class ProgressDropDown extends Component<Props, State> {
             source={require('../../../assets/images/lemon.png')}
           />
         </BabyComparisonContainer>
-        <Headline noMargin>{i18n.t(lang.progressDisplay.weight)}</Headline>
         <BabyInfoContainer>
-          <View style={{ flexDirection: 'row', width: '100%' }}>
-            <View style={{ flex: 1 }}>
-              <BabyInfoTitle>{i18n.t(lang.progressDisplay.yourStartWeight)}</BabyInfoTitle>
-              <BabyInfoText>55 kg</BabyInfoText>
-            </View>
-            <View style={{ flex: 1 }}>
-              <BabyInfoTitle>{i18n.t(lang.progressDisplay.yourCurrentWeight)}</BabyInfoTitle>
-              <BabyInfoText>57 kg</BabyInfoText>
-            </View>
-            <View style={{ flex: 1 }}>
-              <BabyInfoTitle>{i18n.t(lang.progressDisplay.babyWeight)}</BabyInfoTitle>
-              <BabyInfoText>50 gms</BabyInfoText>
-            </View>
-          </View>
-          <SquareButton
+          <InfoRow>
+            <BabyInfoTitle>{i18n.t(lang.progressDisplay.daysPassed)}</BabyInfoTitle>
+            <BabyInfoText>{i18n.t(lang.progressDisplay.totalDays, { daysPassed })}</BabyInfoText>
+          </InfoRow>
+          <InfoRow>
+            <BabyInfoTitle>{i18n.t(lang.progressDisplay.calenderMonth)}</BabyInfoTitle>
+            <BabyInfoText>{getCalenderMonth(this.props.user.dueDate)}</BabyInfoText>
+          </InfoRow>
+          <InfoRow>
+            <BabyInfoTitle>{i18n.t(lang.progressDisplay.pregnancyMonth)}</BabyInfoTitle>
+            <BabyInfoText>{getPregnancyMonths(this.props.user.dueDate)}</BabyInfoText>
+          </InfoRow>
+          <InfoText
             style={{
-              backgroundColor: 'white',
-              alignSelf: 'baseline',
+              fontSize: 13,
+              color: '#6e6578',
+              lineHeight: 17,
               marginTop: theme.BASELINE * 2
             }}
-            textStyle={{ color: '#584f60' }}
-            title={i18n.t(lang.progressDisplay.trackButton)}
-            onPress={() => undefined}
-          />
+          >
+            {i18n.t(lang.progressDisplay.infoText)}
+          </InfoText>
         </BabyInfoContainer>
       </BottomContainer>
     )
@@ -146,8 +151,6 @@ class ProgressDropDown extends Component<Props, State> {
     const dayText = this.getDayText()
     const daysLeft = getDaysUntilDueDate(dueDate)
     const trimester = getTrimester(dueDate)
-
-    console.log(i18n.currentLocale())
 
     return (
       <WhiteBackground>
